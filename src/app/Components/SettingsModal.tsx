@@ -36,7 +36,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
 
     const handleResetClick = () => {
         const enabledLevels = Object.entries(settings)
-            .filter(([_, value]) => value)
+            .filter(([, value]) => value)
             .map(([key]) => Number(key.replace("difficultyCheckbox", "")));
 
         if (enabledLevels.length === 0) {
@@ -45,7 +45,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
         }
 
         const filteredKeys = Array.from(allCharacterData.entries())
-            .filter(([_, values]) => values[11] !== undefined && enabledLevels.includes(Number(values[11])))
+            .filter(([, values]) => values[11] !== undefined && enabledLevels.includes(Number(values[11])))
             .map(([key]) => key);
 
         if (filteredKeys.length > 0) {

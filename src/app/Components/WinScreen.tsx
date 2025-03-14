@@ -9,7 +9,7 @@ export default function WinScreen({todaysAnswer, history}: {todaysAnswer: string
                 </div>
                 <div className="answer-name">
                     <span className="answer-filler">
-                        Today's answer was
+                        Today&apos;s answer was
                     </span>
                     <br></br>
                     <div className="answer-result">

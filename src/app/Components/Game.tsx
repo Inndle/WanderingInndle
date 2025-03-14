@@ -17,7 +17,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
   const [finished, setFinished] = useState(false);
 
   function handleGuess(guess: string): void {
-    let newHistory = [...history];
+    const newHistory = [...history];
     newHistory.unshift(guess);
     setHistory(newHistory);
 
@@ -36,7 +36,6 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
         history={history}
         onGuess={handleGuess}
         todaysAnswer={todaysAnswer}
-        finished={finished}
         difficulties={initialDifficulties}
         onReset={onReset} // Pass reset function
       />

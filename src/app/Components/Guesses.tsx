@@ -1,4 +1,3 @@
-import { Underdog } from "next/font/google"
 import InputContainer from "./Input"
 import SettingsGear from "./SettingsGear"
 import { useState, useEffect } from "react";
@@ -10,7 +9,6 @@ interface GuessContainerProps {
   history: string[],
   onGuess: (guess: string) => void,
   todaysAnswer: string
-  finished: boolean
   difficulties: number[]
   onReset: (newAnswer?: string, newDifficulties?: number[]) => void; // Accept reset function
 }
@@ -97,7 +95,7 @@ let DISPLAYED_CATEGORIES = [
 //   "Fighting Type": "Categorical"
 // }
 
-let categoryTypeMap: Map<string, string> = new Map<string, string>;
+const categoryTypeMap: Map<string, string> = new Map<string, string>;
 categoryTypeMap.set("Image", "Image");
 categoryTypeMap.set("Mentions", "Scalar");
 categoryTypeMap.set("Introduced", "Scalar");
@@ -114,7 +112,7 @@ const DEBUGGING = true;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //// Begin component declaration
-export default function GuessContainer({ allCharacterData, history, onGuess, todaysAnswer, finished, difficulties, onReset }: GuessContainerProps) {
+export default function GuessContainer({ allCharacterData, history, onGuess, todaysAnswer, difficulties, onReset }: GuessContainerProps) {
 
   const [displayedCategories, setDisplayedCategories] = useState([...DISPLAYED_CATEGORIES]);
 
@@ -142,7 +140,6 @@ export default function GuessContainer({ allCharacterData, history, onGuess, tod
   }, [DISPLAYED_CATEGORIES]);
 
 
-
   return (
     <div className="guess-container flex flex-col items-center justify-center w-full">
       <GuessBox 
@@ -154,8 +151,8 @@ export default function GuessContainer({ allCharacterData, history, onGuess, tod
           toggleCategoryFunc={toggleCategory} 
           displayedCategories={displayedCategories}>
       </GuessBox>
-
       <Guesses allCharacterData={allCharacterData} history={history} todaysAnswer={todaysAnswer}></Guesses>
+      
     </div>
   )
 }
@@ -279,7 +276,7 @@ function Guess({ todaysAnswer, allCharacterData, guess }: GuessProps) {
 >
       {
         DISPLAYED_CATEGORIES.map((category, index) => {
-          let responseDetail = allResponses.get(category);
+          const responseDetail = allResponses.get(category);
           let type: string;
           let content: string;
           let response: string;
@@ -441,7 +438,7 @@ function Guess({ todaysAnswer, allCharacterData, guess }: GuessProps) {
    */
   function getCharacterDetailsMap(characterName: string, allCharacterData: Map<string, string[]>) {
     // Get guess details for the given character and confirm that it exists
-    let characterDetails: string[] | undefined = allCharacterData.get(characterName);
+    const characterDetails: string[] | undefined = allCharacterData.get(characterName);
     if (characterDetails === undefined) {
       console.log(`Could not find details for ${characterName}`)
       throw new Error(`Could not find details for ${characterName}`)
@@ -449,7 +446,7 @@ function Guess({ todaysAnswer, allCharacterData, guess }: GuessProps) {
 
     // Organize details of both answer and guess into maps of category : detail so it's parseable
     // Detail is a string array, looking like: ["Erin Solstice", "Sky", "Goblinfriend", etc...]
-    let characterDetailsMap: Map<string, string[]> = new Map<string, string[]>
+    const characterDetailsMap: Map<string, string[]> = new Map<string, string[]>
 
     // i starts at 1 because CATEGORIES includes id but guessDetails does not
     for (let i = 1; i < CATEGORIES.length; i++) {
@@ -470,9 +467,9 @@ function Guess({ todaysAnswer, allCharacterData, guess }: GuessProps) {
  * @param row, a string representing a category from the CSV looking like "Erin Solstice | Sky | etc..."
  * @returns ans, an array of strings (e.g. ["Erin Solstice", "Sky", "Goblinfriend", etc...])
  */
-function parseCategory(categoryString: String): string[] {
-  let categoryEntries = categoryString.split(" |")
-  let ans: string[] = [];
+function parseCategory(categoryString: string): string[] {
+  const categoryEntries = categoryString.split(" |")
+  const ans: string[] = [];
 
   categoryEntries.forEach((entry) => {
     ans.push(entry.trim());
@@ -511,7 +508,7 @@ function compareDetails({ guessMap, answerMap }:
   { guessMap: Map<string, string[]>, answerMap: Map<string, string[]> }
 ): Map<string, string> {
   // Create the response that we will be returning back up
-  let response: Map<string, string> = new Map<string, string>
+  const response: Map<string, string> = new Map<string, string>
 
   // Fill out the response according to the categories we have to display
   DISPLAYED_CATEGORIES.forEach((category) => {
@@ -556,7 +553,7 @@ function compareDetails({ guessMap, answerMap }:
 
       // Respond with whether the detail is correct or not
       case "Binary":
-        let binaryAns: string = guessDetail[0] === answerDetail[0] ? "Correct" : "Incorrect";
+        const binaryAns: string = guessDetail[0] === answerDetail[0] ? "Correct" : "Incorrect";
 
         response.set(category, binaryAns)
         break;

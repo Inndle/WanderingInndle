@@ -1,4 +1,4 @@
-import { ChangeEvent, useId, useState } from "react"
+import { ChangeEvent, useState } from "react"
 
 interface InputContainerProps {
     allCharacterData: Map<string, string[]>,
@@ -13,17 +13,16 @@ export default function InputContainer({allCharacterData, history, onGuess} : In
 }
 
 function InputBar({allCharacterData, history, onGuess} : InputContainerProps) {
-    const id = useId()
     const [input, setInput] = useState("");
     const [showDropdown, setShowDropdown] = useState(false);
     const names: string[] = Array.from(allCharacterData.keys())
-    let namesLowerToUpperMap: Map<string, string> = new Map<string, string>;
+    const namesLowerToUpperMap: Map<string, string> = new Map<string, string>;
 
     for (let i = -0; i < names.length; i++) {
         namesLowerToUpperMap.set(names[i].toLowerCase(), names[i]);
     }
     
-    let options: string[] = names
+    const options: string[] = names
         .filter(name => !history.includes(name))
         .filter(name => name.toLowerCase().includes(input.toLowerCase()))
         .sort((a, b) => {
@@ -77,10 +76,8 @@ function InputBar({allCharacterData, history, onGuess} : InputContainerProps) {
       };
 
     return <div className="input-bar relative w-72">
-        <label htmlFor={id}></label>
         <input 
             className="w-full px-4 py-2 text-white bg-gray-900 border-2 border-cyan-500 rounded-lg outline-none focus:ring-2 focus:ring-cyan-400 placeholder-gray-400"
-            id={id}
             value={input}
             onChange={(e) => handleInputChange(e)}
             onKeyDown={(e) => handleKeyDown(e)}

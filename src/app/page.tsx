@@ -1,8 +1,5 @@
-import Image from "next/image"; 
-import Game from "./Components/Game";
 import { parse } from "csv-parse/sync"
 import * as fs from 'fs'
-import background_img from '../app/innordle_background.jpg'
 import GameWrapper from "./Components/GameWrapper";
 
 
@@ -26,11 +23,11 @@ export default function Home() {
   }
 
   // Organize and store data for use later
-  let allCharacterData: Map<string, string[]> = new Map<string, string[]>()
+  const allCharacterData: Map<string, string[]> = new Map<string, string[]>()
 
 
   for (let i = 0; i < tempData.length; i++) {
-    let row: string[] = tempData[i];
+    const row: string[] = tempData[i];
     allCharacterData.set(row[0], row.slice(1));
   }
 
@@ -38,7 +35,7 @@ export default function Home() {
 
   const filteredData = new Map(
     [...allCharacterData.entries()].filter(
-      ([_, values]) => values[11] !== undefined && difficulties.includes(Number(values[11]))
+      ([, values]) => values[11] !== undefined && difficulties.includes(Number(values[11]))
     )
   );
 
