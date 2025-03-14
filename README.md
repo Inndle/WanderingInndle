@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Innordle
 
-## Getting Started
+![alt text](./innordle_react/innordle/WanderingInndle.png)
 
-First, run the development server:
-
-```bash
+## How to Run Locally
+Currently only supports running in development mode. No packages or dependencies besides React and
+Node.js required, to run, use:
+```
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Things Left to Implement:
+### Functionality (Listed in order of importance):
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Include nicknames (Shouldn't be terrible)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Add initial rules popup (This can be where daily goes. Or that's always the first.)
 
-## Learn More
+- Add daily character option (Hash of number of characters diff 1-3? 1-4?)
 
-To learn more about Next.js, take a look at the following resources:
+The idea is to have an option select between what we have now (infinite random) or a daily mode,
+but the daily mode is all done locally - we hash the current date to a number (this gives uniform 
+odds across all numbers in long?) and then mod it by the amount of characters in the 1-3 difficulty
+range. Thus, changing with their clock date, a new character will appear to be guessed every day. 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Make settings modal a consistent size across tabs
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Add some way to apply settings before starting game 
 
-## Deploy on Vercel
+Includes Difficulty, and could also include which columns to include
+Difficulty can be a strict include 
+    CComment: They can just reset I think this one is optional
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Add options to change guessed characters
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This includes whether the characters are randomly picked or by choice or daily. Would probably require some sort of backend!
+
+- Rework search functionality to be faster and correct -> complete
+
+Ideally we can have little profile photos next to each search entry to make it clearer. Also, the search is for "names containing letter x" instead of "names beginning with letter x". Should also speed up search somehow (maybe cache search results before loading the inputbox?)
+
+- Figure out website hosting
+
+We can just host on GitHub, but not sure how to attatch any backend functionality to it. Could remove all backend if we just keep everything local (including character of the day selection!)
+
+- Refactor code
+
+Right now a lot of the logic for what the squares display and changing what they look like is handled inside `Guesses.tsx`. It might be cleaner and more "React-like" if we move the logic into `Game.tsx`. This is also a placeholder for other potential ways we can make the codebase cleaner.
+
+- Make it so that empty boxes are "Unknown"
+
+Duuuuuuuh
+
+- Add more modes!
+
+Longshot. Shoot for the stars!
+
+### Appearance (Listed in order of importance):
+- Do something about the profile pictures
+- Add animations for when the guess details appear
+- Add victory screen
+- Add tooltips on hover
+- Create transparent textures for behind squares
+- Make search bar look nicer / remove autofill
+- Add favicon
+- Find a better font
+- Create stylized shading for background image 
+- Style scrollbars to be more immersive
+
+### Low Hanging Fruit:
+- Maybe add background to arrows
+- Add favicon (We have no created favicon yet tho)
+- Add arrow keys to switch between search bar results
+- Add a give up button
+- Fix the category titles shifting a little once a guess is made (Maybe hide it until history.length > 0)
