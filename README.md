@@ -1,6 +1,6 @@
 # Innordle
 
-![alt text](./innordle_react/innordle/WanderingInndle.png)
+![alt text](./WanderingInndle.png)
 
 ## How to Run Locally
 Currently only supports running in development mode. No packages or dependencies besides React and
