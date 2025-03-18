@@ -14,16 +14,16 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
 
     const initialDifficulties: number[] = [1, 2, 3];
 
-    const filteredData = new Map(
-      [...allCharacterData.entries()].filter(
-        ([, values]) => values[11] !== undefined && difficulties.includes(Number(values[11]))
-      )
-    );
+    // const filteredData = new Map(
+    //   [...allCharacterData.entries()].filter(
+    //     ([, values]) => values[11] !== undefined && difficulties.includes(Number(values[11]))
+    //   )
+    // );
 
-    const keys = Array.from(filteredData.keys());
-    const randomIndex = Math.floor(Math.random() * keys.length);
-    const initialAnswer: string = keys[randomIndex];
-    // const todaysAnswer: string = "Theillige"
+    // const keys = Array.from(filteredData.keys());
+    // const randomIndex = Math.floor(Math.random() * keys.length);
+    // const initialAnswer: string = keys[randomIndex];
+    const initialAnswer: string = "Theillige"
 
     // if (DEBUGGING) {  
     //   const todaysAnswerDetails: string[] | undefined = allCharacterData.get(todaysAnswer);
