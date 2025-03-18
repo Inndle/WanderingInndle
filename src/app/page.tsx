@@ -39,10 +39,15 @@ export default function Home() {
     )
   );
 
+
+  const now: Date = new Date();
+  const currentTimeMilliseconds: number = now.getTime();
+  console.log(currentTimeMilliseconds);
+  
   const keys = Array.from(filteredData.keys());
-  const randomIndex = Math.floor(Math.random() * keys.length);
+  //const randomIndex = Math.floor(Math.random() * keys.length);
+  const randomIndex = Math.floor(currentTimeMilliseconds % keys.length);
   const todaysAnswer: string = keys[randomIndex];
-  // const todaysAnswer: string = "Theillige"
 
   if (DEBUGGING) {  
     const todaysAnswerDetails: string[] | undefined = allCharacterData.get(todaysAnswer);
