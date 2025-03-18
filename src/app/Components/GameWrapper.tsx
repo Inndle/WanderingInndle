@@ -7,7 +7,8 @@ interface GameWrapperProps {
     allCharacterData: Map<string, string[]>,
 }
 
-const DEBUGGING = false;
+// const DEBUGGING = false;
+
 
 export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
 
@@ -24,18 +25,18 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
     const initialAnswer: string = keys[randomIndex];
     // const todaysAnswer: string = "Theillige"
 
-    if (DEBUGGING) {  
-      const todaysAnswerDetails: string[] | undefined = allCharacterData.get(initialAnswer);
-      if (todaysAnswerDetails === undefined) {
-        console.log('Selected character does not have info')
-      }
-      else {
-        console.log(todaysAnswerDetails);
-        console.log(`Today's Answer: ${initialAnswer}`);
-        console.log(`Today's Answer Aliases: ${todaysAnswerDetails[0].split(" |")}`);
-        console.log(`Today's Answer Fighting Type: ${todaysAnswerDetails[todaysAnswerDetails.length-1].split(" |")}`);
-      }
-    }
+    // if (DEBUGGING) {  
+    //   const todaysAnswerDetails: string[] | undefined = allCharacterData.get(todaysAnswer);
+    //   if (todaysAnswerDetails === undefined) {
+    //     console.log('Selected character does not have info')
+    //   }
+    //   else {
+    //     console.log(todaysAnswerDetails);
+    //     console.log(`Today's Answer: ${todaysAnswer}`);
+    //     console.log(`Today's Answer Aliases: ${todaysAnswerDetails[0].split(" |")}`);
+    //     console.log(`Today's Answer Fighting Type: ${todaysAnswerDetails[todaysAnswerDetails.length-1].split(" |")}`);
+    //   }
+    // }
 
     const [todaysAnswer, setTodaysAnswer] = useState(initialAnswer);
     const [difficulties, setDifficulties] = useState(initialDifficulties);
