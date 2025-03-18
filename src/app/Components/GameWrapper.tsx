@@ -2,14 +2,65 @@
 
 import { useState } from "react";
 import Game from "./Game";
+import { parse } from "csv-parse/sync"
+import * as fs from 'fs'
 
-interface GameWrapperProps {
-    initialAnswer: string;
-    allCharacterData: Map<string, string[]>,
-    initialDifficulties: number[]
-}
 
-export default function GameWrapper({ initialAnswer, initialDifficulties, allCharacterData }: GameWrapperProps) {
+
+const INPUT_PATH = './data/character_data.csv'
+const DEBUGGING = false;
+
+export default function GameWrapper() {
+
+  let file : null | string = null;
+  file = fs.readFileSync(INPUT_PATH, 'utf8');
+  const tempData : null | string[][] = parse(file, {});
+
+  // Confirm data was read in correctly
+  if (tempData === null) {
+    throw new Error("Didn't read in any characters")
+  }
+
+  // Organize and store data for use later
+  const allCharacterData: Map<string, string[]> = new Map<string, string[]>()
+
+
+  for (let i = 0; i < tempData.length; i++) {
+    const row: string[] = tempData[i];
+    allCharacterData.set(row[0], row.slice(1));
+  }
+
+  const initialDifficulties: number[] = [1, 2, 3];
+
+  const filteredData = new Map(
+    [...allCharacterData.entries()].filter(
+      ([, values]) => values[11] !== undefined && difficulties.includes(Number(values[11]))
+    )
+  );
+
+
+  const now: Date = new Date();
+  const currentTimeMilliseconds: number = now.getTime();
+  console.log(currentTimeMilliseconds);
+  
+  const keys = Array.from(filteredData.keys());
+  //const randomIndex = Math.floor(Math.random() * keys.length);
+  const randomIndex = Math.floor(currentTimeMilliseconds % keys.length);
+  const initialAnswer: string = keys[randomIndex];
+
+  if (DEBUGGING) {  
+    const todaysAnswerDetails: string[] | undefined = allCharacterData.get(initialAnswer);
+    if (todaysAnswerDetails === undefined) {
+      console.log('Selected character does not have info')
+    }
+    else {
+      console.log(todaysAnswerDetails);
+      console.log(`Today's Answer: ${initialAnswer}`);
+      console.log(`Today's Answer Aliases: ${todaysAnswerDetails[0].split(" |")}`);
+      console.log(`Today's Answer Fighting Type: ${todaysAnswerDetails[todaysAnswerDetails.length-1].split(" |")}`);
+    }
+  }
+
     const [todaysAnswer, setTodaysAnswer] = useState(initialAnswer);
     const [difficulties, setDifficulties] = useState(initialDifficulties);
     const [gameKey, setGameKey] = useState(0);
