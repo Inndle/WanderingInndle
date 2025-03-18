@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Game from "./Game";
-import { init } from "next/dist/compiled/webpack/webpack";
 
 interface GameWrapperProps {
     allCharacterData: Map<string, string[]>,
