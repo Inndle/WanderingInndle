@@ -22,6 +22,9 @@ function InputBar({ allCharacterData, history, onGuess }: InputContainerProps) {
         namesLowerToUpperMap.set(names[i].toLowerCase(), names[i]);
     }
 
+    console.log(allCharacterData)
+    console.log(allCharacterData)
+
     const options: string[] = names
         .filter(name => !history.includes(name))
         .filter(name => {
@@ -30,7 +33,7 @@ function InputBar({ allCharacterData, history, onGuess }: InputContainerProps) {
             if (!data) return false;
 
             // Get the string containing alternative names
-            const altNames = data[1] || ""; 
+            const altNames = data[0] || ""; 
             
             // Split by "|" and check if any of these contain the input
             const allPossibleNames = [name, ...altNames.split("|").map(n => n.trim())];
