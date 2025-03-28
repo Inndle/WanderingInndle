@@ -9,9 +9,7 @@ interface GameWrapperProps {
 
 const DEBUGGING = false;
 
-
 export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
-
     const initialDifficulties: number[] = [1, 2, 3];
 
     const filteredData = new Map(
@@ -23,7 +21,6 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
     const keys = Array.from(filteredData.keys());
     const randomIndex = Math.floor(Math.random() * keys.length);
     const initialAnswer: string = keys[randomIndex];
-    // const todaysAnswer: string = "Theillige"
 
     if (DEBUGGING) {  
       const todaysAnswerDetails: string[] | undefined = allCharacterData.get(initialAnswer);
@@ -41,12 +38,15 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
     const [todaysAnswer, setTodaysAnswer] = useState(initialAnswer);
     const [difficulties, setDifficulties] = useState(initialDifficulties);
     const [gameKey, setGameKey] = useState(0);
+    const [showModal, setShowModal] = useState(true);
   
-    function resetGame(newAnswer?: string, newDifficulties?: number[]) {
+    function resetGame(newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) {
       setTodaysAnswer(newAnswer || initialAnswer);
       setDifficulties(newDifficulties || initialDifficulties);
+      setShowModal(newShowModal ?? true);
       setGameKey((prevKey) => prevKey + 1);
     }
+    
   
     return (
       <Game
@@ -55,7 +55,7 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
         allCharacterData={allCharacterData}
         initialDifficulties={difficulties}
         onReset={resetGame} // Pass down reset function
+        showModal={showModal} // Pass down showModal state
       />
     );
-  }
-
+}

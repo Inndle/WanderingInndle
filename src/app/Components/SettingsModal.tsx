@@ -12,7 +12,7 @@ interface SettingsModalProps {
         difficultyCheckbox2: boolean;
         difficultyCheckbox3: boolean;
     }) => void;
-    resetFunction: (newAnswer?: string, newDifficulties?: number[]) => void;
+    resetFunction: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void;
     allCharacterData: Map<string, string[]>;
     toggleCategoryFunc: (category: string) => void
     displayedCategories: string[]
@@ -50,7 +50,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
 
         if (filteredKeys.length > 0) {
             const randomIndex = Math.floor(Math.random() * filteredKeys.length);
-            resetFunction(filteredKeys[randomIndex], enabledLevels);
+            resetFunction(filteredKeys[randomIndex], enabledLevels, false);
         }
     };
 

@@ -10,14 +10,14 @@ interface GuessContainerProps {
   onGuess: (guess: string) => void,
   todaysAnswer: string
   difficulties: number[]
-  onReset: (newAnswer?: string, newDifficulties?: number[]) => void; // Accept reset function
+  onReset: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void; // Accept reset function
 }
 interface GuessBoxProps {
   allCharacterData: Map<string, string[]>,
   history: string[],
   onGuess: (guess: string) => void,
   difficultyLevels: number[],
-  resetFunc: (newAnswer?: string, newDifficulties?: number[]) => void;
+  resetFunc: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void;
   toggleCategoryFunc: (category: string) => void
   displayedCategories: string[]
 }
