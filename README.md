@@ -12,7 +12,7 @@ npm run dev
 ## Things Left to Implement:
 ### Functionality (Listed in order of importance):
 
-- Include nicknames (Shouldn't be terrible)
+- Include nicknames (Shouldn't be terrible) (COMPLETE)
 
 - Add initial rules popup (This can be where daily goes. Or that's always the first.)
 
