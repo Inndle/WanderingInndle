@@ -9,7 +9,8 @@ interface GameProps {
   todaysAnswer: string;
   allCharacterData: Map<string, string[]>;
   initialDifficulties: number[];
-  onReset: (newAnswer?: string, newDifficulties?: number[]) => void;
+  onReset: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void;
+  showModal: boolean;
 }
 
 interface ModalProps {
@@ -28,10 +29,10 @@ function Modal({ onClose }: ModalProps) {
   );
 }
 
-export default function Game({ todaysAnswer, allCharacterData, initialDifficulties, onReset }: GameProps) {
+export default function Game({ todaysAnswer, allCharacterData, initialDifficulties, onReset, showModal }: GameProps) {
   const [history, setHistory] = useState<string[]>([]);
   const [finished, setFinished] = useState(false);
-  const [showModal, setShowModal] = useState(true);
+  const [showTheModal, setShowTheModal] = useState(showModal);
 
   function handleGuess(guess: string): void {
     const newHistory = [...history];
@@ -45,7 +46,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
 
   return (
     <div className="game justify-center relative">
-      {showModal && <Modal onClose={() => setShowModal(false)} />}
+      {showTheModal && <Modal onClose={() => setShowTheModal(false)} />}
       <div className="flex justify-center mb-4">
         <img src={background_img.src} alt="Background" className="w-full max-w-md rounded-2xl" />
       </div>
