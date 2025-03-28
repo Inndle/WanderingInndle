@@ -44,6 +44,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
     }
   }
 
+  console.log("ShowModal3", showTheModal)
   return (
     <div className="game justify-center relative">
       {showTheModal && <Modal onClose={() => setShowTheModal(false)} />}

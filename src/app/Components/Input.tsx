@@ -6,7 +6,6 @@ interface InputContainerProps {
     onGuess: (guess: string)=>void
   }
 export default function InputContainer({allCharacterData, history, onGuess} : InputContainerProps) {
-    console.log("DATA", allCharacterData)
     return <div className="input-container flex items-center space-x-2 bg-transparent">
                 <InputBar allCharacterData={allCharacterData} history={history} onGuess={onGuess} ></InputBar>
                 <SubmitButton></SubmitButton>

@@ -43,11 +43,12 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
     function resetGame(newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) {
       setTodaysAnswer(newAnswer || initialAnswer);
       setDifficulties(newDifficulties || initialDifficulties);
+      console.log("ShowModal1", newShowModal)
       setShowModal(newShowModal ?? true);
       setGameKey((prevKey) => prevKey + 1);
     }
     
-  
+    console.log("showModal2", showModal)
     return (
       <Game
         key={gameKey}
