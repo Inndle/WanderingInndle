@@ -235,7 +235,7 @@ function Guesses({ allCharacterData, history, todaysAnswer }: GuessesProps) {
             <div className=" justify-center flex text-white">
               {category}
             </div>
-            <hr className="w-16 h-0.5 mx-auto my-1 bg-gray-100 border-0 md:my-1 dark:bg-gray-700"></hr>
+            <hr className="w-16 h-0.5 mx-auto my-1 bg-gray-100 border-0 md:my-1"></hr>
           </div>
         ))}
       </div>
