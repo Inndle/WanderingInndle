@@ -109,8 +109,36 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
       setFinished(true);
     }
   }
-
   return (
+    <div className="game flex flex-col items-center relative px-4">
+      {showTheModal && (
+        <Modal
+          onClose={() => setShowTheModal(false)}
+          resetFunc={onReset}
+          allCharacterData={allCharacterData}
+        />
+      )}
+      <div className="flex justify-center mb-4 w-full">
+        <img src={background_img.src} alt="Background" className="w-full max-w-md rounded-2xl" />
+      </div>
+      {finished && (
+        <WinScreen
+          todaysAnswer={todaysAnswer}
+          history={history}
+          onFreePlay={onReset}
+        />
+      )}
+      <GuessContainer
+        allCharacterData={allCharacterData}
+        history={history}
+        onGuess={handleGuess}
+        todaysAnswer={todaysAnswer}
+        difficulties={initialDifficulties}
+        onReset={onReset}
+      />
+    </div>
+  );
+  /*return (
     <div className="game justify-center relative">
       {showTheModal && <Modal onClose={() => setShowTheModal(false)} resetFunc={onReset} allCharacterData={allCharacterData} />}
       <div className="flex justify-center mb-4">
@@ -126,5 +154,5 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
       />
       {finished && <WinScreen todaysAnswer={todaysAnswer} history={history} />}
     </div>
-  );
+  );*/
 }
