@@ -31,7 +31,7 @@ export default function WinScreen({todaysAnswer, history, onFreePlay}: {todaysAn
       <div className="bg-white shadow-xl rounded-2xl p-6 w-full max-w-md mb-6 text-center">
         <h2 className="text-2xl font-bold text-green-600 mb-4">You did it!</h2>
         <div className="text-lg text-gray-700 mb-2">
-          Today's answer was:
+          Today&apos;s answer was:
         </div>
         <div className="text-2xl font-semibold text-black mb-4">
           {todaysAnswer}
