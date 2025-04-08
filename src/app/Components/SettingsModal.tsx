@@ -112,7 +112,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
 
                     <h3 className="font-semibold mt-4 mb-2">Column Definitions</h3>
                     <ul className="list-disc list-inside space-y-1">
-                    <li><strong>Image</strong>: Main image from the wiki</li>
+                    <li><strong>Image</strong>: Main image from the (<a href="https://wiki.wanderinginn.com/The_Wandering_Inn_Wiki" className="text-blue-600 underline" target="_blank">wiki</a></li>
                     <li><strong>Mentions</strong>: Number of mentions (<a href="https://innwords.pallandor.com/" className="text-blue-600 underline" target="_blank">InnWords</a>)</li>
                     <li><strong>Introduced</strong>: Volume of first appearance (<a href="https://innwords.pallandor.com/" className="text-blue-600 underline" target="_blank">InnWords</a>)</li>
                     <li><strong>Gender</strong>: Female, Male, or Non-binary</li>
