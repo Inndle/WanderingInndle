@@ -68,32 +68,47 @@ function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white p-6 rounded-2xl shadow-lg max-w-md text-center relative">
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-2 right-2 text-gray-700 hover:text-black bg-transparent p-2 text-2xl"
-        >
-          &times;
-        </button>
+  <div className="bg-white p-6 rounded-2xl shadow-lg max-w-md w-full text-center relative">
+    {/* Close Button */}
+    <button
+      onClick={onClose}
+      className="absolute top-2 right-2 text-gray-700 hover:text-black bg-transparent p-2 text-2xl"
+    >
+      &times;
+    </button>
 
-        {/* Modal Content */}
-        <h2 className="text-xl font-bold mb-4">Welcome to Inndle!</h2>
-        <p className="mb-6">The Daily Challenge is the same for everyone (resets at 8:00pm EST).
-          Free Play allows you to choose from different difficulties.
-          See settings to select difficulty, to mask columns to prevent spoilers, and for a more comprehensive instruction page.</p>
+    {/* Modal Content */}
+    <h2 className="text-2xl font-bold mb-4">Welcome to Inndle!</h2>
 
-        {/* Action Buttons */}
-        <div className="flex justify-center gap-4">
-          <button onClick={() => resetFunc(dailyAnswer, enabledLevels, false)} className="px-4 py-2 bg-green-500 text-white rounded-lg">
-            DAILY CHALLENGE
-          </button>
-          <button onClick={() => resetFunc(initialAnswer, enabledLevels, false)} className="px-4 py-2 bg-red-500 text-white rounded-lg">
-            Free Play
-          </button>
-        </div>
-      </div>
+    <p className="mb-6 text-sm text-gray-700 leading-relaxed">
+      The <strong>Daily Challenge</strong> is the same for everyone and resets at <strong>8:00pm EST</strong>.<br /><br />
+      <strong>Free Play</strong> allows you to choose from different difficulties.<br /><br />
+      Visit <strong>Settings</strong> to:
+      <ul className="list-disc list-inside text-left mt-2 ml-2">
+        <li>Select difficulty</li>
+        <li>Mask columns to prevent spoilers</li>
+        <li>Read comprehensive instructions</li>
+      </ul>
+    </p>
+
+    {/* Action Buttons */}
+    <div className="flex justify-center gap-4">
+      <button
+        onClick={() => resetFunc(dailyAnswer, enabledLevels, false)}
+        className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+      >
+        DAILY CHALLENGE
+      </button>
+      <button
+        onClick={() => resetFunc(initialAnswer, enabledLevels, false)}
+        className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+      >
+        Free Play
+      </button>
     </div>
+  </div>
+</div>
+
   );
 }
 
