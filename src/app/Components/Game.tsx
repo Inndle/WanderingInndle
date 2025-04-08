@@ -126,6 +126,8 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
           todaysAnswer={todaysAnswer}
           history={history}
           onFreePlay={onReset}
+          characterData={allCharacterData}
+          difficulties={initialDifficulties}
         />
       )}
       <GuessContainer

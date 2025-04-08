@@ -26,7 +26,33 @@
     </div>
     )
 }*/
-export default function WinScreen({todaysAnswer, history, onFreePlay}: {todaysAnswer: string, history: string[], onFreePlay: () => void}) {
+export default function WinScreen({todaysAnswer, history, onFreePlay, characterData, difficulties}: {
+    todaysAnswer: string, 
+    history: string[], 
+    onFreePlay: (newAnswer: string, difficulties: number[], showModal: boolean) => void,
+    characterData: Map<string, any[]>,
+    difficulties: Record<string, boolean>
+  }) {
+    const handleResetClick = () => {
+        const enabledLevels = Object.entries(difficulties)
+            .filter(([, value]) => value)
+            .map(([key]) => Number(key.replace("difficultyCheckbox", "")));
+
+        if (enabledLevels.length === 0) {
+            alert("Please select at least one difficulty level before resetting the game.");
+            return;
+        }
+
+        const filteredKeys = Array.from(characterData.entries())
+            .filter(([, values]) => values[11] !== undefined && enabledLevels.includes(Number(values[11])))
+            .map(([key]) => key);
+
+        if (filteredKeys.length > 0) {
+            const randomIndex = Math.floor(Math.random() * filteredKeys.length);
+            onFreePlay(filteredKeys[randomIndex], enabledLevels, false);
+        }
+    };
+
     return (
       <div className="bg-white shadow-xl rounded-2xl p-6 w-full max-w-md mb-6 text-center">
         <h2 className="text-2xl font-bold text-green-600 mb-4">You did it!</h2>
@@ -40,7 +66,7 @@ export default function WinScreen({todaysAnswer, history, onFreePlay}: {todaysAn
           Number of tries: {history.length}
         </div>
         <button
-          onClick={onFreePlay}
+          onClick={handleResetClick}
           className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-xl transition"
         >
           Play Again (Free Play)
