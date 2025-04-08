@@ -109,8 +109,8 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                         and pick your difficulty on the one after that. Difficulties are subjective — 
                         <em>Hard</em> is usually the best we can do, but maybe you’re better than us!
                         </p>
-                        
-                        <h3 className="font-semibold mt-4 mb-2">Column Definitions</h3>
+
+                        <h2 className="text-lg font-semibold text-center mb-4">Column Definitions</h2>
 
                         <dl className="text-sm space-y-2">
                         <div className="flex">
