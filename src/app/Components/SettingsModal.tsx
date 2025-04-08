@@ -90,29 +90,47 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
 
                 {/* Rules Tab Content */}
                 {activeTab === "rules" && (
-                    <div className="overflow-y-auto max-h-[24rem] pr-2">
-                        <h2 className="text-lg font-semibold text-center mb-2">Game Rules</h2>
-                        <p className="text-sm leading-relaxed">
-                            Choose any character from the Wandering Inn and guess them! If the category matches perfectly, it will be green. If it doesn&apos;t match at all, it will be red. And if a subset of your guess matches a subset of the correct answer, it will be yellow. 
+                <div className="overflow-y-auto max-h-[24rem] pr-2 text-sm leading-relaxed">
+                    <h2 className="text-lg font-semibold text-center mb-4">Game Rules</h2>
 
-                            You can choose your allowed columns (to prevent spoilers!) on the next page and your allowed difficulties on the page after that. The difficulties are subjective. (Hard is about the limit that we can get, but maybe you&apos;re better than us!)
+                    <p className="mb-4">
+                    Choose any character from <em>The Wandering Inn</em> and try to guess them!
+                    Each column provides feedback on your guess:
+                    </p>
 
-                            Image: Main Image from the Wiki
-                            Mentions: Number of mentions over all volumes (source)[https://innwords.pallandor.com/]
-                            Introduced: Volume in which the character first appears (source)[https://innwords.pallandor.com/]
-                            Gender: Female, Male, or Non-binary
-                            Species: Human, Drake, Gnoll, etc.
-                            Status: Alive, Deceased, or Unknown (up to the Palace of Fates Arc)
-                            Affiliation: Groups, Nations, or People person is connected to (standardized to this format)
-                            Continent: Avalon, Baleros, Chandrar, Drath, Isles, Izril, Kasignel, North America, Rhir, Sea, Terandria, Wistram
-                            Residence: More specific than continent (standardized to this format)
-                            Occupation: General category of their job (standardized to this format)
-                            Fighting Type: Archer, God, Leader, Mage, Non-combat, Priest, Rogue, Warrior
+                    <ul className="list-disc list-inside mb-4">
+                    <li><span className="text-green-600 font-semibold">Green</span>: Exact match</li>
+                    <li><span className="text-yellow-500 font-semibold">Yellow</span>: Partial match (subset overlap)</li>
+                    <li><span className="text-red-500 font-semibold">Red</span>: No match</li>
+                    </ul>
 
-                            The dataset was made manually, please direct all complaints and issues to wanderinginndle@gmail.com
-                        </p>
-                    </div>
+                    <p className="mb-4">
+                    You can customize which columns are shown (to avoid spoilers!) on the next page,
+                    and pick your difficulty on the one after that. Difficulties are subjective —
+                    <em>Hard</em> is our best guess at the limit, but maybe you’re better than us!
+                    </p>
+
+                    <h3 className="font-semibold mt-4 mb-2">Column Definitions</h3>
+                    <ul className="list-disc list-inside space-y-1">
+                    <li><strong>Image</strong>: Main image from the wiki</li>
+                    <li><strong>Mentions</strong>: Number of mentions (source: <a href="https://innwords.pallandor.com/" className="text-blue-600 underline" target="_blank">InnWords</a>)</li>
+                    <li><strong>Introduced</strong>: Volume in which the character first appears (<a href="https://innwords.pallandor.com/" className="text-blue-600 underline" target="_blank">source</a>)</li>
+                    <li><strong>Gender</strong>: Female, Male, or Non-binary</li>
+                    <li><strong>Species</strong>: Human, Drake, Gnoll, etc.</li>
+                    <li><strong>Status</strong>: Alive, Deceased, or Unknown (up to the Palace of Fates Arc)</li>
+                    <li><strong>Affiliation</strong>: Groups, nations, or individuals the character is connected to</li>
+                    <li><strong>Continent</strong>: Avalon, Baleros, Chandrar, Drath, Isles, Izril, etc.</li>
+                    <li><strong>Residence</strong>: More specific location than continent</li>
+                    <li><strong>Occupation</strong>: General job category</li>
+                    <li><strong>Fighting Type</strong>: Archer, God, Leader, Mage, Non-combat, Priest, Rogue, Warrior</li>
+                    </ul>
+
+                    <p className="mt-4 text-gray-600 italic">
+                    This dataset was created manually. For corrections, complaints, or contributions, email <a href="mailto:wanderinginndle@gmail.com" className="text-blue-600 underline">wanderinginndle@gmail.com</a>.
+                    </p>
+                </div>
                 )}
+
 
                 {/* Categories Tab Content */}
                 {activeTab === "categories" && (
