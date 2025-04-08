@@ -58,7 +58,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
 
     return (
         <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
-            <div className="relative bg-white p-6 rounded-lg shadow-lg w-[28rem] min-h-[32rem]">
+            <div className="relative bg-white p-6 rounded-lg shadow-lg w-[30rem] min-h-[32rem]">
                 <button
                     onClick={onClose}
                     className="absolute top-2 right-2 text-gray-700 hover:text-black bg-transparent p-2 text-2xl"
@@ -106,20 +106,20 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
 
                     <p className="mb-4">
                     You can customize which columns are shown (to avoid spoilers!) on the next page,
-                    and pick your difficulty on the one after that. Difficulties are subjective —
-                    <em>Hard</em> is our best guess at the limit, but maybe you’re better than us!
+                    and pick your difficulty on the one after that. Difficulties are subjective — 
+                    <em>Hard</em> is usually the best we can do, but maybe you’re better than us!
                     </p>
 
                     <h3 className="font-semibold mt-4 mb-2">Column Definitions</h3>
                     <ul className="list-disc list-inside space-y-1">
                     <li><strong>Image</strong>: Main image from the wiki</li>
-                    <li><strong>Mentions</strong>: Number of mentions (source: <a href="https://innwords.pallandor.com/" className="text-blue-600 underline" target="_blank">InnWords</a>)</li>
-                    <li><strong>Introduced</strong>: Volume in which the character first appears (<a href="https://innwords.pallandor.com/" className="text-blue-600 underline" target="_blank">source</a>)</li>
+                    <li><strong>Mentions</strong>: Number of mentions (<a href="https://innwords.pallandor.com/" className="text-blue-600 underline" target="_blank">InnWords</a>)</li>
+                    <li><strong>Introduced</strong>: Volume of first appearance (<a href="https://innwords.pallandor.com/" className="text-blue-600 underline" target="_blank">InnWords</a>)</li>
                     <li><strong>Gender</strong>: Female, Male, or Non-binary</li>
                     <li><strong>Species</strong>: Human, Drake, Gnoll, etc.</li>
                     <li><strong>Status</strong>: Alive, Deceased, or Unknown (up to the Palace of Fates Arc)</li>
                     <li><strong>Affiliation</strong>: Groups, nations, or individuals the character is connected to</li>
-                    <li><strong>Continent</strong>: Avalon, Baleros, Chandrar, Drath, Isles, Izril, etc.</li>
+                    <li><strong>Continent</strong>: Avalon, Baleros, Chandrar, Drath, Isles, Izril, Kasignel, North America, Rhir, Sea, Terandria, Wistram</li>
                     <li><strong>Residence</strong>: More specific location than continent</li>
                     <li><strong>Occupation</strong>: General job category</li>
                     <li><strong>Fighting Type</strong>: Archer, God, Leader, Mage, Non-combat, Priest, Rogue, Warrior</li>
@@ -134,23 +134,25 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
 
                 {/* Categories Tab Content */}
                 {activeTab === "categories" && (
-                    <div>
-                        <h2 className="text-lg font-semibold text-center">Included Categories</h2>
-                        {[
-                            "Mentions", "Introduced", "Gender", "Species", "Status",
-                            "Affiliation", "Continent", "Residence", "Occupation", "Fighting Type"
-                        ].map((category) => (
-                            <label key={category} className="flex items-center space-x-2 mb-2">
-                                <input
-                                    type="checkbox"
-                                    name={`${category.toLowerCase().replace(/\s/g, "")}Checkbox`}
-                                    checked={displayedCategories.includes(category)}
-                                    onChange={() => toggleCategoryFunc(category)}
-                                />
-                                <span>{category}</span>
-                            </label>
-                        ))}
+                <div className="flex flex-col items-center">
+                    <h2 className="text-lg font-semibold text-center mb-4">Included Categories</h2>
+                    <div className="flex flex-col items-start">
+                    {[
+                        "Mentions", "Introduced", "Gender", "Species", "Status",
+                        "Affiliation", "Continent", "Residence", "Occupation", "Fighting Type"
+                    ].map((category) => (
+                        <label key={category} className="flex items-center space-x-2 mb-2">
+                        <input
+                            type="checkbox"
+                            name={`${category.toLowerCase().replace(/\s/g, "")}Checkbox`}
+                            checked={displayedCategories.includes(category)}
+                            onChange={() => toggleCategoryFunc(category)}
+                        />
+                        <span>{category}</span>
+                        </label>
+                    ))}
                     </div>
+                </div>
                 )}
 
                 {/* Difficulties Tab Content */}
