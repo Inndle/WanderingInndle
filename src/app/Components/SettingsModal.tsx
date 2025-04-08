@@ -135,7 +135,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                         </div>
                         <div className="flex">
                             <dt className="font-bold w-28 shrink-0">Status:</dt>
-                            <dd>Alive, Deceased, or Unknown (up to the Palace of Fates Arc)</dd>
+                            <dd>Alive, Active, Deceased, or Unknown (up to the Palace of Fates Arc)</dd>
                         </div>
                         <div className="flex">
                             <dt className="font-bold w-28 shrink-0">Affiliation:</dt>
