@@ -22,7 +22,7 @@ interface SettingsModalProps {
 
 export default function SettingsModal({ onClose, initialSettings, onSettingsChange, resetFunction, allCharacterData, toggleCategoryFunc, displayedCategories }: SettingsModalProps) {
     const [settings, setSettings] = useState(initialSettings);
-    const [activeTab, setActiveTab] = useState("categories");
+    const [activeTab, setActiveTab] = useState("rules"); // ✅ Set default tab to "rules"
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
         const { name, checked } = event.target;
@@ -69,6 +69,12 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                 {/* Tab Navigation */}
                 <div className="flex border-b mb-4">
                     <button
+                        className={`flex-1 p-2 ${activeTab === "rules" ? "border-b-2 border-blue-500 font-bold" : "text-gray-500"}`}
+                        onClick={() => setActiveTab("rules")}
+                    >
+                        Rules
+                    </button>
+                    <button
                         className={`flex-1 p-2 ${activeTab === "categories" ? "border-b-2 border-blue-500 font-bold" : "text-gray-500"}`}
                         onClick={() => setActiveTab("categories")}
                     >
@@ -82,115 +88,44 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                     </button>
                 </div>
 
-                {/* Tab Content */}
-                {activeTab === "categories" && (
-
-                    <div>
-                        <h2 className="text-lg font-semibold text-center">Included Categories</h2>
-
-                        <label className="flex items-center space-x-2 mb-2">
-                        <input 
-                            type="checkbox" 
-                            name="mentionsCheckbox" 
-                            checked={displayedCategories.includes("Mentions")} 
-                            onChange={() => toggleCategoryFunc("Mentions")} 
-                        />
-                        <span>Mentions</span>
-                        </label>
-
-                        <label className="flex items-center space-x-2 mb-2">
-                        <input 
-                            type="checkbox" 
-                            name="introducedCheckbox" 
-                            checked={displayedCategories.includes("Introduced")} 
-                            onChange={() => toggleCategoryFunc("Introduced")} 
-                        />
-                        <span>Introduced</span>
-                        </label>
-
-                        <label className="flex items-center space-x-2 mb-2">
-                        <input 
-                            type="checkbox" 
-                            name="genderCheckbox" 
-                            checked={displayedCategories.includes("Gender")} 
-                            onChange={() => toggleCategoryFunc("Gender")} 
-                        />
-                        <span>Gender</span>
-                        </label>
-
-                        <label className="flex items-center space-x-2 mb-2">
-                        <input 
-                            type="checkbox" 
-                            name="speciesCheckbox" 
-                            checked={displayedCategories.includes("Species")} 
-                            onChange={() => toggleCategoryFunc("Species")} 
-                        />
-                        <span>Species</span>
-                        </label>
-
-                        <label className="flex items-center space-x-2 mb-2">
-                        <input 
-                            type="checkbox" 
-                            name="StatusCheckbox" 
-                            checked={displayedCategories.includes("Status")} 
-                            onChange={() => toggleCategoryFunc("Status")} 
-                        />
-                        <span>Status</span>
-                        </label>
-
-                        <label className="flex items-center space-x-2 mb-2">
-                        <input 
-                            type="checkbox" 
-                            name="affiliationCheckbox" 
-                            checked={displayedCategories.includes("Affiliation")} 
-                            onChange={() => toggleCategoryFunc("Affiliation")} 
-                        />
-                        <span>Affiliation</span>
-                        </label>
-
-                        <label className="flex items-center space-x-2 mb-2">
-                        <input 
-                            type="checkbox" 
-                            name="continentCheckbox" 
-                            checked={displayedCategories.includes("Continent")} 
-                            onChange={() => toggleCategoryFunc("Continent")} 
-                        />
-                        <span>Continent</span>
-                        </label>
-
-                        <label className="flex items-center space-x-2 mb-2">
-                        <input 
-                            type="checkbox" 
-                            name="residenceCheckbox" 
-                            checked={displayedCategories.includes("Residence")} 
-                            onChange={() => toggleCategoryFunc("Residence")} 
-                        />
-                        <span>Residence</span>
-                        </label>
-
-                        <label className="flex items-center space-x-2 mb-2">
-                        <input 
-                            type="checkbox" 
-                            name="occupationCheckbox" 
-                            checked={displayedCategories.includes("Occupation")} 
-                            onChange={() => toggleCategoryFunc("Occupation")} 
-                        />
-                        <span>Occupation</span>
-                        </label>
-                        
-                        <label className="flex items-center space-x-2 mb-2">
-                        <input 
-                            type="checkbox" 
-                            name="fightingTypeCheckbox" 
-                            checked={displayedCategories.includes("Fighting Type")} 
-                            onChange={() => toggleCategoryFunc("Fighting Type")} 
-                        />
-                        <span>Fighting Type</span>
-                        </label>
+                {/* Rules Tab Content */}
+                {activeTab === "rules" && (
+                    <div className="overflow-y-auto max-h-[24rem] pr-2">
+                        <h2 className="text-lg font-semibold text-center mb-2">Game Rules</h2>
+                        <p className="text-sm leading-relaxed">
+                            {/* Replace this with actual rules text later */}
+                            1. Select the categories and difficulty levels you want to include.<br />
+                            2. Press "Save & Reset" to begin a new game round.<br />
+                            3. The character will be randomly chosen from the selected criteria.<br />
+                            4. Guess the character based on the displayed information.<br />
+                            5. Have fun and good luck!<br /><br />
+                            (You can paste in your full rules here later.)
+                        </p>
                     </div>
-                    
                 )}
 
+                {/* Categories Tab Content */}
+                {activeTab === "categories" && (
+                    <div>
+                        <h2 className="text-lg font-semibold text-center">Included Categories</h2>
+                        {[
+                            "Mentions", "Introduced", "Gender", "Species", "Status",
+                            "Affiliation", "Continent", "Residence", "Occupation", "Fighting Type"
+                        ].map((category) => (
+                            <label key={category} className="flex items-center space-x-2 mb-2">
+                                <input
+                                    type="checkbox"
+                                    name={`${category.toLowerCase().replace(/\s/g, "")}Checkbox`}
+                                    checked={displayedCategories.includes(category)}
+                                    onChange={() => toggleCategoryFunc(category)}
+                                />
+                                <span>{category}</span>
+                            </label>
+                        ))}
+                    </div>
+                )}
+
+                {/* Difficulties Tab Content */}
                 {activeTab === "difficulties" && (
                     <div>
                         <h2 className="text-lg font-semibold text-center">Included Difficulties</h2>
