@@ -213,7 +213,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                         </div>
                         <button
                         onClick={handleResetClick}
-                        className="mt-2 px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500"
+                        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-xl transition"
                         >
                         Save & Reset
                         </button>
