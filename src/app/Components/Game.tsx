@@ -97,7 +97,7 @@ function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
         onClick={() => resetFunc(dailyAnswer, enabledLevels, false)}
         className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
       >
-        DAILY CHALLENGE
+        Daily Challenge
       </button>
       <button
         onClick={() => resetFunc(initialAnswer, enabledLevels, false)}

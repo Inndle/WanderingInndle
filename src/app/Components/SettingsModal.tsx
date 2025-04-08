@@ -22,7 +22,7 @@ interface SettingsModalProps {
 
 export default function SettingsModal({ onClose, initialSettings, onSettingsChange, resetFunction, allCharacterData, toggleCategoryFunc, displayedCategories }: SettingsModalProps) {
     const [settings, setSettings] = useState(initialSettings);
-    const [activeTab, setActiveTab] = useState("rules"); // ✅ Set default tab to "rules"
+    const [activeTab, setActiveTab] = useState("rules");
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
         const { name, checked } = event.target;
