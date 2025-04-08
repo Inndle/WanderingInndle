@@ -78,8 +78,10 @@ function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
         </button>
 
         {/* Modal Content */}
-        <h2 className="text-xl font-bold mb-4">Welcome to the Game!</h2>
-        <p className="mb-6">Here are the rules and some helpful hints to get you started.</p>
+        <h2 className="text-xl font-bold mb-4">Welcome to Inndle!</h2>
+        <p className="mb-6">The Daily Challenge is the same for everyone (resets at 8:00pm EST).
+          Free Play allows you to choose from different difficulties.
+          See settings to select difficulty, to mask columns to prevent spoilers, and for a more comprehensive instruction page.</p>
 
         {/* Action Buttons */}
         <div className="flex justify-center gap-4">

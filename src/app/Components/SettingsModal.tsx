@@ -93,7 +93,23 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                     <div className="overflow-y-auto max-h-[24rem] pr-2">
                         <h2 className="text-lg font-semibold text-center mb-2">Game Rules</h2>
                         <p className="text-sm leading-relaxed">
-                            YOOOOOOO
+                            Choose any character from the Wandering Inn and guess them! If the category matches perfectly, it will be green. If it doesn't match at all, it will be red. And if a subset of your guess matches a subset of the correct answer, it will be yellow. 
+
+                            You can choose your allowed columns (to prevent spoilers!) on the next page and your allowed difficulties on the page after that. The difficulties are subjective. (Hard is about the limit that we can get, but maybe you're better than us!)
+
+                            Image: Main Image from the Wiki
+                            Mentions: Number of mentions over all volumes (source)[https://innwords.pallandor.com/]
+                            Introduced: Volume in which the character first appears (source)[https://innwords.pallandor.com/]
+                            Gender: Female, Male, or Non-binary
+                            Species: Human, Drake, Gnoll, etc.
+                            Status: Alive, Deceased, or Unknown (up to the Palace of Fates Arc)
+                            Affiliation: Groups, Nations, or People person is connected to (standardized to this format)
+                            Continent: Avalon, Baleros, Chandrar, Drath, Isles, Izril, Kasignel, North America, Rhir, Sea, Terandria, Wistram
+                            Residence: More specific than continent (standardized to this format)
+                            Occupation: General category of their job (standardized to this format)
+                            Fighting Type: Archer, God, Leader, Mage, Non-combat, Priest, Rogue, Warrior
+
+                            The dataset was made manually, please direct all complaints and issues to wanderinginndle@gmail.com
                         </p>
                     </div>
                 )}
