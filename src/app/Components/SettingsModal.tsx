@@ -90,75 +90,110 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
 
                 {/* Rules Tab Content */}
                 {activeTab === "rules" && (
-                <div className="overflow-y-auto max-h-[24rem] pr-2 text-sm leading-relaxed">
-                    <h2 className="text-lg font-semibold text-center mb-4">Game Rules</h2>
+                    <div className="overflow-y-auto max-h-[24rem] pr-2 text-sm leading-relaxed">
+                        <h2 className="text-lg font-semibold text-center mb-4">Game Rules</h2>
 
-                    <p className="mb-4">
-                    Choose any character from <em>The Wandering Inn</em> and try to guess them!
-                    Each column provides feedback on your guess:
-                    </p>
+                        <p className="mb-4">
+                        Choose any character from <em>The Wandering Inn</em> and try to guess them!
+                        Each column provides feedback on your guess:
+                        </p>
 
-                    <ul className="list-disc list-inside mb-4">
-                    <li><span className="text-green-600 font-semibold">Green</span>: Exact match</li>
-                    <li><span className="text-yellow-500 font-semibold">Yellow</span>: Partial match (subset overlap)</li>
-                    <li><span className="text-red-500 font-semibold">Red</span>: No match</li>
-                    </ul>
+                        <ul className="list-disc list-inside mb-4">
+                        <li><span className="text-green-600 font-semibold">Green</span>: Exact match</li>
+                        <li><span className="text-yellow-500 font-semibold">Yellow</span>: Partial match (subset overlap)</li>
+                        <li><span className="text-red-500 font-semibold">Red</span>: No match</li>
+                        </ul>
 
-                    <p className="mb-4">
-                    You can customize which columns are shown (to avoid spoilers!) on the next page,
-                    and pick your difficulty on the one after that. Difficulties are subjective — 
-                    <em>Hard</em> is usually the best we can do, but maybe you’re better than us!
-                    </p>
+                        <p className="mb-4">
+                        You can customize which columns are shown (to avoid spoilers!) on the next page,
+                        and pick your difficulty on the one after that. Difficulties are subjective — 
+                        <em>Hard</em> is usually the best we can do, but maybe you’re better than us!
+                        </p>
+                        
+                        <h3 className="font-semibold mt-4 mb-2">Column Definitions</h3>
 
-                    <h3 className="font-semibold mt-4 mb-2">Column Definitions</h3>
-                    <ul className="list-disc list-inside space-y-1">
-                    <li><strong>Image</strong>: Main image from the (<a href="https://wiki.wanderinginn.com/The_Wandering_Inn_Wiki" className="text-blue-600 underline" target="_blank">wiki</a></li>
-                    <li><strong>Mentions</strong>: Number of mentions (<a href="https://innwords.pallandor.com/" className="text-blue-600 underline" target="_blank">InnWords</a>)</li>
-                    <li><strong>Introduced</strong>: Volume of first appearance (<a href="https://innwords.pallandor.com/" className="text-blue-600 underline" target="_blank">InnWords</a>)</li>
-                    <li><strong>Gender</strong>: Female, Male, or Non-binary</li>
-                    <li><strong>Species</strong>: Human, Drake, Gnoll, etc.</li>
-                    <li><strong>Status</strong>: Alive, Deceased, or Unknown (up to the Palace of Fates Arc)</li>
-                    <li><strong>Affiliation</strong>: Groups, nations, or individuals the character is connected to</li>
-                    <li><strong>Continent</strong>: Avalon, Baleros, Chandrar, Drath, Isles, Izril, Kasignel, North America, Rhir, Sea, Terandria, Wistram</li>
-                    <li><strong>Residence</strong>: More specific location than continent</li>
-                    <li><strong>Occupation</strong>: General job category</li>
-                    <li><strong>Fighting Type</strong>: Archer, God, Leader, Mage, Non-combat, Priest, Rogue, Warrior</li>
-                    </ul>
+                        <dl className="text-sm space-y-2">
+                        <div className="flex">
+                            <dt className="font-bold w-28 shrink-0">Image:</dt>
+                            <dd>Main image from the (<a href="https://wiki.wanderinginn.com/The_Wandering_Inn_Wiki" className="text-blue-600 underline" target="_blank">wiki</a>)</dd>
+                        </div>
+                        <div className="flex">
+                            <dt className="font-bold w-28 shrink-0">Mentions:</dt>
+                            <dd>Number of mentions over all volumes (<a href="https://innwords.pallandor.com/" className="underline text-blue-600">InnWords</a>)</dd>
+                        </div>
+                        <div className="flex">
+                            <dt className="font-bold w-28 shrink-0">Introduced:</dt>
+                            <dd>Volume of first appearance (<a href="https://innwords.pallandor.com/" className="text-blue-600 underline" target="_blank">InnWords</a>)</dd>
+                        </div>
+                        <div className="flex">
+                            <dt className="font-bold w-28 shrink-0">Gender:</dt>
+                            <dd>Female, Male, or Non-binary</dd>
+                        </div>
+                        <div className="flex">
+                            <dt className="font-bold w-28 shrink-0">Species:</dt>
+                            <dd>Human, Drake, Gnoll, etc.</dd>
+                        </div>
+                        <div className="flex">
+                            <dt className="font-bold w-28 shrink-0">Status:</dt>
+                            <dd>Alive, Deceased, or Unknown (up to the Palace of Fates Arc)</dd>
+                        </div>
+                        <div className="flex">
+                            <dt className="font-bold w-28 shrink-0">Affiliation:</dt>
+                            <dd>Groups, Nations, or people the character is connected to (standardized)</dd>
+                        </div>
+                        <div className="flex">
+                            <dt className="font-bold w-28 shrink-0">Continent:</dt>
+                            <dd>Avalon, Baleros, Chandrar, Drath, Isles, Izril, Kasignel, North America, Rhir, Sea, Terandria, Wistram</dd>
+                        </div>
+                        <div className="flex">
+                            <dt className="font-bold w-28 shrink-0">Residence:</dt>
+                            <dd>More specific than continent (standardized)</dd>
+                        </div>
+                        <div className="flex">
+                            <dt className="font-bold w-28 shrink-0">Occupation:</dt>
+                            <dd>General category of job (standardized)</dd>
+                        </div>
+                        <div className="flex">
+                            <dt className="font-bold w-28 shrink-0">Fighting Type:</dt>
+                            <dd>Archer, God, Leader, Mage, Non-combat, Priest, Rogue, Warrior</dd>
+                        </div>
+                        </dl>
 
-                    <p className="mt-4 text-gray-600 italic">
-                    This dataset was created manually. For corrections, complaints, or contributions, email <a href="mailto:wanderinginndle@gmail.com" className="text-blue-600 underline">wanderinginndle@gmail.com</a>.
-                    </p>
-                </div>
+                        <p className="mt-4 text-gray-600 italic">
+                        This dataset was created manually. For corrections, complaints, or contributions, email <a href="mailto:wanderinginndle@gmail.com" className="text-blue-600 underline">wanderinginndle@gmail.com</a>.
+                        </p>
+                    </div>
                 )}
 
 
                 {/* Categories Tab Content */}
                 {activeTab === "categories" && (
-                <div className="flex flex-col items-center">
-                    <h2 className="text-lg font-semibold text-center mb-4">Included Categories</h2>
-                    <div className="flex flex-col items-start">
-                    {[
-                        "Mentions", "Introduced", "Gender", "Species", "Status",
-                        "Affiliation", "Continent", "Residence", "Occupation", "Fighting Type"
-                    ].map((category) => (
-                        <label key={category} className="flex items-center space-x-2 mb-2">
-                        <input
-                            type="checkbox"
-                            name={`${category.toLowerCase().replace(/\s/g, "")}Checkbox`}
-                            checked={displayedCategories.includes(category)}
-                            onChange={() => toggleCategoryFunc(category)}
-                        />
-                        <span>{category}</span>
-                        </label>
-                    ))}
+                    <div className="flex flex-col items-center">
+                        <h2 className="text-lg font-semibold text-center mb-4">Included Categories</h2>
+                        <div className="flex flex-col items-start">
+                        {[
+                            "Mentions", "Introduced", "Gender", "Species", "Status",
+                            "Affiliation", "Continent", "Residence", "Occupation", "Fighting Type"
+                        ].map((category) => (
+                            <label key={category} className="flex items-center space-x-2 mb-2">
+                            <input
+                                type="checkbox"
+                                name={`${category.toLowerCase().replace(/\s/g, "")}Checkbox`}
+                                checked={displayedCategories.includes(category)}
+                                onChange={() => toggleCategoryFunc(category)}
+                            />
+                            <span>{category}</span>
+                            </label>
+                        ))}
+                        </div>
                     </div>
-                </div>
                 )}
 
                 {/* Difficulties Tab Content */}
                 {activeTab === "difficulties" && (
-                    <div>
-                        <h2 className="text-lg font-semibold text-center">Included Difficulties</h2>
+                    <div className="flex flex-col items-center">
+                        <h2 className="text-lg font-semibold text-center mb-4">Included Difficulties</h2>
+                        <div className="flex flex-col items-start">
                         <label className="flex items-center space-x-2 mb-2">
                             <input type="checkbox" name="difficultyCheckbox1" checked={settings.difficultyCheckbox1} onChange={handleChange} />
                             <span>Easy</span>
@@ -175,13 +210,15 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                             <input type="checkbox" name="difficultyCheckbox4" checked={settings.difficultyCheckbox4} onChange={handleChange} />
                             <span>Expert</span>
                         </label>
-                        <div className="flex justify-center">
-                            <button onClick={handleResetClick} className="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500">
-                                Save & Reset
-                            </button>
                         </div>
+                        <button
+                        onClick={handleResetClick}
+                        className="mt-2 px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500"
+                        >
+                        Save & Reset
+                        </button>
                     </div>
-                )}
+                    )}
             </div>
         </div>
     );
