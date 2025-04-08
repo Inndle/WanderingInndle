@@ -6,11 +6,13 @@ interface SettingsModalProps {
         difficultyCheckbox1: boolean;
         difficultyCheckbox2: boolean;
         difficultyCheckbox3: boolean;
+        difficultyCheckbox4: boolean;
     };
     onSettingsChange: (updatedSettings: {
         difficultyCheckbox1: boolean;
         difficultyCheckbox2: boolean;
         difficultyCheckbox3: boolean;
+        difficultyCheckbox4: boolean;
     }) => void;
     resetFunction: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void;
     allCharacterData: Map<string, string[]>;
@@ -203,6 +205,10 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                         <label className="flex items-center space-x-2 mb-4">
                             <input type="checkbox" name="difficultyCheckbox3" checked={settings.difficultyCheckbox3} onChange={handleChange} />
                             <span>Hard</span>
+                        </label>
+                        <label className="flex items-center space-x-2 mb-4">
+                            <input type="checkbox" name="difficultyCheckbox4" checked={settings.difficultyCheckbox4} onChange={handleChange} />
+                            <span>Expert</span>
                         </label>
                         <div className="flex justify-center">
                             <button onClick={handleResetClick} className="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500">

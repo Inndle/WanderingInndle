@@ -164,6 +164,7 @@ function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetF
     difficultyCheckbox1: difficultyLevels.includes(1),
     difficultyCheckbox2: difficultyLevels.includes(2),
     difficultyCheckbox3: difficultyLevels.includes(3),
+    difficultyCheckbox4: difficultyLevels.includes(4),
   });
 
   const handleSettingsChange = (updatedSettings: typeof settings) => {

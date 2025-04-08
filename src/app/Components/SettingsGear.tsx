@@ -7,11 +7,13 @@ interface SettingsGearProps {
         difficultyCheckbox1: boolean;
         difficultyCheckbox2: boolean;
         difficultyCheckbox3: boolean;
+        difficultyCheckbox4: boolean;
     };
     onSettingsChange: (updatedSettings: {
         difficultyCheckbox1: boolean;
         difficultyCheckbox2: boolean;
         difficultyCheckbox3: boolean;
+        difficultyCheckbox4: boolean;
     }) => void;
     resetFunction: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void; // Accept reset function
     charData: Map<string, string[]>;
