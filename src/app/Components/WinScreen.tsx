@@ -29,27 +29,23 @@
 export default function WinScreen({todaysAnswer, history, onFreePlay, characterData, difficulties}: {
     todaysAnswer: string, 
     history: string[], 
-    onFreePlay: (newAnswer: string, difficulties: number[], showModal: boolean) => void,
+    onFreePlay: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void,
     characterData: Map<string, string[]>,
-    difficulties: Record<string, boolean>
+    difficulties: number[]
   }) {
     const handleResetClick = () => {
-        const enabledLevels = Object.entries(difficulties)
-            .filter(([, value]) => value)
-            .map(([key]) => Number(key.replace("difficultyCheckbox", "")));
-
-        if (enabledLevels.length === 0) {
+        if (difficulties.length === 0) {
             alert("Please select at least one difficulty level before resetting the game.");
             return;
         }
 
         const filteredKeys = Array.from(characterData.entries())
-            .filter(([, values]) => values[11] !== undefined && enabledLevels.includes(Number(values[11])))
+            .filter(([, values]) => values[11] !== undefined && difficulties.includes(Number(values[11])))
             .map(([key]) => key);
 
         if (filteredKeys.length > 0) {
             const randomIndex = Math.floor(Math.random() * filteredKeys.length);
-            onFreePlay(filteredKeys[randomIndex], enabledLevels, false);
+            onFreePlay(filteredKeys[randomIndex], difficulties, false);
         }
     };
 
