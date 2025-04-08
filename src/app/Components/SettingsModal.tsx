@@ -202,7 +202,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                             <input type="checkbox" name="difficultyCheckbox2" checked={settings.difficultyCheckbox2} onChange={handleChange} />
                             <span>Medium</span>
                         </label>
-                        <label className="flex items-center space-x-2 mb-4">
+                        <label className="flex items-center space-x-2 mb-2">
                             <input type="checkbox" name="difficultyCheckbox3" checked={settings.difficultyCheckbox3} onChange={handleChange} />
                             <span>Hard</span>
                         </label>
