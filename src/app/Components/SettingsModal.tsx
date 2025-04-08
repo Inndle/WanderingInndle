@@ -93,13 +93,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                     <div className="overflow-y-auto max-h-[24rem] pr-2">
                         <h2 className="text-lg font-semibold text-center mb-2">Game Rules</h2>
                         <p className="text-sm leading-relaxed">
-                            {/* Replace this with actual rules text later */}
-                            1. Select the categories and difficulty levels you want to include.<br />
-                            2. Press "Save & Reset" to begin a new game round.<br />
-                            3. The character will be randomly chosen from the selected criteria.<br />
-                            4. Guess the character based on the displayed information.<br />
-                            5. Have fun and good luck!<br /><br />
-                            (You can paste in your full rules here later.)
+                            YOOOOOOO
                         </p>
                     </div>
                 )}
