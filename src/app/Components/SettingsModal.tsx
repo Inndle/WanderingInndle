@@ -93,9 +93,9 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                     <div className="overflow-y-auto max-h-[24rem] pr-2">
                         <h2 className="text-lg font-semibold text-center mb-2">Game Rules</h2>
                         <p className="text-sm leading-relaxed">
-                            Choose any character from the Wandering Inn and guess them! If the category matches perfectly, it will be green. If it doesn't match at all, it will be red. And if a subset of your guess matches a subset of the correct answer, it will be yellow. 
+                            Choose any character from the Wandering Inn and guess them! If the category matches perfectly, it will be green. If it doesn&apos;t match at all, it will be red. And if a subset of your guess matches a subset of the correct answer, it will be yellow. 
 
-                            You can choose your allowed columns (to prevent spoilers!) on the next page and your allowed difficulties on the page after that. The difficulties are subjective. (Hard is about the limit that we can get, but maybe you're better than us!)
+                            You can choose your allowed columns (to prevent spoilers!) on the next page and your allowed difficulties on the page after that. The difficulties are subjective. (Hard is about the limit that we can get, but maybe you&apos;re better than us!)
 
                             Image: Main Image from the Wiki
                             Mentions: Number of mentions over all volumes (source)[https://innwords.pallandor.com/]
