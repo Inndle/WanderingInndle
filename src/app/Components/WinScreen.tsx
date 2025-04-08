@@ -30,7 +30,7 @@ export default function WinScreen({todaysAnswer, history, onFreePlay, characterD
     todaysAnswer: string, 
     history: string[], 
     onFreePlay: (newAnswer: string, difficulties: number[], showModal: boolean) => void,
-    characterData: Map<string, any[]>,
+    characterData: Map<string, string[]>,
     difficulties: Record<string, boolean>
   }) {
     const handleResetClick = () => {
