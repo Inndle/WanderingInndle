@@ -18,7 +18,7 @@ npm run dev
 
 - Include optional difficulty 4 (Easy)
 
-- Include victory screen
+- Include victory screen - Done?
 
 - Add some way to apply settings before starting game 
 
