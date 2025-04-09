@@ -232,7 +232,7 @@ function GiveUpModal({setGiveUp, onClose}: GiveUpModalProps) {
             >
                 &times;
             </button>
-          <div className="overflow-y-auto max-h-[24rem] pr-2 text-sm leading-relaxed">
+          <div className="mt-6 flex justify-center">
             <button
                   onClick={() => {setGiveUp(true); onClose();}}
                   className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
