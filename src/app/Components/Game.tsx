@@ -112,6 +112,7 @@ function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
           <button
             onClick={() => {
               onClose(); 
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
               setIsSettingsOpen(true);
             }}
             className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
@@ -122,7 +123,9 @@ function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
           <button
             onClick={() => {
               onClose();
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
               setSettingsPage(1);
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
               setIsSettingsOpen(true);
             }}
             className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-yellow-600 transition"
