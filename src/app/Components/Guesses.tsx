@@ -187,8 +187,8 @@ function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetF
             resetFunction={resetFunc} 
             charData={allCharacterData} 
             toggleCategoryFunc={toggleCategoryFunc} 
-            displayedCategories={displayedCategories}/>
-            startOpen={settingsStartOpen}
+            displayedCategories={displayedCategories}
+            startOpen={settingsStartOpen}/>
       </div>
     </div>
 );
