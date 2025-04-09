@@ -225,10 +225,10 @@ function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetF
 function GiveUpModal({setGiveUp, onClose}: GiveUpModalProps) {
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
-        <div className="relative bg-white p-2 rounded-lg shadow-lg w-[10rem] min-h-[8rem]">
+        <div className="relative bg-white p-6 rounded-lg shadow-lg w-[10rem] min-h-[8rem]">
             <button
                 onClick={onClose}
-                className="absolute top-2 right-2 text-gray-700 hover:text-black bg-transparent p-2 text-2xl"
+                className="absolute top-2 right-2 text-gray-700 hover:text-black bg-transparent p-1 text-2xl"
             >
                 &times;
             </button>
