@@ -96,7 +96,7 @@ function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
         </p>
 
         {/* Action Buttons */}
-        <div className="flex justify-center gap-4">
+        <div className="grid grid-cols-2 gap-4">
           <button
             onClick={() => resetFunc(dailyAnswer, enabledLevels, false)}
             className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
@@ -129,7 +129,7 @@ function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
               console.log(isSettingsOpen);
               console.log(settingsPage);
             }}
-            className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-yellow-600 transition"
+            className="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition"
           >
             Spoiler Controls
           </button>
