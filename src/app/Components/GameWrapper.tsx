@@ -10,8 +10,11 @@ interface GameWrapperProps {
 const DEBUGGING = false;
 
 export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
+    // Set defaults for game start
     const initialDifficulties: number[] = [1, 2, 3];
+    const initialMaxVolume: number = 10;
 
+    // Create an initial answer based on the defaults
     const filteredData = new Map(
       [...allCharacterData.entries()].filter(
         ([, values]) => values[11] !== undefined && initialDifficulties.includes(Number(values[11]))
@@ -22,6 +25,7 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
     const randomIndex = Math.floor(Math.random() * keys.length);
     const initialAnswer: string = keys[randomIndex];
 
+    // Log initial answer
     if (DEBUGGING) {  
       const todaysAnswerDetails: string[] | undefined = allCharacterData.get(initialAnswer);
       if (todaysAnswerDetails === undefined) {
@@ -35,11 +39,20 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
       }
     }
 
+    // Initialize state based on calculated defaults
     const [todaysAnswer, setTodaysAnswer] = useState(initialAnswer);
     const [difficulties, setDifficulties] = useState(initialDifficulties);
+    const [maxVolume, setMaxVolume] = useState(initialMaxVolume);
     const [gameKey, setGameKey] = useState(0);
     const [showModal, setShowModal] = useState(true);
   
+    /**
+     * Reset game function that will be passed down to reinitialize the game state
+     * @param newAnswer Character name 
+     * @param newDifficulties
+     * @param newShowModal 
+     * returns nothing
+     */
     function resetGame(newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) {
       setTodaysAnswer(newAnswer || initialAnswer);
       setDifficulties(newDifficulties || initialDifficulties);

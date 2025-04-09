@@ -22,19 +22,7 @@ interface ModalProps {
   allCharacterData: Map<string, string[]>;
 }
 
-// function Modal({ onClose }: ModalProps) {
-//   return (
-//     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-//       <div className="bg-white p-6 rounded-2xl shadow-lg max-w-md text-center">
-//         <h2 className="text-xl font-bold mb-4">Welcome to the Game!</h2>
-//         <p className="mb-4">Here are the rules and some helpful hints to get you started.</p>
-//         <button onClick={onClose} className="px-4 py-2 bg-blue-500 text-white rounded-lg">Got it!</button>
-//       </div>
-//     </div>
-//   );
-// }
-
-
+// Helper function for generating the daily character
 function sha256ToBigInt(data: string): bigint {
   const hashHex = createHash('sha256').update(data).digest('hex');
   return BigInt('0x' + hashHex);
@@ -42,31 +30,27 @@ function sha256ToBigInt(data: string): bigint {
 
 
 function Modal({ onClose, resetFunc, settingsModalFunc, allCharacterData }: ModalProps) {
+  //// Generate the character for when the player starts playing - both daily and free
+  // Our initial character will only be from difficulties easy, medium, and hard
   const enabledLevels: number[] = [1, 2, 3];
 
+  // Remove characters that are too difficult
   const filteredKeys = Array.from(allCharacterData.entries())
     .filter(([, values]) => values[11] !== undefined && enabledLevels.includes(Number(values[11])))
     .map(([key]) => key);
 
-
-
+  // Calculate the free play initial character
   const randomIndex = Math.floor(Math.random() * filteredKeys.length);
   const initialAnswer: string = filteredKeys[randomIndex];
 
+  // Calculate the daily character using our hash
   const dateStr = new Date().toISOString().split("T")[0];
-
   const hashInt = sha256ToBigInt(dateStr);
   const keysSize = BigInt(filteredKeys.length)
   const index = hashInt % keysSize
-
   const dailyAnswer: string = filteredKeys[Number(index)]
 
-
-  // if (filteredKeys.length > 0) {
-  //     const randomIndex = Math.floor(Math.random() * filteredKeys.length);
-  //     resetFunction(filteredKeys[randomIndex], enabledLevels, false);
-  // }
-
+  // Now that we have generated the characters we can create our modal
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white p-6 rounded-2xl shadow-lg max-w-md w-full text-center relative">
@@ -108,7 +92,6 @@ function Modal({ onClose, resetFunc, settingsModalFunc, allCharacterData }: Moda
           </button>
           <button
             onClick={() => {
-              //onClose(); 
               settingsModalFunc(0);
             }}
             className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
@@ -118,7 +101,6 @@ function Modal({ onClose, resetFunc, settingsModalFunc, allCharacterData }: Moda
 
           <button
             onClick={() => {
-              //onClose();
               settingsModalFunc(1);
             }}
             className="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition"
@@ -128,8 +110,6 @@ function Modal({ onClose, resetFunc, settingsModalFunc, allCharacterData }: Moda
         </div>
       </div>
     </div>
-
-
   );
 }
 
@@ -138,9 +118,9 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
   const [finished, setFinished] = useState(false);
   const [showTheModal, setShowTheModal] = useState(showModal);
   const [giveUp, setGiveUp] = useState(false);
-
   const [settingsPage, setSettingsPage] = useState(-1);
 
+  // Helper function to pass down to Guesses to update history state
   function handleGuess(guess: string): void {
     const newHistory = [...history];
     newHistory.unshift(guess);
@@ -150,6 +130,8 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
       setFinished(true);
     }
   }
+
+
   return (
     <div className="game flex flex-col items-center relative px-4">
       {showTheModal && (
@@ -187,21 +169,4 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
       />
     </div>
   );
-  /*return (
-    <div className="game justify-center relative">
-      {showTheModal && <Modal onClose={() => setShowTheModal(false)} resetFunc={onReset} allCharacterData={allCharacterData} />}
-      <div className="flex justify-center mb-4">
-        <img src={background_img.src} alt="Background" className="w-full max-w-md rounded-2xl" />
-      </div>
-      <GuessContainer
-        allCharacterData={allCharacterData}
-        history={history}
-        onGuess={handleGuess}
-        todaysAnswer={todaysAnswer}
-        difficulties={initialDifficulties}
-        onReset={onReset}
-      />
-      {finished && <WinScreen todaysAnswer={todaysAnswer} history={history} />}
-    </div>
-  );*/
 }
