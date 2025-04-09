@@ -210,7 +210,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                                         name={name}
                                         checked={settings[name as keyof typeof settings]}
                                         onChange={handleChange}
-                                        className="w-6 h-6 accent-blue-600"
+                                        className="w-5 h-5 accent-blue-600"
                                     />
                                     <span className="text-xl">{label}</span>
                                 </label>
@@ -218,7 +218,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                         </div>
                         <button
                             onClick={handleResetClick}
-                            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition"
+                            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xxl transition"
                         >
                             Save & Reset
                         </button>
