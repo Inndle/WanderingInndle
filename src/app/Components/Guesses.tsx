@@ -242,6 +242,7 @@ function GiveUpModal({setGiveUp, onClose}: GiveUpModalProps) {
             </button>
         </div>
     </div>
+  );
 } 
 
 
