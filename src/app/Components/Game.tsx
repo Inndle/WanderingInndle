@@ -18,6 +18,7 @@ interface GameProps {
 interface ModalProps {
   onClose: () => void;
   resetFunc: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void;
+  setDaily: (state: boolean) => void;
   settingsModalFunc: (page: number) => void;
   allCharacterData: Map<string, string[]>;
 }
@@ -41,7 +42,7 @@ function sha256ToBigInt(data: string): bigint {
 }
 
 
-function Modal({ onClose, resetFunc, settingsModalFunc, allCharacterData }: ModalProps) {
+function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterData }: ModalProps) {
   const enabledLevels: number[] = [1, 2, 3];
 
   const filteredKeys = Array.from(allCharacterData.entries())
@@ -95,7 +96,7 @@ function Modal({ onClose, resetFunc, settingsModalFunc, allCharacterData }: Moda
         {/* Action Buttons */}
         <div className="grid grid-cols-2 gap-4">
           <button
-            onClick={() => resetFunc(dailyAnswer, enabledLevels, false)}
+            onClick={() => {resetFunc(dailyAnswer, enabledLevels, false); setDaily(true)}}
             className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
           >
             Daily Challenge
@@ -138,6 +139,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
   const [finished, setFinished] = useState(false);
   const [showTheModal, setShowTheModal] = useState(showModal);
   const [giveUp, setGiveUp] = useState(false);
+  const [isDaily, setIsDaily] = useState(false);
 
   const [settingsPage, setSettingsPage] = useState(-1);
 
@@ -156,6 +158,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
         <Modal
           onClose={() => setShowTheModal(false)}
           resetFunc={onReset}
+          setDaily={setIsDaily}
           settingsModalFunc={setSettingsPage}
           allCharacterData={allCharacterData}
         />
@@ -168,6 +171,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
           todaysAnswer={todaysAnswer}
           history={history}
           onFreePlay={onReset}
+          daily={isDaily}
           characterData={allCharacterData}
           difficulties={initialDifficulties}
           gaveUp={giveUp}
