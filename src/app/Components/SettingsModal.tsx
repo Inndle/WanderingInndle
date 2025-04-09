@@ -170,21 +170,21 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                 {activeTab === "categories" && (
                     <div className="flex flex-col items-center">
                         <h2 className="text-lg font-semibold text-center mb-4">Included Categories</h2>
-                        <div className="flex flex-col items-start">
-                        {[
-                            "Mentions", "Introduced", "Gender", "Species", "Status",
-                            "Affiliation", "Continent", "Residence", "Occupation", "Fighting Type"
-                        ].map((category) => (
-                            <label key={category} className="flex items-center space-x-2 mb-2">
-                            <input
-                                type="checkbox"
-                                name={`${category.toLowerCase().replace(/\s/g, "")}Checkbox`}
-                                checked={displayedCategories.includes(category)}
-                                onChange={() => toggleCategoryFunc(category)}
-                            />
-                            <span>{category}</span>
-                            </label>
-                        ))}
+                        <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+                            {[
+                                "Mentions", "Introduced", "Gender", "Species", "Status",
+                                "Affiliation", "Continent", "Residence", "Occupation", "Fighting Type"
+                            ].map((category) => (
+                                <label key={category} className="flex items-center space-x-2">
+                                    <input
+                                        type="checkbox"
+                                        name={`${category.toLowerCase().replace(/\s/g, "")}Checkbox`}
+                                        checked={displayedCategories.includes(category)}
+                                        onChange={() => toggleCategoryFunc(category)}
+                                    />
+                                    <span>{category}</span>
+                                </label>
+                            ))}
                         </div>
                     </div>
                 )}
@@ -192,33 +192,34 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                 {/* Difficulties Tab Content */}
                 {activeTab === "difficulties" && (
                     <div className="flex flex-col items-center">
-                        <h2 className="text-lg font-semibold text-center mb-4">Included Difficulties</h2>
+                        <h2 className="text-xl font-semibold text-center mb-4">Included Difficulties</h2>
                         <div className="flex flex-col items-start">
-                        <label className="flex items-center space-x-2 mb-2">
-                            <input type="checkbox" name="difficultyCheckbox1" checked={settings.difficultyCheckbox1} onChange={handleChange} />
-                            <span>Easy</span>
-                        </label>
-                        <label className="flex items-center space-x-2 mb-2">
-                            <input type="checkbox" name="difficultyCheckbox2" checked={settings.difficultyCheckbox2} onChange={handleChange} />
-                            <span>Medium</span>
-                        </label>
-                        <label className="flex items-center space-x-2 mb-2">
-                            <input type="checkbox" name="difficultyCheckbox3" checked={settings.difficultyCheckbox3} onChange={handleChange} />
-                            <span>Hard</span>
-                        </label>
-                        <label className="flex items-center space-x-2 mb-4">
-                            <input type="checkbox" name="difficultyCheckbox4" checked={settings.difficultyCheckbox4} onChange={handleChange} />
-                            <span>Expert</span>
-                        </label>
+                            {[
+                                { label: "Easy", name: "difficultyCheckbox1" },
+                                { label: "Medium", name: "difficultyCheckbox2" },
+                                { label: "Hard", name: "difficultyCheckbox3" },
+                                { label: "Expert", name: "difficultyCheckbox4" },
+                            ].map(({ label, name }, index) => (
+                                <label key={index} className="flex items-center space-x-3 mb-4 text-lg cursor-pointer">
+                                    <input
+                                        type="checkbox"
+                                        name={name}
+                                        checked={settings[name as keyof typeof settings]}
+                                        onChange={handleChange}
+                                        className="w-6 h-6 accent-blue-600"
+                                    />
+                                    <span className="text-xl">{label}</span>
+                                </label>
+                            ))}
                         </div>
                         <button
-                        onClick={handleResetClick}
-                        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-xl transition"
+                            onClick={handleResetClick}
+                            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-xl transition"
                         >
-                        Save & Reset
+                            Save & Reset
                         </button>
                     </div>
-                    )}
+                )}
             </div>
         </div>
     );
