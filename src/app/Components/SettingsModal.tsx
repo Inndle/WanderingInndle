@@ -19,6 +19,8 @@ interface SettingsModalProps {
     toggleCategoryFunc: (category: string) => void
     displayedCategories: string[]
     settingsPage?: number; 
+    settingsModalFunc: (page: number) => void;
+
 }
 
 const categoryLabels: Record<string, string> = {
@@ -29,7 +31,7 @@ const categoryLabels: Record<string, string> = {
     Residence: "Residence (Medium Spoilers)",
   };
 
-export default function SettingsModal({ onClose, initialSettings, onSettingsChange, resetFunction, allCharacterData, toggleCategoryFunc, displayedCategories, settingsPage = 0}: SettingsModalProps) {
+export default function SettingsModal({ onClose, initialSettings, onSettingsChange, resetFunction, allCharacterData, toggleCategoryFunc, displayedCategories, settingsPage = 0, settingsModalFunc}: SettingsModalProps) {
     const [settings, setSettings] = useState(initialSettings);
     const tabOptions = ["rules", "categories", "difficulties"];
     const [activeTab, setActiveTab] = useState(tabOptions[settingsPage]);
@@ -40,6 +42,11 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
             ...prev,
             [name]: checked,
         }));
+    }
+
+    function changeModalStateAndClose() {
+        settingsModalFunc(-1);
+        onClose();
     }
 
     useEffect(() => {
@@ -70,7 +77,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
         <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
             <div className="relative bg-white p-6 rounded-lg shadow-lg w-[30rem] min-h-[32rem]">
                 <button
-                    onClick={onClose}
+                    onClick={changeModalStateAndClose}
                     className="absolute top-2 right-2 text-gray-700 hover:text-black bg-transparent p-2 text-2xl"
                 >
                     &times;
