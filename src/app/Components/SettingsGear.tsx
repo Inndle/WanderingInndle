@@ -20,9 +20,11 @@ interface SettingsGearProps {
     toggleCategoryFunc: (category: string) => void;
     displayedCategories: string[];
     startOpen: number;
+    settingsModalFunc: (page: number) => void;
+
 }
 
-export default function SettingsGear({ settings, onSettingsChange, resetFunction, charData, toggleCategoryFunc, displayedCategories, startOpen }: SettingsGearProps) {
+export default function SettingsGear({ settings, onSettingsChange, resetFunction, charData, toggleCategoryFunc, displayedCategories, startOpen, settingsModalFunc }: SettingsGearProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [page, setPage] = useState<number>(0);
 
@@ -32,7 +34,7 @@ export default function SettingsGear({ settings, onSettingsChange, resetFunction
             setIsOpen(true); // Open the modal
             setPage(startOpen); // Set the page
         }
-    }, [startOpen]); 
+    }, [startOpen]);
 
     return (
         <>
@@ -53,6 +55,7 @@ export default function SettingsGear({ settings, onSettingsChange, resetFunction
                     toggleCategoryFunc={toggleCategoryFunc}
                     displayedCategories={displayedCategories}
                     settingsPage={page}
+                    settingsModalFunc={settingsModalFunc}
                 />
             )}
         </>

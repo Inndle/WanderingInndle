@@ -128,7 +128,7 @@ function Modal({ onClose, resetFunc, settingsModalFunc, allCharacterData }: Moda
         </div>
       </div>
     </div>
-    
+
 
   );
 }
@@ -183,6 +183,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
         onReset={onReset}
         setGiveUp={setGiveUp}
         settingsStartOpen={settingsPage}
+        settingsModalFunc={setSettingsPage}
       />
     </div>
   );
