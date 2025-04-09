@@ -4,6 +4,8 @@ import { useState } from "react";
 import GuessContainer from "./Guesses";
 import WinScreen from "./WinScreen";
 import background_img from "../twi-logo-fancy.png";
+import { createHash } from 'crypto';
+
 
 interface GameProps {
   todaysAnswer: string;
@@ -32,19 +34,12 @@ interface ModalProps {
 //   );
 // }
 
-function fnv1aHash(str: string, maxRange: number): number {
-  let hash = 2166136261; // FNV offset basis
-  for (let i = 0; i < str.length; i++) {
-    hash ^= str.charCodeAt(i);
-    hash *= 16777619; // FNV prime
-  }
-  return Math.abs(hash) % maxRange;
+
+function sha256ToBigInt(data: string): bigint {
+  const hashHex = createHash('sha256').update(data).digest('hex');
+  return BigInt('0x' + hashHex);
 }
 
-function getDailyHashImproved(maxRange: number): number {
-  const dateStr = new Date().toISOString().split("T")[0];
-  return fnv1aHash(dateStr, maxRange);
-}
 
 function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
 
@@ -58,7 +53,14 @@ function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
 
   const randomIndex = Math.floor(Math.random() * filteredKeys.length);
   const initialAnswer: string = filteredKeys[randomIndex];
-  const dailyAnswer: string = filteredKeys[getDailyHashImproved(filteredKeys.length)]
+
+  const dateStr = new Date().toISOString().split("T")[0];
+
+  const hashInt = sha256ToBigInt(dateStr);
+  const keysSize = BigInt(filteredKeys.length)
+  const index = hashInt % keysSize
+
+  const dailyAnswer: string = filteredKeys[Number(index)]
 
 
   // if (filteredKeys.length > 0) {
@@ -68,46 +70,46 @@ function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-  <div className="bg-white p-6 rounded-2xl shadow-lg max-w-md w-full text-center relative">
-    {/* Close Button */}
-    <button
-      onClick={onClose}
-      className="absolute top-2 right-2 text-gray-700 hover:text-black bg-transparent p-2 text-2xl"
-    >
-      &times;
-    </button>
+      <div className="bg-white p-6 rounded-2xl shadow-lg max-w-md w-full text-center relative">
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-2 right-2 text-gray-700 hover:text-black bg-transparent p-2 text-2xl"
+        >
+          &times;
+        </button>
 
-    {/* Modal Content */}
-    <h2 className="text-2xl font-bold mb-4">Welcome to Inndle!</h2>
+        {/* Modal Content */}
+        <h2 className="text-2xl font-bold mb-4">Welcome to Inndle!</h2>
 
-    <p className="mb-6 text-sm text-gray-700 leading-relaxed">
-      The <strong>Daily Challenge</strong> is the same for everyone and resets at <strong>8:00pm EST</strong>.<br /><br />
-      <strong>Free Play</strong> allows you to choose from different difficulties.<br /><br />
-      Visit <strong>Settings</strong> to:
-      <ul className="list-disc list-inside text-left mt-2 ml-2">
-        <li>Select difficulty</li>
-        <li>Mask columns to prevent spoilers</li>
-        <li>Read comprehensive instructions</li>
-      </ul>
-    </p>
+        <p className="mb-6 text-sm text-gray-700 leading-relaxed">
+          The <strong>Daily Challenge</strong> is the same for everyone and resets at <strong>8:00pm EST</strong>.<br /><br />
+          <strong>Free Play</strong> allows you to choose from different difficulties.<br /><br />
+          Visit <strong>Settings</strong> to:
+          <ul className="list-disc list-inside text-left mt-2 ml-2">
+            <li>Select difficulty</li>
+            <li>Mask columns to prevent spoilers</li>
+            <li>Read comprehensive instructions</li>
+          </ul>
+        </p>
 
-    {/* Action Buttons */}
-    <div className="flex justify-center gap-4">
-      <button
-        onClick={() => resetFunc(dailyAnswer, enabledLevels, false)}
-        className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
-      >
-        DAILY CHALLENGE
-      </button>
-      <button
-        onClick={() => resetFunc(initialAnswer, enabledLevels, false)}
-        className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
-      >
-        Free Play
-      </button>
+        {/* Action Buttons */}
+        <div className="flex justify-center gap-4">
+          <button
+            onClick={() => resetFunc(dailyAnswer, enabledLevels, false)}
+            className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+          >
+            Daily Challenge
+          </button>
+          <button
+            onClick={() => resetFunc(initialAnswer, enabledLevels, false)}
+            className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+          >
+            Free Play
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
   );
 }

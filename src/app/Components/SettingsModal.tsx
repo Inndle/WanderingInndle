@@ -22,7 +22,7 @@ interface SettingsModalProps {
 
 export default function SettingsModal({ onClose, initialSettings, onSettingsChange, resetFunction, allCharacterData, toggleCategoryFunc, displayedCategories }: SettingsModalProps) {
     const [settings, setSettings] = useState(initialSettings);
-    const [activeTab, setActiveTab] = useState("rules"); // ✅ Set default tab to "rules"
+    const [activeTab, setActiveTab] = useState("rules");
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
         const { name, checked } = event.target;
@@ -135,7 +135,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                         </div>
                         <div className="flex">
                             <dt className="font-bold w-28 shrink-0">Status:</dt>
-                            <dd>Alive, Deceased, or Unknown (up to the Palace of Fates Arc)</dd>
+                            <dd>Alive, Active, Deceased, or Unknown (up to the Palace of Fates Arc)</dd>
                         </div>
                         <div className="flex">
                             <dt className="font-bold w-28 shrink-0">Affiliation:</dt>
