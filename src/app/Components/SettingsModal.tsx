@@ -21,6 +21,14 @@ interface SettingsModalProps {
     settingsPage?: number; 
 }
 
+const categoryLabels: Record<string, string> = {
+    Gender: "Gender (Minor Spoilers)",
+    Status: "Status (Major Spoilers)",
+    Affiliation: "Affiliation (Major Spoilers)",
+    Continent: "Continent (Medium Spoilers)",
+    Residence: "Residence (Medium Spoilers)",
+  };
+
 export default function SettingsModal({ onClose, initialSettings, onSettingsChange, resetFunction, allCharacterData, toggleCategoryFunc, displayedCategories, settingsPage = 0}: SettingsModalProps) {
     const [settings, setSettings] = useState(initialSettings);
     const tabOptions = ["rules", "categories", "difficulties"];
@@ -186,7 +194,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                                         className="w-5 h-5 accent-blue-600"
 
                                     />
-                                    <span>{category}</span>
+                                    <span>{categoryLabels[category] || category}</span>
                                 </label>
                             ))}
                         </div>
