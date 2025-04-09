@@ -42,7 +42,7 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
     // Initialize state based on calculated defaults
     const [todaysAnswer, setTodaysAnswer] = useState(initialAnswer);
     const [difficulties, setDifficulties] = useState(initialDifficulties);
-    const [maxVolume, setMaxVolume] = useState(initialMaxVolume);
+    //const [maxVolume, setMaxVolume] = useState(initialMaxVolume);
     const [gameKey, setGameKey] = useState(0);
     const [showModal, setShowModal] = useState(true);
   
