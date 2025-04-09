@@ -12,7 +12,7 @@ const DEBUGGING = false;
 export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
     // Set defaults for game start
     const initialDifficulties: number[] = [1, 2, 3];
-    const initialMaxVolume: number = 10;
+    //const initialMaxVolume: number = 10;
 
     // Create an initial answer based on the defaults
     const filteredData = new Map(
