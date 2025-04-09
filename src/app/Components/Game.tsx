@@ -38,11 +38,13 @@ function fnv1aHash(str: string, maxRange: number): number {
     hash ^= str.charCodeAt(i);
     hash *= 16777619; // FNV prime
   }
+  console.log(hash);
   return Math.abs(hash) % maxRange;
 }
 
 function getDailyHashImproved(maxRange: number): number {
   const dateStr = new Date().toISOString().split("T")[0];
+  console.log(dateStr);
   return fnv1aHash(dateStr, maxRange);
 }
 
