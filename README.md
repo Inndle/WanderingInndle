@@ -5,7 +5,8 @@
 ## Things Left to Implement:
 ### Functionality (Listed in order of importance):
 
-- Give up button
+- Give up button only shows up in free play
+- Volume Filter
 
 - Refactor code
 
