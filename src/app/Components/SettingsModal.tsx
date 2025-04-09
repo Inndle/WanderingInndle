@@ -36,7 +36,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
 
     useEffect(() => {
         onSettingsChange(settings);
-    }, [settings]);
+    }, [settings, onSettingsChange]);
 
     const handleResetClick = () => {
         const enabledLevels = Object.entries(settings)

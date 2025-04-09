@@ -132,6 +132,7 @@ function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
         </div>
       </div>
     </div>
+    
 
   );
 }
