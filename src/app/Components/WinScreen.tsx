@@ -1,13 +1,16 @@
-export default function WinScreen({todaysAnswer, history, onFreePlay, characterData, difficulties, gaveUp, setGiveUp}: {
-    todaysAnswer: string, 
-    history: string[], 
-    onFreePlay: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void,
-    characterData: Map<string, string[]>,
-    difficulties: number[],
-    gaveUp: boolean,
-    setGiveUp: (state: boolean) => void;
-  }) {
-    const handleResetClick = () => {
+interface WinScreenProps {
+  todaysAnswer: string, 
+  history: string[], 
+  onFreePlay: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void,
+  characterData: Map<string, string[]>,
+  difficulties: number[],
+  gaveUp: boolean,
+  setGiveUp: (state: boolean) => void;
+}
+
+export default function WinScreen({todaysAnswer, history, onFreePlay, characterData, difficulties, gaveUp, setGiveUp}: WinScreenProps) {
+  // Helper function to generate a new character 
+  const handleResetClick = () => {
         if (difficulties.length === 0) {
             alert("Please select at least one difficulty level before resetting the game.");
             return;

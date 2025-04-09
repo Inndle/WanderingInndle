@@ -192,7 +192,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                                 "Mentions", "Introduced", "Gender", "Species", "Status",
                                 "Affiliation", "Continent", "Residence", "Occupation", "Fighting Type"
                             ].map((category) => (
-                                <label key={category} className="flex items-center space-x-2 text-base">
+                                <label key={category} className="items-center space-x-2 text-base">
                                     <input
                                         type="checkbox"
                                         name={`${category.toLowerCase().replace(/\s/g, "")}Checkbox`}

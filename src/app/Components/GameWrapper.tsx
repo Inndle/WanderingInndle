@@ -25,7 +25,7 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
     const randomIndex = Math.floor(Math.random() * keys.length);
     const initialAnswer: string = keys[randomIndex];
 
-    // Log initial answer
+    // Log initial answer - NOTE: This answer is only for when you press close on the game start modal
     if (DEBUGGING) {  
       const todaysAnswerDetails: string[] | undefined = allCharacterData.get(initialAnswer);
       if (todaysAnswerDetails === undefined) {
@@ -48,6 +48,12 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
   
     /**
      * Reset game function that will be passed down to reinitialize the game state
+     * New characters are prepared locally downstream whenever a reset button exists and they just
+     * pass the info up here 
+     * 
+     * TODO: Refactor code so that reset game performs the character calculation so everything
+     * is in one place
+     * 
      * @param newAnswer Character name 
      * @param newDifficulties
      * @param newShowModal 
