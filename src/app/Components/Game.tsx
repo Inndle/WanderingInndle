@@ -29,14 +29,9 @@ function sha256ToBigInt(data: string): bigint {
   return BigInt('0x' + hashHex);
 }
 
-
-<<<<<<< HEAD
 function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterData }: ModalProps) {
-=======
-function Modal({ onClose, resetFunc, settingsModalFunc, allCharacterData }: ModalProps) {
   //// Generate the character for when the player starts playing - both daily and free
   // Our initial character will only be from difficulties easy, medium, and hard
->>>>>>> 6e88ac529d4c2638fa0e17da9d0343b88b999561
   const enabledLevels: number[] = [1, 2, 3];
 
   // Remove characters that are too difficult
