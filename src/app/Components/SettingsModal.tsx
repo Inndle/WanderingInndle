@@ -211,15 +211,15 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                 {/* Difficulties Tab Content */}
                 {activeTab === "difficulties" && (
                     <div className="flex flex-col items-center">
-                        <h2 className="text-xl font-semibold text-center mb-4">Included Difficulties</h2>
-                        <div className="flex flex-col items-start">
+                        <h2 className="text-lg font-semibold text-center mb-4">Included Difficulties</h2>
+                        <div className="flex flex-col items-start mb-6">
                             {[
                                 { label: "Easy", name: "difficultyCheckbox1" },
                                 { label: "Medium", name: "difficultyCheckbox2" },
                                 { label: "Hard", name: "difficultyCheckbox3" },
                                 { label: "Expert", name: "difficultyCheckbox4" },
                             ].map(({ label, name }, index) => (
-                                <label key={index} className="flex items-center space-x-3 mb-4 text-lg cursor-pointer">
+                                <label key={index} className="flex items-center space-x-3 mb-4 text-m cursor-pointer">
                                     <input
                                         type="checkbox"
                                         name={name}
@@ -227,7 +227,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                                         onChange={handleChange}
                                         className="w-5 h-5 accent-blue-600"
                                     />
-                                    <span className="text-xl">{label}</span>
+                                    <span className="text-m">{label}</span>
                                 </label>
                             ))}
                         </div>
