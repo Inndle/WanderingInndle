@@ -205,14 +205,14 @@ function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetF
             startOpen={settingsStartOpen}
             settingsModalFunc={settingsModalFunc}/>
       </div>
-      <div className="absolute top-0 left-0">
+      {history.length > 4 && <div className="absolute top-0 left-0">
         <button
           onClick={() => {setGiveUpIsOpen(true)}}
           className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
         >
           Give Up
         </button>
-      </div>
+      </div>}
       {giveUpIsOpen && <GiveUpModal
         setGiveUp={setGiveUp}
         onClose={() => setGiveUpIsOpen(false)}/>}
@@ -225,21 +225,21 @@ function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetF
 function GiveUpModal({setGiveUp, onClose}: GiveUpModalProps) {
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
-        <div className="relative bg-white p-6 rounded-lg shadow-lg w-[30rem] min-h-[32rem]">
+        <div className="relative bg-white p-6 rounded-lg shadow-lg w-[10rem] min-h-[8rem]">
             <button
                 onClick={onClose}
                 className="absolute top-2 right-2 text-gray-700 hover:text-black bg-transparent p-2 text-2xl"
             >
                 &times;
             </button>
-        </div>
-        <div className="overflow-y-auto max-h-[24rem] pr-2 text-sm leading-relaxed">
-        <button
-                onClick={() => {setGiveUp(true); onClose();}}
-                className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
-            >
-                Give Up
+          <div className="overflow-y-auto max-h-[24rem] pr-2 text-sm leading-relaxed">
+            <button
+                  onClick={() => {setGiveUp(true); onClose();}}
+                  className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+              >
+                  Give Up
             </button>
+          </div>
         </div>
     </div>
   );

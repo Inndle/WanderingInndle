@@ -48,7 +48,7 @@ export default function WinScreen({todaysAnswer, history, onFreePlay, characterD
     } else {
       return (
         <div className="bg-white shadow-xl rounded-2xl p-6 w-full max-w-md mb-6 text-center">
-          <h2 className="text-2xl font-bold text-black-600 mb-4">Gave Up :&lpar;</h2>
+          <h2 className="text-2xl font-bold text-black-600 mb-4">You Gave Up :(</h2>
           <div className="text-lg text-gray-700 mb-2">
             Today&apos;s answer was:
           </div>
