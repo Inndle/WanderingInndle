@@ -7,13 +7,6 @@
 
 - Give up button
 
-- Add some way to apply settings before starting game -OPTIONAL
-
-    Includes Difficulty, and could also include which columns to include
-    Difficulty can be a strict include 
-    
-    CComment: They can just reset I think this one is optional
-
 - Refactor code
 
 Right now a lot of the logic for what the squares display and changing what they look like is handled inside `Guesses.tsx`. It might be cleaner and more "React-like" if we move the logic into `Game.tsx`. This is also a placeholder for other potential ways we can make the codebase cleaner.
@@ -22,7 +15,6 @@ Right now a lot of the logic for what the squares display and changing what they
 - Get a better logo
 - Do something about the profile pictures
 - Add animations for when the guess details appear
-- Add victory screen
 - Add tooltips on hover
 - Create transparent textures for behind squares
 - Make search bar look nicer / remove autofill
