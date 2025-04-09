@@ -232,7 +232,7 @@ function GiveUpModal({setGiveUp, onClose}: GiveUpModalProps) {
             >
                 &times;
             </button>
-          <p>Are you sure you want to give up?</p>
+          <h4>Are you sure you want to give up?</h4>
           <div className="mt-6 flex justify-center">
             <button
                   onClick={() => {setGiveUp(true); onClose();}}
