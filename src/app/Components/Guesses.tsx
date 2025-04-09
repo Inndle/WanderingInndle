@@ -10,7 +10,8 @@ interface GuessContainerProps {
   onGuess: (guess: string) => void,
   todaysAnswer: string,
   difficulties: number[],
-  onReset: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void // Accept reset function
+  onReset: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void, // Accept reset function
+  setGiveUp: (state: boolean) => void,
   settingsStartOpen?: number;
 }
 interface GuessBoxProps {
@@ -21,7 +22,13 @@ interface GuessBoxProps {
   resetFunc: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void,
   toggleCategoryFunc: (category: string) => void,
   displayedCategories: string[],
+  setGiveUp: (state: boolean) => void,
   settingsStartOpen?: number;
+}
+
+interface GiveUpModalProps {
+  setGiveUp: (state: boolean) => void;
+  onClose: () => void;
 }
 
 interface GuessesProps {
@@ -114,7 +121,7 @@ const DEBUGGING = true;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //// Begin component declaration
-export default function GuessContainer({ allCharacterData, history, onGuess, todaysAnswer, difficulties, onReset, settingsStartOpen = -1 }: GuessContainerProps) {
+export default function GuessContainer({ allCharacterData, history, onGuess, todaysAnswer, difficulties, onReset, setGiveUp, settingsStartOpen = -1 }: GuessContainerProps) {
 
   const [displayedCategories, setDisplayedCategories] = useState([...DISPLAYED_CATEGORIES]);
 
@@ -152,6 +159,7 @@ export default function GuessContainer({ allCharacterData, history, onGuess, tod
           resetFunc={onReset} 
           toggleCategoryFunc={toggleCategory} 
           displayedCategories={displayedCategories}
+          setGiveUp={setGiveUp}
           settingsStartOpen={settingsStartOpen}>
       </GuessBox>
       {history.length > 0 &&
@@ -163,7 +171,7 @@ export default function GuessContainer({ allCharacterData, history, onGuess, tod
 
 
 
-function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetFunc, toggleCategoryFunc, displayedCategories, settingsStartOpen = -1 }: GuessBoxProps) {
+function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetFunc, setGiveUp, toggleCategoryFunc, displayedCategories, settingsStartOpen = -1 }: GuessBoxProps) {
   const [settings, setSettings] = useState({
     difficultyCheckbox1: difficultyLevels.includes(1),
     difficultyCheckbox2: difficultyLevels.includes(2),
@@ -175,6 +183,8 @@ function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetF
     console.log("Updated settings in GuessBox:", updatedSettings);
     setSettings(updatedSettings);
   };
+
+  const [giveUpIsOpen, setGiveUpIsOpen] = useState(false);
 
   
   return (
@@ -191,9 +201,44 @@ function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetF
             displayedCategories={displayedCategories}
             startOpen={settingsStartOpen}/>
       </div>
-    </div>
+      <div className="absolute top-0 left-0">
+        <button
+          onClick={() => {setGiveUpIsOpen(true)}}
+          className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+        >
+          Give Up
+        </button>
+      </div>
+      {giveUpIsOpen && <GiveUpModal
+        setGiveUp={setGiveUp}
+        onClose={() => setGiveUpIsOpen(false)}/>}
+  </div>
 );
 }
+
+
+
+function GiveUpModal({setGiveUp, onClose}: GiveUpModalProps) {
+  return (
+    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
+        <div className="relative bg-white p-6 rounded-lg shadow-lg w-[30rem] min-h-[32rem]">
+            <button
+                onClick={onClose}
+                className="absolute top-2 right-2 text-gray-700 hover:text-black bg-transparent p-2 text-2xl"
+            >
+                &times;
+            </button>
+        </div>
+        <div className="overflow-y-auto max-h-[24rem] pr-2 text-sm leading-relaxed">
+        <button
+                onClick={() => {setGiveUp(true); onClose();}}
+                className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+            >
+                Give Up
+            </button>
+        </div>
+    </div>
+} 
 
 
 

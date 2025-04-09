@@ -137,6 +137,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
   const [history, setHistory] = useState<string[]>([]);
   const [finished, setFinished] = useState(false);
   const [showTheModal, setShowTheModal] = useState(showModal);
+  const [giveUp, setGiveUp] = useState(false);
 
   const [settingsPage, setSettingsPage] = useState(-1);
 
@@ -162,13 +163,15 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
       <div className="flex justify-center mb-4 w-full">
         <img src={background_img.src} alt="Background" className="w-full max-w-md rounded-2xl" />
       </div>
-      {finished && (
+      {(finished || giveUp) && (
         <WinScreen
           todaysAnswer={todaysAnswer}
           history={history}
           onFreePlay={onReset}
           characterData={allCharacterData}
           difficulties={initialDifficulties}
+          gaveUp={giveUp}
+          setGiveUp={setGiveUp}
         />
       )}
       <GuessContainer
@@ -178,6 +181,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
         todaysAnswer={todaysAnswer}
         difficulties={initialDifficulties}
         onReset={onReset}
+        setGiveUp={setGiveUp}
         settingsStartOpen={settingsPage}
       />
     </div>
