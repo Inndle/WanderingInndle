@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SettingsModal from "./SettingsModal";
 import gearIcon from "../settingsGear.png"; // Store your PNG inside the assets folder
 
@@ -24,11 +24,15 @@ interface SettingsGearProps {
 
 export default function SettingsGear({ settings, onSettingsChange, resetFunction, charData, toggleCategoryFunc, displayedCategories, startOpen }: SettingsGearProps) {
     const [isOpen, setIsOpen] = useState(false);
-    let page: number = 0;
-    if (startOpen > -1) {
-        setIsOpen(true);
-        page = startOpen;
-    }
+    const [page, setPage] = useState<number>(0);
+
+    // Using useEffect to set page and isOpen conditionally
+    useEffect(() => {
+        if (startOpen > -1) {
+            setIsOpen(true); // Open the modal
+            setPage(startOpen); // Set the page
+        }
+    }, [startOpen]); 
 
     return (
         <>
