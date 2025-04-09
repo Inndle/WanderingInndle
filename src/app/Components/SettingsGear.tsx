@@ -19,11 +19,16 @@ interface SettingsGearProps {
     charData: Map<string, string[]>;
     toggleCategoryFunc: (category: string) => void;
     displayedCategories: string[];
-
+    startOpen: number;
 }
 
-export default function SettingsGear({ settings, onSettingsChange, resetFunction, charData, toggleCategoryFunc, displayedCategories }: SettingsGearProps) {
+export default function SettingsGear({ settings, onSettingsChange, resetFunction, charData, toggleCategoryFunc, displayedCategories, startOpen }: SettingsGearProps) {
     const [isOpen, setIsOpen] = useState(false);
+    let page: number = 0;
+    if (startOpen > -1) {
+        setIsOpen(true);
+        page = startOpen;
+    }
 
     return (
         <>
@@ -43,6 +48,7 @@ export default function SettingsGear({ settings, onSettingsChange, resetFunction
                     allCharacterData={charData}
                     toggleCategoryFunc={toggleCategoryFunc}
                     displayedCategories={displayedCategories}
+                    settingsPage={page}
                 />
             )}
         </>

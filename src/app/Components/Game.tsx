@@ -18,8 +18,8 @@ interface GameProps {
 interface ModalProps {
   onClose: () => void;
   resetFunc: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void;
+  settingsModalFunc: (page: number) => void;
   allCharacterData: Map<string, string[]>;
-
 }
 
 // function Modal({ onClose }: ModalProps) {
@@ -41,10 +41,7 @@ function sha256ToBigInt(data: string): bigint {
 }
 
 
-function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [settingsPage, setSettingsPage] = useState(0); 
-
+function Modal({ onClose, resetFunc, settingsModalFunc, allCharacterData }: ModalProps) {
   const enabledLevels: number[] = [1, 2, 3];
 
   const filteredKeys = Array.from(allCharacterData.entries())
@@ -112,9 +109,7 @@ function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
           <button
             onClick={() => {
               onClose(); 
-              setIsSettingsOpen(true);
-              console.log(isSettingsOpen);
-              console.log(settingsPage);
+              settingsModalFunc(0);
             }}
             className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
           >
@@ -124,10 +119,7 @@ function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
           <button
             onClick={() => {
               onClose();
-              setSettingsPage(1);
-              setIsSettingsOpen(true);
-              console.log(isSettingsOpen);
-              console.log(settingsPage);
+              settingsModalFunc(1);
             }}
             className="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition"
           >
@@ -146,6 +138,8 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
   const [finished, setFinished] = useState(false);
   const [showTheModal, setShowTheModal] = useState(showModal);
 
+  const [settingsPage, setSettingsPage] = useState(-1);
+
   function handleGuess(guess: string): void {
     const newHistory = [...history];
     newHistory.unshift(guess);
@@ -161,6 +155,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
         <Modal
           onClose={() => setShowTheModal(false)}
           resetFunc={onReset}
+          settingsModalFunc={setSettingsPage}
           allCharacterData={allCharacterData}
         />
       )}
@@ -183,6 +178,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
         todaysAnswer={todaysAnswer}
         difficulties={initialDifficulties}
         onReset={onReset}
+        settingsStartOpen={settingsPage}
       />
     </div>
   );

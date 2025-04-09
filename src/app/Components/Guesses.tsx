@@ -8,18 +8,20 @@ interface GuessContainerProps {
   allCharacterData: Map<string, string[]>,
   history: string[],
   onGuess: (guess: string) => void,
-  todaysAnswer: string
-  difficulties: number[]
-  onReset: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void; // Accept reset function
+  todaysAnswer: string,
+  difficulties: number[],
+  onReset: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void // Accept reset function
+  settingsStartOpen?: number;
 }
 interface GuessBoxProps {
   allCharacterData: Map<string, string[]>,
   history: string[],
   onGuess: (guess: string) => void,
   difficultyLevels: number[],
-  resetFunc: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void;
-  toggleCategoryFunc: (category: string) => void
-  displayedCategories: string[]
+  resetFunc: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void,
+  toggleCategoryFunc: (category: string) => void,
+  displayedCategories: string[],
+  settingsStartOpen?: number;
 }
 
 interface GuessesProps {
@@ -112,7 +114,7 @@ const DEBUGGING = true;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //// Begin component declaration
-export default function GuessContainer({ allCharacterData, history, onGuess, todaysAnswer, difficulties, onReset }: GuessContainerProps) {
+export default function GuessContainer({ allCharacterData, history, onGuess, todaysAnswer, difficulties, onReset, settingsStartOpen = -1 }: GuessContainerProps) {
 
   const [displayedCategories, setDisplayedCategories] = useState([...DISPLAYED_CATEGORIES]);
 
@@ -149,7 +151,8 @@ export default function GuessContainer({ allCharacterData, history, onGuess, tod
           difficultyLevels={difficulties} 
           resetFunc={onReset} 
           toggleCategoryFunc={toggleCategory} 
-          displayedCategories={displayedCategories}>
+          displayedCategories={displayedCategories}
+          settingsStartOpen={settingsStartOpen}>
       </GuessBox>
       <Guesses allCharacterData={allCharacterData} history={history} todaysAnswer={todaysAnswer}></Guesses>
       
@@ -159,7 +162,7 @@ export default function GuessContainer({ allCharacterData, history, onGuess, tod
 
 
 
-function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetFunc, toggleCategoryFunc, displayedCategories }: GuessBoxProps) {
+function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetFunc, toggleCategoryFunc, displayedCategories, settingsStartOpen = -1 }: GuessBoxProps) {
   const [settings, setSettings] = useState({
     difficultyCheckbox1: difficultyLevels.includes(1),
     difficultyCheckbox2: difficultyLevels.includes(2),
@@ -185,6 +188,7 @@ function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetF
             charData={allCharacterData} 
             toggleCategoryFunc={toggleCategoryFunc} 
             displayedCategories={displayedCategories}/>
+            startOpen={settingsStartOpen}
       </div>
     </div>
 );
