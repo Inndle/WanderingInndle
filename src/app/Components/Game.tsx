@@ -111,7 +111,7 @@ function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
           </button>
           <button
             onClick={() => {
-              onClose; 
+              onClose(); 
               setIsSettingsOpen(true);
             }}
             className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
@@ -121,7 +121,7 @@ function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
 
           <button
             onClick={() => {
-              onClose;
+              onClose();
               setSettingsPage(1);
               setIsSettingsOpen(true);
             }}
