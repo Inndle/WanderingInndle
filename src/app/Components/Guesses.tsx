@@ -154,7 +154,8 @@ export default function GuessContainer({ allCharacterData, history, onGuess, tod
           displayedCategories={displayedCategories}
           settingsStartOpen={settingsStartOpen}>
       </GuessBox>
-      <Guesses allCharacterData={allCharacterData} history={history} todaysAnswer={todaysAnswer}></Guesses>
+      {history.length > 0 &&
+       <Guesses allCharacterData={allCharacterData} history={history} todaysAnswer={todaysAnswer}></Guesses>}
       
     </div>
   )
