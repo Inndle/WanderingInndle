@@ -39,7 +39,7 @@ function fnv1aHash(str: string, maxRange: number): number {
     hash *= 16777619; // FNV prime
   }
   console.log(hash);
-  console.log(number);
+  console.log(maxRange);
   return Math.abs(hash) % maxRange;
 }
 
