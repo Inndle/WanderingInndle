@@ -18,11 +18,13 @@ interface SettingsModalProps {
     allCharacterData: Map<string, string[]>;
     toggleCategoryFunc: (category: string) => void
     displayedCategories: string[]
+    settingsPage?: number; 
 }
 
-export default function SettingsModal({ onClose, initialSettings, onSettingsChange, resetFunction, allCharacterData, toggleCategoryFunc, displayedCategories }: SettingsModalProps) {
+export default function SettingsModal({ onClose, initialSettings, onSettingsChange, resetFunction, allCharacterData, toggleCategoryFunc, displayedCategories, settingsPage = 0}: SettingsModalProps) {
     const [settings, setSettings] = useState(initialSettings);
-    const [activeTab, setActiveTab] = useState("rules");
+    const tabOptions = ["rules", "categories", "difficulties"];
+    const [activeTab, setActiveTab] = useState(tabOptions[settingsPage]);
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
         const { name, checked } = event.target;
@@ -175,12 +177,14 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                                 "Mentions", "Introduced", "Gender", "Species", "Status",
                                 "Affiliation", "Continent", "Residence", "Occupation", "Fighting Type"
                             ].map((category) => (
-                                <label key={category} className="flex items-center space-x-2">
+                                <label key={category} className="flex items-center space-x-2 text-base">
                                     <input
                                         type="checkbox"
                                         name={`${category.toLowerCase().replace(/\s/g, "")}Checkbox`}
                                         checked={displayedCategories.includes(category)}
                                         onChange={() => toggleCategoryFunc(category)}
+                                        className="w-5 h-5 accent-blue-600"
+
                                     />
                                     <span>{category}</span>
                                 </label>
@@ -214,7 +218,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                         </div>
                         <button
                             onClick={handleResetClick}
-                            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-xl transition"
+                            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition"
                         >
                             Save & Reset
                         </button>

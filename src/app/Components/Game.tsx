@@ -42,6 +42,8 @@ function sha256ToBigInt(data: string): bigint {
 
 
 function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [settingsPage, setSettingsPage] = useState(0); 
 
   const enabledLevels: number[] = [1, 2, 3];
 
@@ -106,6 +108,26 @@ function Modal({ onClose, resetFunc, allCharacterData }: ModalProps) {
             className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
           >
             Free Play
+          </button>
+          <button
+            onClick={() => {
+              onClose; 
+              setIsSettingsOpen(true);
+            }}
+            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+          >
+            Open Rules
+          </button>
+
+          <button
+            onClick={() => {
+              onClose;
+              setSettingsPage(1);
+              setIsSettingsOpen(true);
+            }}
+            className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-yellow-600 transition"
+          >
+            Spoiler Controls
           </button>
         </div>
       </div>
