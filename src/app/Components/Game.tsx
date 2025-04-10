@@ -172,7 +172,6 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
         setGiveUp={setGiveUp}
         settingsStartOpen={settingsPage}
         settingsModalFunc={setSettingsPage}
-        maxVolume={maxVolume}
       />
     </div>
   );

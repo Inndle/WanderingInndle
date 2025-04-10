@@ -20,8 +20,6 @@ interface SettingsModalProps {
     displayedCategories: string[]
     settingsPage?: number;
     settingsModalFunc: (page: number) => void;
-    maxVolume: number;
-
 }
 
 const categoryLabels: Record<string, string> = {
@@ -32,7 +30,7 @@ const categoryLabels: Record<string, string> = {
     Residence: "Residence (Medium Spoilers)",
 };
 
-export default function SettingsModal({ onClose, initialSettings, onSettingsChange, resetFunction, allCharacterData, toggleCategoryFunc, displayedCategories, settingsPage = 0, settingsModalFunc, maxVolume }: SettingsModalProps) {
+export default function SettingsModal({ onClose, initialSettings, onSettingsChange, resetFunction, allCharacterData, toggleCategoryFunc, displayedCategories, settingsPage = 0, settingsModalFunc }: SettingsModalProps) {
     const [settings, setSettings] = useState(initialSettings);
     const tabOptions = ["rules", "categories", "difficulties"];
     const [activeTab, setActiveTab] = useState(tabOptions[settingsPage]);
