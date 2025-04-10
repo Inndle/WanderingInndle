@@ -221,7 +221,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                                     id="dropdown"
                                     value={dropdownValue}
                                     onChange={(e) => setDropdownValue(Number(e.target.value))}
-                                    className="border border-gray-300 rounded-md p-2 text-base mb-2"
+                                    className="border border-gray-300 rounded-md p-2 text-base mb-2 ml-2"
                                 >
                                     {[...Array(10)].map((_, index) => (
                                         <option key={index + 1} value={index + 1}>
