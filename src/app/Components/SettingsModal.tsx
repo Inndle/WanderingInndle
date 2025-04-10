@@ -210,13 +210,13 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                         </div>
                         <div className="mt-6 flex flex-col items-center">
                             <label htmlFor="dropdown" className="mb-2 font-medium text-base">
-                                Select a number (1–10):
+                                Max volume:
                             </label>
                             <select
                                 id="dropdown"
                                 value={dropdownValue}
                                 onChange={(e) => setDropdownValue(Number(e.target.value))}
-                                className="border border-gray-300 rounded-md p-2 text-base"
+                                className="border border-gray-300 rounded-md p-2 text-base mb-2"
                             >
                                 {[...Array(10)].map((_, index) => (
                                     <option key={index + 1} value={index + 1}>
