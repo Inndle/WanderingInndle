@@ -10,22 +10,24 @@ interface GuessContainerProps {
   onGuess: (guess: string) => void,
   todaysAnswer: string,
   difficulties: number[],
-  onReset: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void, // Accept reset function
+  onReset: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number) => void;
   setGiveUp: (state: boolean) => void,
   settingsStartOpen?: number;
   settingsModalFunc: (page: number) => void;
+  maxVolume: number;
 }
 interface GuessBoxProps {
   allCharacterData: Map<string, string[]>,
   history: string[],
   onGuess: (guess: string) => void,
   difficultyLevels: number[],
-  resetFunc: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void,
+  resetFunc: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number) => void;
   toggleCategoryFunc: (category: string) => void,
   displayedCategories: string[],
   setGiveUp: (state: boolean) => void,
   settingsStartOpen?: number;
   settingsModalFunc: (page: number) => void;
+  maxVolume: number;
 }
 
 interface GiveUpModalProps {
@@ -123,13 +125,13 @@ const DEBUGGING = true;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //// Begin component declaration
-export default function GuessContainer({ allCharacterData, history, onGuess, todaysAnswer, difficulties, onReset, setGiveUp, settingsStartOpen = -1, settingsModalFunc }: GuessContainerProps) {
+export default function GuessContainer({ allCharacterData, history, onGuess, todaysAnswer, difficulties, onReset, setGiveUp, settingsStartOpen = -1, settingsModalFunc, maxVolume }: GuessContainerProps) {
 
   const [displayedCategories, setDisplayedCategories] = useState([...DISPLAYED_CATEGORIES]);
 
   const toggleCategory = (category: string) => {
     let updatedCategories;
-    
+
     if (displayedCategories.includes(category)) {
       // Remove the category
       updatedCategories = displayedCategories.filter((c) => c !== category);
@@ -153,28 +155,29 @@ export default function GuessContainer({ allCharacterData, history, onGuess, tod
 
   return (
     <div className="guess-container flex flex-col items-center justify-center w-full">
-      <GuessBox 
-          allCharacterData={allCharacterData} 
-          history={history} 
-          onGuess={onGuess} 
-          difficultyLevels={difficulties} 
-          resetFunc={onReset} 
-          toggleCategoryFunc={toggleCategory} 
-          displayedCategories={displayedCategories}
-          setGiveUp={setGiveUp}
-          settingsStartOpen={settingsStartOpen}
-          settingsModalFunc={settingsModalFunc}>
+      <GuessBox
+        allCharacterData={allCharacterData}
+        history={history}
+        onGuess={onGuess}
+        difficultyLevels={difficulties}
+        resetFunc={onReset}
+        toggleCategoryFunc={toggleCategory}
+        displayedCategories={displayedCategories}
+        setGiveUp={setGiveUp}
+        settingsStartOpen={settingsStartOpen}
+        settingsModalFunc={settingsModalFunc}
+        maxVolume={maxVolume}>
       </GuessBox>
       {history.length > 0 &&
-       <Guesses allCharacterData={allCharacterData} history={history} todaysAnswer={todaysAnswer}></Guesses>}
-      
+        <Guesses allCharacterData={allCharacterData} history={history} todaysAnswer={todaysAnswer}></Guesses>}
+
     </div>
   )
 }
 
 
 
-function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetFunc, setGiveUp, toggleCategoryFunc, displayedCategories, settingsStartOpen = -1, settingsModalFunc }: GuessBoxProps) {
+function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetFunc, setGiveUp, toggleCategoryFunc, displayedCategories, settingsStartOpen = -1, settingsModalFunc, maxVolume }: GuessBoxProps) {
   const [settings, setSettings] = useState({
     difficultyCheckbox1: difficultyLevels.includes(1),
     difficultyCheckbox2: difficultyLevels.includes(2),
@@ -189,25 +192,26 @@ function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetF
 
   const [giveUpIsOpen, setGiveUpIsOpen] = useState(false);
 
-  
+
   return (
     <div className="guessbox relative flex justify-center w-2/3 my-4">
       <InputContainer allCharacterData={allCharacterData} history={history} onGuess={onGuess} />
-      
+
       <div className="absolute top-0 right-0">
-        <SettingsGear 
-            settings={settings} 
-            onSettingsChange={handleSettingsChange} 
-            resetFunction={resetFunc} 
-            charData={allCharacterData} 
-            toggleCategoryFunc={toggleCategoryFunc} 
-            displayedCategories={displayedCategories}
-            startOpen={settingsStartOpen}
-            settingsModalFunc={settingsModalFunc}/>
+        <SettingsGear
+          settings={settings}
+          onSettingsChange={handleSettingsChange}
+          resetFunction={resetFunc}
+          charData={allCharacterData}
+          toggleCategoryFunc={toggleCategoryFunc}
+          displayedCategories={displayedCategories}
+          startOpen={settingsStartOpen}
+          settingsModalFunc={settingsModalFunc}
+          maxVolume={maxVolume} />
       </div>
       {history.length > 4 && <div className="absolute top-0 left-0">
         <button
-          onClick={() => {setGiveUpIsOpen(true)}}
+          onClick={() => { setGiveUpIsOpen(true) }}
           className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
         >
           Give Up
@@ -215,36 +219,36 @@ function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetF
       </div>}
       {giveUpIsOpen && <GiveUpModal
         setGiveUp={setGiveUp}
-        onClose={() => setGiveUpIsOpen(false)}/>}
-  </div>
-);
+        onClose={() => setGiveUpIsOpen(false)} />}
+    </div>
+  );
 }
 
 
 
-function GiveUpModal({setGiveUp, onClose}: GiveUpModalProps) {
+function GiveUpModal({ setGiveUp, onClose }: GiveUpModalProps) {
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
-        <div className="relative bg-white p-6 rounded-lg shadow-lg w-[14rem] min-h-[2rem]">
-            <button
-                onClick={onClose}
-                className="absolute top-2 right-2 text-gray-700 hover:text-black bg-transparent p-1 text-2xl"
-            >
-                &times;
-            </button>
-            <h2 className="text-lg font-semibold text-center mb-4">Are you sure you want to give up?</h2>
-          <div className="mt-6 flex justify-center">
-            <button
-                  onClick={() => {setGiveUp(true); onClose();}}
-                  className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
-              >
-                  Give Up
-            </button>
-          </div>
+      <div className="relative bg-white p-6 rounded-lg shadow-lg w-[14rem] min-h-[2rem]">
+        <button
+          onClick={onClose}
+          className="absolute top-2 right-2 text-gray-700 hover:text-black bg-transparent p-1 text-2xl"
+        >
+          &times;
+        </button>
+        <h2 className="text-lg font-semibold text-center mb-4">Are you sure you want to give up?</h2>
+        <div className="mt-6 flex justify-center">
+          <button
+            onClick={() => { setGiveUp(true); onClose(); }}
+            className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+          >
+            Give Up
+          </button>
         </div>
+      </div>
     </div>
   );
-} 
+}
 
 
 
@@ -285,7 +289,7 @@ function Guesses({ allCharacterData, history, todaysAnswer }: GuessesProps) {
   return (
     <div className="guesses-container flex flex-col justify-center">
       <div className="category-bar grid grid-cols-11 mb-4 flex"
-            style={{ gridTemplateColumns: `repeat(${DISPLAYED_CATEGORIES.length}, minmax(0, 1fr))` }}
+        style={{ gridTemplateColumns: `repeat(${DISPLAYED_CATEGORIES.length}, minmax(0, 1fr))` }}
       >
         {DISPLAYED_CATEGORIES.map((category, index) => (
           <div key={index} className="w-24 h-12 category-title border-0">
@@ -328,9 +332,9 @@ function Guess({ todaysAnswer, allCharacterData, guess }: GuessProps) {
   // Dynamically populate the guess row with the correct response according to given guess
   return (
     <div
-  className="guess grid gap-2 rounded-lg w-full mb-4 text-white"
-  style={{ gridTemplateColumns: `repeat(${DISPLAYED_CATEGORIES.length}, minmax(0, 1fr))` }}
->
+      className="guess grid gap-2 rounded-lg w-full mb-4 text-white"
+      style={{ gridTemplateColumns: `repeat(${DISPLAYED_CATEGORIES.length}, minmax(0, 1fr))` }}
+    >
       {
         DISPLAYED_CATEGORIES.map((category, index) => {
           const responseDetail = allResponses.get(category);
@@ -395,12 +399,12 @@ function Guess({ todaysAnswer, allCharacterData, guess }: GuessProps) {
         }
         if (name === "Introduced") {
           return <div className={generic_styling + scalarStyling}>
-                   <span>{"Vol. " + content}</span>
-                 </div>
+            <span>{"Vol. " + content}</span>
+          </div>
         } else {
           return <div className={generic_styling + scalarStyling}>
-                   <span>{content}</span>
-                 </div>
+            <span>{content}</span>
+          </div>
         }
 
       case "Binary":
@@ -414,8 +418,8 @@ function Guess({ todaysAnswer, allCharacterData, guess }: GuessProps) {
             break;
         }
         return <div className={generic_styling + binaryStyling}>
-                 <span>{content}</span>
-               </div>
+          <span>{content}</span>
+        </div>
 
       case "Category":
         let categoryStyling = "";
@@ -455,8 +459,8 @@ function Guess({ todaysAnswer, allCharacterData, guess }: GuessProps) {
 
         }
         return <div className={generic_styling + categoryStyling}>
-                  <span>{content}</span>
-               </div>
+          <span>{content}</span>
+        </div>
     }
   }
 
@@ -614,7 +618,7 @@ function compareDetails({ guessMap, answerMap }:
 
         response.set(category, binaryAns)
         break;
-        
+
       // Respond with whether there are some entries that overlap or not
       case "Category":
         let categoryAns: string = ""

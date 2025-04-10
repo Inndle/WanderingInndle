@@ -1,15 +1,16 @@
 interface WinScreenProps {
   todaysAnswer: string, 
   history: string[], 
-  onFreePlay: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void,
+  onFreePlay: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number) => void,
   daily: boolean,
   characterData: Map<string, string[]>,
   difficulties: number[],
   gaveUp: boolean,
   setGiveUp: (state: boolean) => void;
+  maxVolume: number;
 }
 
-export default function WinScreen({todaysAnswer, history, onFreePlay, daily, characterData, difficulties, gaveUp, setGiveUp}: WinScreenProps) {
+export default function WinScreen({todaysAnswer, history, onFreePlay, daily, characterData, difficulties, gaveUp, setGiveUp, maxVolume}: WinScreenProps) {
   // Helper function to generate a new character 
   const handleResetClick = () => {
         if (difficulties.length === 0) {
@@ -18,7 +19,7 @@ export default function WinScreen({todaysAnswer, history, onFreePlay, daily, cha
         }
 
         const filteredKeys = Array.from(characterData.entries())
-            .filter(([, values]) => values[11] !== undefined && difficulties.includes(Number(values[11])))
+            .filter(([, values]) => values[11] !== undefined && difficulties.includes(Number(values[11])) && Number(values[13]) <= maxVolume)
             .map(([key]) => key);
 
         if (filteredKeys.length > 0) {

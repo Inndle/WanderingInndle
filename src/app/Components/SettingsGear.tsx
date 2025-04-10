@@ -15,16 +15,17 @@ interface SettingsGearProps {
         difficultyCheckbox3: boolean;
         difficultyCheckbox4: boolean;
     }) => void;
-    resetFunction: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void; // Accept reset function
+    resetFunction: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number) => void; // Accept reset function
     charData: Map<string, string[]>;
     toggleCategoryFunc: (category: string) => void;
     displayedCategories: string[];
     startOpen: number;
     settingsModalFunc: (page: number) => void;
+    maxVolume: number;
 
 }
 
-export default function SettingsGear({ settings, onSettingsChange, resetFunction, charData, toggleCategoryFunc, displayedCategories, startOpen, settingsModalFunc }: SettingsGearProps) {
+export default function SettingsGear({ settings, onSettingsChange, resetFunction, charData, toggleCategoryFunc, displayedCategories, startOpen, settingsModalFunc, maxVolume }: SettingsGearProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [page, setPage] = useState<number>(0);
 
@@ -56,6 +57,7 @@ export default function SettingsGear({ settings, onSettingsChange, resetFunction
                     displayedCategories={displayedCategories}
                     settingsPage={page}
                     settingsModalFunc={settingsModalFunc}
+                    maxVolume={maxVolume}
                 />
             )}
         </>

@@ -11,13 +11,14 @@ interface GameProps {
   todaysAnswer: string;
   allCharacterData: Map<string, string[]>;
   initialDifficulties: number[];
-  onReset: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void;
+  onReset: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number) => void;
   showModal: boolean;
+  maxVolume: number;
 }
 
 interface ModalProps {
   onClose: () => void;
-  resetFunc: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void;
+  resetFunc: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number) => void;
   setDaily: (state: boolean) => void;
   settingsModalFunc: (page: number) => void;
   allCharacterData: Map<string, string[]>;
@@ -79,7 +80,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
         {/* Action Buttons */}
         <div className="grid grid-cols-2 gap-4">
           <button
-            onClick={() => {resetFunc(dailyAnswer, enabledLevels, false); setDaily(true)}}
+            onClick={() => { resetFunc(dailyAnswer, enabledLevels, false); setDaily(true) }}
             className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
           >
             Daily Challenge
@@ -113,7 +114,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
   );
 }
 
-export default function Game({ todaysAnswer, allCharacterData, initialDifficulties, onReset, showModal }: GameProps) {
+export default function Game({ todaysAnswer, allCharacterData, initialDifficulties, onReset, showModal, maxVolume }: GameProps) {
   const [history, setHistory] = useState<string[]>([]);
   const [finished, setFinished] = useState(false);
   const [showTheModal, setShowTheModal] = useState(showModal);
@@ -158,6 +159,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
           difficulties={initialDifficulties}
           gaveUp={giveUp}
           setGiveUp={setGiveUp}
+          maxVolume={maxVolume}
         />
       )}
       <GuessContainer
@@ -170,6 +172,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
         setGiveUp={setGiveUp}
         settingsStartOpen={settingsPage}
         settingsModalFunc={setSettingsPage}
+        maxVolume={maxVolume}
       />
     </div>
   );
