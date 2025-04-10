@@ -59,13 +59,13 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
      * @param newShowModal 
      * returns nothing
      */
-    function resetGame(newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number) {
+    function resetGame(newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVol?: number) {
       setTodaysAnswer(newAnswer || initialAnswer);
       setDifficulties(newDifficulties || initialDifficulties);
       console.log("ShowModal1", newShowModal)
       setShowModal(newShowModal ?? true);
       setGameKey((prevKey) => prevKey + 1);
-      setMaxVolume(maxVolume ?? 10)
+      setMaxVolume(maxVol ?? maxVolume)
     }
     
     console.log("showModal2", showModal)
