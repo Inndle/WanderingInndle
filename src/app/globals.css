@@ -27,5 +27,33 @@ body {
     clip-path: polygon(97% 40%, 80% 40%, 80% 95%, 20% 95%, 20% 40%, 3% 40%, 50% 5%);
 
 }
+}
 
+@keyframes flipIn {
+  0% {
+    transform: rotateX(180deg);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.animate-flip-in {
+  animation-name: flipIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  animation-timing-function: ease-out;
+  opacity: 0;
+  visibility: hidden; 
+}
+
+.flip-card {  
+  perspective: 1000px;
+  transform-style: preserve-3d;
 }
