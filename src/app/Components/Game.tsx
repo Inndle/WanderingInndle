@@ -120,6 +120,8 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
   const [showTheModal, setShowTheModal] = useState(showModal);
   const [giveUp, setGiveUp] = useState(false);
   const [isDaily, setIsDaily] = useState(false);
+  const [showInfoModal, setShowInfoModal] = useState(false);
+
 
   const [settingsPage, setSettingsPage] = useState(-1);
 
@@ -134,6 +136,25 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
     }
   }
 
+  function InfoModal({ onClose }: { onClose: () => void }) {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+        <div className="bg-white p-6 rounded-2xl shadow-lg max-w-md w-full text-left relative">
+          <button
+            onClick={onClose}
+            className="absolute top-2 left-2 text-gray-700 hover:text-black bg-transparent p-2 text-2xl"
+          >
+            &times;
+          </button>
+          <h2 className="text-xl font-bold mb-4">What is Inndle?</h2>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            Inndle is a daily character-guessing game. Use the clues to guess who it is!
+            Free play mode lets you try other characters at different difficulty levels.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="game flex flex-col items-center relative px-4">
@@ -146,6 +167,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
           allCharacterData={allCharacterData}
         />
       )}
+      {showInfoModal && <InfoModal onClose={() => setShowInfoModal(false)} />}
       <div className="flex justify-center mb-4 w-full">
         <img src={background_img.src} alt="Background" className="w-full max-w-md rounded-2xl" />
       </div>
@@ -174,6 +196,14 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
         settingsModalFunc={setSettingsPage}
         maxVolume={maxVolume}
       />
+      <div className="my-4 flex justify-center">
+        <button
+          onClick={() => setShowInfoModal(true)}
+          className="w-14 h-14 rounded-full shadow-lg bg-white hover:bg-gray-200 transition flex items-center justify-center"
+        >
+          <img src="../infoButton.png" alt="Info" className="w-6 h-6" />
+        </button>
+      </div>
     </div>
   );
 }
