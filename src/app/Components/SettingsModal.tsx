@@ -89,24 +89,23 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
 
                 {/* Tab Navigation */}
                 <div className="flex border-b mb-4">
-                    <button
-                        className={`flex-1 p-2 ${activeTab === "rules" ? "border-b-2 border-blue-500 font-bold" : "text-gray-500"}`}
-                        onClick={() => setActiveTab("rules")}
-                    >
-                        Rules
-                    </button>
-                    <button
-                        className={`flex-1 p-2 ${activeTab === "categories" ? "border-b-2 border-blue-500 font-bold" : "text-gray-500"}`}
-                        onClick={() => setActiveTab("categories")}
-                    >
-                        Categories Settings
-                    </button>
-                    <button
-                        className={`flex-1 p-2 ${activeTab === "difficulties" ? "border-b-2 border-blue-500 font-bold" : "text-gray-500"}`}
-                        onClick={() => setActiveTab("difficulties")}
-                    >
-                        Difficulty Settings
-                    </button>
+                    {tabOptions.map((tabKey) => (
+                        <button
+                            key={tabKey}
+                            className={`flex-1 p-2 text-center transition font-medium ${
+                                activeTab === tabKey
+                                    ? "bg-gray-200 text-black border-b-2 border-blue-500"
+                                    : "text-gray-500 hover:bg-gray-100"
+                            }`}
+                            onClick={() => setActiveTab(tabKey)}
+                        >
+                            {tabKey === "rules"
+                                ? "Rules"
+                                : tabKey === "categories"
+                                ? "Spoiler Settings"
+                                : "Difficulty Settings"}
+                        </button>
+                    ))}
                 </div>
 
                 {/* Rules Tab Content */}
@@ -128,7 +127,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                         <p className="mb-4">
                             You can customize which columns are shown (to avoid spoilers!) on the next page,
                             and pick your difficulty on the one after that. Difficulties are subjective —
-                            <em>Hard</em> is usually the best we can do, but maybe you’re better than us!
+                            <em> Hard</em> is usually the best we can do, but maybe you’re better than us!
                         </p>
 
                         <h2 className="text-lg font-semibold text-center mb-4">Column Definitions</h2>
@@ -205,26 +204,32 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                                         className="w-5 h-5 accent-blue-600"
 
                                     />
-                                    <span>{categoryLabels[category] || category}</span>
+                                    {categoryLabels[category] ? 
+                                    (
+                                        <span className="text-sm">{categoryLabels[category]}</span>
+                                    ) :
+                                    (
+                                        <span>{ category }</span>
+                                    )}
                                 </label>
                             ))}
                         </div>
                         <div className="mt-6 flex flex-col items-center">
-                            <label htmlFor="dropdown" className="mb-2 font-medium text-base">
-                                Max volume:
-                            </label>
-                            <select
-                                id="dropdown"
-                                value={dropdownValue}
-                                onChange={(e) => setDropdownValue(Number(e.target.value))}
-                                className="border border-gray-300 rounded-md p-2 text-base mb-2"
-                            >
-                                {[...Array(10)].map((_, index) => (
-                                    <option key={index + 1} value={index + 1}>
-                                        {index + 1}
-                                    </option>
-                                ))}
-                            </select>
+                        <h2 className="text-lg font-semibold text-center mb-2">Included Volumes</h2>
+                            <div> Max Volume:
+                                <select
+                                    id="dropdown"
+                                    value={dropdownValue}
+                                    onChange={(e) => setDropdownValue(Number(e.target.value))}
+                                    className="border border-gray-300 rounded-md p-2 text-base mb-2 ml-2"
+                                >
+                                    {[...Array(10)].map((_, index) => (
+                                        <option key={index + 1} value={index + 1}>
+                                            Volume {index + 1}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div> 
                         </div>
                         <button
                             onClick={handleResetClick}
