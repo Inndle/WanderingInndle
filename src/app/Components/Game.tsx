@@ -147,10 +147,12 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
           >
             &times;
           </button>
-          <h2 className="text-xl font-bold mb-4">What is Inndle?</h2>
+          <h2 className="text-xl font-bold mb-4">About</h2>
           <p className="text-gray-700 text-sm leading-relaxed">
-            Inndle is a daily character-guessing game. Use the clues to guess who it is!
-            Free play mode lets you try other characters at different difficulty levels.
+            Inndle is a daily character-guessing game featuring characters from the web serial The Wandering Inn by Pirateaba.
+
+            This project is not endorsed nor sponsored by Pirateaba.
+
           </p>
         </div>
       </div>
