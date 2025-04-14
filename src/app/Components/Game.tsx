@@ -143,7 +143,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
         <div className="bg-white p-6 rounded-2xl shadow-lg max-w-md w-full text-left relative">
           <button
             onClick={onClose}
-            className="absolute top-2 left-2 text-gray-700 hover:text-black bg-transparent p-2 text-2xl"
+            className="absolute top-2 right-2 text-gray-700 hover:text-black bg-transparent p-2 text-2xl"
           >
             &times;
           </button>
@@ -175,9 +175,9 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
       <div className="absolute top-4 right-4">
         <button
           onClick={() => setShowInfoModal(true)}
-          className="w-14 h-14 rounded-full shadow-lg bg-white hover:bg-gray-200 transition flex items-center justify-center"
+          className="w-14 h-14 rounded-full shadow-lg bg-white hover:bg-gray-200 transition flex items-center justify-center overflow-hidden"
         >
-          <img src={buttonImage.src} alt="Info" className="w-6 h-6" />
+          <img src={buttonImage.src} alt="Info" className="w-full h-full object-cover scale-125" />
         </button>
       </div>
       {(finished || giveUp) && (
