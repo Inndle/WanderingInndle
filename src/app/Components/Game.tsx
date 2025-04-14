@@ -151,8 +151,13 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
           <p className="text-gray-700 text-sm leading-relaxed">
             Inndle is a daily character-guessing game featuring characters from the web serial The Wandering Inn by Pirateaba.
           </p>
+
           <p className="text-gray-700 text-sm leading-relaxed">
             This project is not endorsed nor sponsored by Pirateaba.
+          </p>
+
+          <p className="text-gray-700 text-sm leading-relaxed">
+            Created by CalvinWill, SppEric, and samf25 on Github.
           </p>
         </div>
       </div>
