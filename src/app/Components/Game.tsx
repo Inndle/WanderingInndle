@@ -175,7 +175,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
       <div className="absolute top-4 right-4">
         <button
           onClick={() => setShowInfoModal(true)}
-          className="w-14 h-14 rounded-full shadow-lg bg-white hover:bg-gray-200 transition flex items-center justify-center overflow-hidden"
+          className="w-11 h-11 rounded-full shadow-lg bg-white hover:bg-gray-200 transition flex items-center justify-center overflow-hidden"
         >
           <img src={buttonImage.src} alt="Info" className="w-full h-full object-cover scale-125" />
         </button>
