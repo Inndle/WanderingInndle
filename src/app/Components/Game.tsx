@@ -172,6 +172,14 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
       <div className="flex justify-center mb-4 w-full">
         <img src={background_img.src} alt="Background" className="w-full max-w-md rounded-2xl" />
       </div>
+      <div className="absolute top-4 right-4">
+        <button
+          onClick={() => setShowInfoModal(true)}
+          className="w-14 h-14 rounded-full shadow-lg bg-white hover:bg-gray-200 transition flex items-center justify-center"
+        >
+          <img src={buttonImage.src} alt="Info" className="w-6 h-6" />
+        </button>
+      </div>
       {(finished || giveUp) && (
         <WinScreen
           todaysAnswer={todaysAnswer}
@@ -197,14 +205,6 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
         settingsModalFunc={setSettingsPage}
         maxVolume={maxVolume}
       />
-      <div className="my-4 flex justify-center">
-        <button
-          onClick={() => setShowInfoModal(true)}
-          className="w-14 h-14 rounded-full shadow-lg bg-white hover:bg-gray-200 transition flex items-center justify-center"
-        >
-          <img src={buttonImage.src} alt="Info" className="w-6 h-6" />
-        </button>
-      </div>
     </div>
   );
 }
