@@ -4,6 +4,7 @@ import { useState } from "react";
 import GuessContainer from "./Guesses";
 import WinScreen from "./WinScreen";
 import background_img from "../twi-logo-fancy.png";
+import buttonImage from "../infoButton.png";
 import { createHash } from 'crypto';
 
 
@@ -201,7 +202,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
           onClick={() => setShowInfoModal(true)}
           className="w-14 h-14 rounded-full shadow-lg bg-white hover:bg-gray-200 transition flex items-center justify-center"
         >
-          <img src="../infoButton.png" alt="Info" className="w-6 h-6" />
+          <img src={buttonImage.src} alt="Info" className="w-6 h-6" />
         </button>
       </div>
     </div>
