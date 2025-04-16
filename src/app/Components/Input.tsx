@@ -103,10 +103,12 @@ function InputBar({ allCharacterData, history, onGuess }: InputContainerProps) {
                                     onClick={() => handleClick(option)}
                                     className="p-2 text-white cursor-pointer hover:bg-cyan-600"
                                 >
-                                    {firstAlias}
-                                    {showMatched && (
-                                        <span className="text-sm text-gray-400 ml-1">({matchedAlias})</span>
-                                    )}
+                                    <div className="leading-tight">
+                                        <div>{firstAlias}</div>
+                                        {showMatched && (
+                                            <div className="text-sm text-gray-400">{matchedAlias}</div>
+                                        )}
+                                    </div>
                                 </li>
                             );
                         });
