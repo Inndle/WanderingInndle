@@ -95,7 +95,7 @@ function InputBar({ allCharacterData, history, onGuess }: InputContainerProps) {
                             const firstAlias = aliases[0] || option;
 
                             const matchedAlias = aliases.find(alias => alias.toLowerCase().includes(lowerInput));
-                            const showMatched = matchedAlias && !option.toLowerCase().includes(matchedAlias.toLowerCase());
+                            const showMatched = matchedAlias && !firstAlias.toLowerCase().includes(matchedAlias.toLowerCase());
 
                             return (
                                 <li
@@ -104,7 +104,9 @@ function InputBar({ allCharacterData, history, onGuess }: InputContainerProps) {
                                     className="p-2 text-white cursor-pointer hover:bg-cyan-600"
                                 >
                                     {firstAlias}
-                                    {showMatched ? ` (${matchedAlias})` : ""}
+                                    {showMatched && (
+                                        <span className="text-sm text-gray-400 ml-1">({matchedAlias})</span>
+                                    )}
                                 </li>
                             );
                         });
