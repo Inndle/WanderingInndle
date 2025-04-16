@@ -12,7 +12,7 @@ const DEBUGGING = false;
 export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
     // Set defaults for game start
     const initialDifficulties: number[] = [1, 2, 3];
-    //const initialMaxVolume: number = 10;
+    const initialMaxVolume: number = 10;
 
     // Create an initial answer based on the defaults
     const filteredData = new Map(
@@ -42,7 +42,7 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
     // Initialize state based on calculated defaults
     const [todaysAnswer, setTodaysAnswer] = useState(initialAnswer);
     const [difficulties, setDifficulties] = useState(initialDifficulties);
-    //const [maxVolume, setMaxVolume] = useState(initialMaxVolume);
+    const [maxVolume, setMaxVolume] = useState(initialMaxVolume);
     const [gameKey, setGameKey] = useState(0);
     const [showModal, setShowModal] = useState(true);
   
@@ -59,12 +59,13 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
      * @param newShowModal 
      * returns nothing
      */
-    function resetGame(newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) {
+    function resetGame(newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVol?: number) {
       setTodaysAnswer(newAnswer || initialAnswer);
       setDifficulties(newDifficulties || initialDifficulties);
       console.log("ShowModal1", newShowModal)
       setShowModal(newShowModal ?? true);
       setGameKey((prevKey) => prevKey + 1);
+      setMaxVolume(maxVol ?? maxVolume)
     }
     
     console.log("showModal2", showModal)
@@ -75,7 +76,8 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
         allCharacterData={allCharacterData}
         initialDifficulties={difficulties}
         onReset={resetGame} // Pass down reset function
-        showModal={showModal} // Pass down showModal state
+        showModal={showModal}
+        maxVolume={maxVolume} // Pass down showModal state
       />
     );
 }

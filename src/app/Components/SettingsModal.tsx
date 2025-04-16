@@ -14,13 +14,13 @@ interface SettingsModalProps {
         difficultyCheckbox3: boolean;
         difficultyCheckbox4: boolean;
     }) => void;
-    resetFunction: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean) => void;
+    resetFunction: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number) => void;
     allCharacterData: Map<string, string[]>;
     toggleCategoryFunc: (category: string) => void
     displayedCategories: string[]
-    settingsPage?: number; 
+    settingsPage?: number;
     settingsModalFunc: (page: number) => void;
-
+    maxVolume: number;
 }
 
 const categoryLabels: Record<string, string> = {
@@ -29,12 +29,14 @@ const categoryLabels: Record<string, string> = {
     Affiliation: "Affiliation (Major Spoilers)",
     Continent: "Continent (Medium Spoilers)",
     Residence: "Residence (Medium Spoilers)",
-  };
+};
 
-export default function SettingsModal({ onClose, initialSettings, onSettingsChange, resetFunction, allCharacterData, toggleCategoryFunc, displayedCategories, settingsPage = 0, settingsModalFunc}: SettingsModalProps) {
+export default function SettingsModal({ onClose, initialSettings, onSettingsChange, resetFunction, allCharacterData, toggleCategoryFunc, displayedCategories, settingsPage = 0, settingsModalFunc, maxVolume }: SettingsModalProps) {
     const [settings, setSettings] = useState(initialSettings);
     const tabOptions = ["rules", "categories", "difficulties"];
     const [activeTab, setActiveTab] = useState(tabOptions[settingsPage]);
+    const [dropdownValue, setDropdownValue] = useState(maxVolume);
+
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
         const { name, checked } = event.target;
@@ -64,12 +66,14 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
         }
 
         const filteredKeys = Array.from(allCharacterData.entries())
-            .filter(([, values]) => values[11] !== undefined && enabledLevels.includes(Number(values[11])))
+            .filter(([, values]) => values[11] !== undefined && enabledLevels.includes(Number(values[11])) && Number(values[13]) <= dropdownValue)
             .map(([key]) => key);
 
         if (filteredKeys.length > 0) {
             const randomIndex = Math.floor(Math.random() * filteredKeys.length);
-            resetFunction(filteredKeys[randomIndex], enabledLevels, false);
+            resetFunction(filteredKeys[randomIndex], enabledLevels, false, dropdownValue);
+        } else {
+            alert("There are no characters who meet your desired settings.")
         }
     };
 
@@ -85,24 +89,23 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
 
                 {/* Tab Navigation */}
                 <div className="flex border-b mb-4">
-                    <button
-                        className={`flex-1 p-2 ${activeTab === "rules" ? "border-b-2 border-blue-500 font-bold" : "text-gray-500"}`}
-                        onClick={() => setActiveTab("rules")}
-                    >
-                        Rules
-                    </button>
-                    <button
-                        className={`flex-1 p-2 ${activeTab === "categories" ? "border-b-2 border-blue-500 font-bold" : "text-gray-500"}`}
-                        onClick={() => setActiveTab("categories")}
-                    >
-                        Categories Settings
-                    </button>
-                    <button
-                        className={`flex-1 p-2 ${activeTab === "difficulties" ? "border-b-2 border-blue-500 font-bold" : "text-gray-500"}`}
-                        onClick={() => setActiveTab("difficulties")}
-                    >
-                        Difficulty Settings
-                    </button>
+                    {tabOptions.map((tabKey) => (
+                        <button
+                            key={tabKey}
+                            className={`flex-1 p-2 text-center transition font-medium ${
+                                activeTab === tabKey
+                                    ? "bg-gray-200 text-black border-b-2 border-blue-500"
+                                    : "text-gray-500 hover:bg-gray-100"
+                            }`}
+                            onClick={() => setActiveTab(tabKey)}
+                        >
+                            {tabKey === "rules"
+                                ? "Rules"
+                                : tabKey === "categories"
+                                ? "Spoiler Settings"
+                                : "Difficulty Settings"}
+                        </button>
+                    ))}
                 </div>
 
                 {/* Rules Tab Content */}
@@ -111,73 +114,73 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                         <h2 className="text-lg font-semibold text-center mb-4">Game Rules</h2>
 
                         <p className="mb-4">
-                        Choose any character from <em>The Wandering Inn</em> and try to guess them!
-                        Each column provides feedback on your guess:
+                            Choose any character from <em>The Wandering Inn</em> and try to guess them!
+                            Each column provides feedback on your guess:
                         </p>
 
                         <ul className="list-disc list-inside mb-4">
-                        <li><span className="text-green-600 font-semibold">Green</span>: Exact match</li>
-                        <li><span className="text-yellow-500 font-semibold">Yellow</span>: Partial match (subset overlap)</li>
-                        <li><span className="text-red-500 font-semibold">Red</span>: No match</li>
+                            <li><span className="text-green-600 font-semibold">Green</span>: Exact match</li>
+                            <li><span className="text-yellow-500 font-semibold">Yellow</span>: Partial match (subset overlap)</li>
+                            <li><span className="text-red-500 font-semibold">Red</span>: No match</li>
                         </ul>
 
                         <p className="mb-4">
-                        You can customize which columns are shown (to avoid spoilers!) on the next page,
-                        and pick your difficulty on the one after that. Difficulties are subjective — 
-                        <em>Hard</em> is usually the best we can do, but maybe you’re better than us!
+                            You can customize which columns are shown (to avoid spoilers!) on the next page,
+                            and pick your difficulty on the one after that. Difficulties are subjective —
+                            <em> Hard</em> is usually the best we can do, but maybe you’re better than us!
                         </p>
 
                         <h2 className="text-lg font-semibold text-center mb-4">Column Definitions</h2>
 
                         <dl className="text-sm space-y-2">
-                        <div className="flex">
-                            <dt className="font-bold w-28 shrink-0">Image:</dt>
-                            <dd>Main image from the (<a href="https://wiki.wanderinginn.com/The_Wandering_Inn_Wiki" className="text-blue-600 underline" target="_blank">wiki</a>)</dd>
-                        </div>
-                        <div className="flex">
-                            <dt className="font-bold w-28 shrink-0">Mentions:</dt>
-                            <dd>Number of mentions over all volumes (<a href="https://innwords.pallandor.com/" className="underline text-blue-600">InnWords</a>)</dd>
-                        </div>
-                        <div className="flex">
-                            <dt className="font-bold w-28 shrink-0">Introduced:</dt>
-                            <dd>Volume of first appearance (<a href="https://innwords.pallandor.com/" className="text-blue-600 underline" target="_blank">InnWords</a>)</dd>
-                        </div>
-                        <div className="flex">
-                            <dt className="font-bold w-28 shrink-0">Gender:</dt>
-                            <dd>Female, Male, or Non-binary</dd>
-                        </div>
-                        <div className="flex">
-                            <dt className="font-bold w-28 shrink-0">Species:</dt>
-                            <dd>Human, Drake, Gnoll, etc.</dd>
-                        </div>
-                        <div className="flex">
-                            <dt className="font-bold w-28 shrink-0">Status:</dt>
-                            <dd>Alive, Active, Deceased, or Unknown (up to the Palace of Fates Arc)</dd>
-                        </div>
-                        <div className="flex">
-                            <dt className="font-bold w-28 shrink-0">Affiliation:</dt>
-                            <dd>Groups, Nations, or people the character is connected to (standardized)</dd>
-                        </div>
-                        <div className="flex">
-                            <dt className="font-bold w-28 shrink-0">Continent:</dt>
-                            <dd>Avalon, Baleros, Chandrar, Drath, Isles, Izril, Kasignel, North America, Rhir, Sea, Terandria, Wistram</dd>
-                        </div>
-                        <div className="flex">
-                            <dt className="font-bold w-28 shrink-0">Residence:</dt>
-                            <dd>More specific than continent (standardized)</dd>
-                        </div>
-                        <div className="flex">
-                            <dt className="font-bold w-28 shrink-0">Occupation:</dt>
-                            <dd>General category of job (standardized)</dd>
-                        </div>
-                        <div className="flex">
-                            <dt className="font-bold w-28 shrink-0">Fighting Type:</dt>
-                            <dd>Archer, God, Leader, Mage, Non-combat, Priest, Rogue, Warrior</dd>
-                        </div>
+                            <div className="flex">
+                                <dt className="font-bold w-28 shrink-0">Image:</dt>
+                                <dd>Main image from the (<a href="https://wiki.wanderinginn.com/The_Wandering_Inn_Wiki" className="text-blue-600 underline" target="_blank">wiki</a>)</dd>
+                            </div>
+                            <div className="flex">
+                                <dt className="font-bold w-28 shrink-0">Mentions:</dt>
+                                <dd>Number of mentions over all volumes (<a href="https://innwords.pallandor.com/" className="underline text-blue-600">InnWords</a>)</dd>
+                            </div>
+                            <div className="flex">
+                                <dt className="font-bold w-28 shrink-0">Introduced:</dt>
+                                <dd>Volume of first appearance (<a href="https://innwords.pallandor.com/" className="text-blue-600 underline" target="_blank">InnWords</a>)</dd>
+                            </div>
+                            <div className="flex">
+                                <dt className="font-bold w-28 shrink-0">Gender:</dt>
+                                <dd>Female, Male, or Non-binary</dd>
+                            </div>
+                            <div className="flex">
+                                <dt className="font-bold w-28 shrink-0">Species:</dt>
+                                <dd>Human, Drake, Gnoll, etc.</dd>
+                            </div>
+                            <div className="flex">
+                                <dt className="font-bold w-28 shrink-0">Status:</dt>
+                                <dd>Alive, Active, Deceased, or Unknown (up to the Palace of Fates Arc)</dd>
+                            </div>
+                            <div className="flex">
+                                <dt className="font-bold w-28 shrink-0">Affiliation:</dt>
+                                <dd>Groups, Nations, or people the character is connected to (standardized)</dd>
+                            </div>
+                            <div className="flex">
+                                <dt className="font-bold w-28 shrink-0">Continent:</dt>
+                                <dd>Avalon, Baleros, Chandrar, Drath, Isles, Izril, Kasignel, North America, Rhir, Sea, Terandria, Wistram</dd>
+                            </div>
+                            <div className="flex">
+                                <dt className="font-bold w-28 shrink-0">Residence:</dt>
+                                <dd>More specific than continent (standardized)</dd>
+                            </div>
+                            <div className="flex">
+                                <dt className="font-bold w-28 shrink-0">Occupation:</dt>
+                                <dd>General category of job (standardized)</dd>
+                            </div>
+                            <div className="flex">
+                                <dt className="font-bold w-28 shrink-0">Fighting Type:</dt>
+                                <dd>Archer, God, Leader, Mage, Non-combat, Priest, Rogue, Warrior</dd>
+                            </div>
                         </dl>
 
                         <p className="mt-4 text-gray-600 italic">
-                        This dataset was created manually. For corrections, complaints, or contributions, email <a href="mailto:wanderinginndle@gmail.com" className="text-blue-600 underline">wanderinginndle@gmail.com</a>.
+                            This dataset was created manually. For corrections, complaints, or contributions, email <a href="mailto:wanderinginndle@gmail.com" className="text-blue-600 underline">wanderinginndle@gmail.com</a>.
                         </p>
                     </div>
                 )}
@@ -201,10 +204,39 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                                         className="w-5 h-5 accent-blue-600"
 
                                     />
-                                    <span>{categoryLabels[category] || category}</span>
+                                    {categoryLabels[category] ? 
+                                    (
+                                        <span className="text-sm">{categoryLabels[category]}</span>
+                                    ) :
+                                    (
+                                        <span>{ category }</span>
+                                    )}
                                 </label>
                             ))}
                         </div>
+                        <div className="mt-6 flex flex-col items-center">
+                        <h2 className="text-lg font-semibold text-center mb-2">Included Volumes</h2>
+                            <div> Max Volume:
+                                <select
+                                    id="dropdown"
+                                    value={dropdownValue}
+                                    onChange={(e) => setDropdownValue(Number(e.target.value))}
+                                    className="border border-gray-300 rounded-md p-2 text-base mb-2 ml-2"
+                                >
+                                    {[...Array(10)].map((_, index) => (
+                                        <option key={index + 1} value={index + 1}>
+                                            Volume {index + 1}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div> 
+                        </div>
+                        <button
+                            onClick={handleResetClick}
+                            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl transition"
+                        >
+                            Save & Reset
+                        </button>
                     </div>
                 )}
 
