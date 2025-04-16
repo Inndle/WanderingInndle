@@ -86,17 +86,32 @@ function InputBar({ allCharacterData, history, onGuess }: InputContainerProps) {
             />
             {showDropdown && (
                 <ul className="absolute left-0 right-0 mt-1 overflow-y-auto bg-gray-800 shadow-md max-h-48 rounded-md max-h-50" style={{ zIndex: "1" }}>
-                    {options.map((option, index) => {
-                        const data = allCharacterData.get(option);
-                        const firstAlias = data?.[0]?.split('|')[0]?.trim() || option;
-                        return (
-                            <li key={index} onClick={() => handleClick(option)} className="p-2 text-white cursor-pointer hover:bg-cyan-600">
-                                {firstAlias}
-                            </li>
-                        );
-                    })}
-                </ul>
-            )}
+                    {(() => {
+                        const lowerInput = input.toLowerCase();
+
+                        return options.map((option, index) => {
+                            const data = allCharacterData.get(option);
+                            const aliases = data?.[0]?.split('|').map(alias => alias.trim()) || [];
+                            const firstAlias = aliases[0] || option;
+
+                            const matchedAlias = aliases.find(alias => alias.toLowerCase().includes(lowerInput));
+                            const showMatched = matchedAlias && !option.toLowerCase().includes(matchedAlias.toLowerCase());
+
+                            return (
+                                <li
+                                    key={index}
+                                    onClick={() => handleClick(option)}
+                                    className="p-2 text-white cursor-pointer hover:bg-cyan-600"
+                                >
+                                    {firstAlias}
+                                    {showMatched ? ` (${matchedAlias})` : ""}
+                                </li>
+                            );
+                        });
+                    })()}
+    </ul>
+)}
+
         </div>
     );
 }
