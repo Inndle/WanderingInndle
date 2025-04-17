@@ -77,8 +77,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
     };
 
     const noSpoilers = spoilerGroups["No Spoilers"];
-    const otherSpoilerGroups = Object.entries(spoilerGroups).filter(([level]) => level !== "No Spoilers");
-
+    const otherSpoilerGroups = Object.entries(spoilerGroups).filter(([level]) => level !== "No Spoilers");    
 
     return (
         <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
@@ -193,13 +192,12 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                 {activeTab === "categories" && (
                     <div className="flex flex-col items-center">
                         <h2 className="text-lg font-semibold text-center mb-4">Included Categories</h2>
-
                         <div className="space-y-6">
 
                             {/* No Spoilers section */}
                             <div>
                                 <div className="col-span-2 text-sm underline text-gray-600 mb-2 text-center">No Spoilers</div>
-                                <div className="grid grid-cols-2 gap-x-3 gap-y-2">
+                                <div className="columns-2 gap-x-2 space-y-2">
                                     {noSpoilers.map((category, idx) => {
                                         // Check if this is the last item and the total number is odd
                                         const isLastOdd = noSpoilers.length % 2 === 1 && idx === noSpoilers.length - 1;
@@ -226,7 +224,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                             </div>
 
                             {/* Other Spoiler Sections */}
-                            <div className="columns-2 gap-x-8 space-y-2">
+                            <div className="columns-3 gap-x-8 space-y-2">
                                 {otherSpoilerGroups.map(([level, categories]) => (
                                     <div key={level} className="break-inside-avoid mb-4">
                                         <div className="text-sm underline text-gray-600 mb-1">{level}</div>
