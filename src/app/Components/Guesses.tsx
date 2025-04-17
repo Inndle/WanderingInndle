@@ -19,6 +19,7 @@ interface GuessContainerProps {
 interface GuessBoxProps {
   allCharacterData: Map<string, string[]>,
   history: string[],
+  todaysAnswer: string,
   onGuess: (guess: string) => void,
   difficultyLevels: number[],
   resetFunc: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number) => void;
@@ -121,6 +122,7 @@ export default function GuessContainer({ allCharacterData, history, onGuess, tod
       <GuessBox
         allCharacterData={allCharacterData}
         history={history}
+        todaysAnswer={todaysAnswer}
         onGuess={onGuess}
         difficultyLevels={difficulties}
         resetFunc={onReset}
@@ -137,7 +139,7 @@ export default function GuessContainer({ allCharacterData, history, onGuess, tod
   )
 }
 
-function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetFunc, setGiveUp, toggleCategoryFunc, displayedCategories, settingsStartOpen = -1, settingsModalFunc, maxVolume }: GuessBoxProps) {
+function GuessBox({ allCharacterData, history, todaysAnswer, onGuess, difficultyLevels, resetFunc, setGiveUp, toggleCategoryFunc, displayedCategories, settingsStartOpen = -1, settingsModalFunc, maxVolume }: GuessBoxProps) {
   const [settings, setSettings] = useState({
     difficultyCheckbox1: difficultyLevels.includes(1),
     difficultyCheckbox2: difficultyLevels.includes(2),
@@ -168,7 +170,7 @@ function GuessBox({ allCharacterData, history, onGuess, difficultyLevels, resetF
           maxVolume={maxVolume}
         />
       </div>
-      {history.length > 4 && <div className="absolute top-0 left-0">
+      {history.length > 4 && !history.includes(todaysAnswer) && <div className="absolute top-0 left-0">
         <button
           onClick={() => { setGiveUpIsOpen(true) }}
           className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
