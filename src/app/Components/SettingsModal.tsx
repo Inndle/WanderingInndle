@@ -192,7 +192,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                         <div className="grid grid-cols-2 gap-x-8 gap-y-2">
                             {Object.entries(spoilerGroups).flatMap(([level, categories]) => [
                                 // Insert a header row that spans both columns
-                                <div key={`${level}-header`} className="col-span-2 text-sm underline text-gray-600 mb-1 mt-3">
+                                <div key={`${level}-header`} className="col-span-1 text-sm underline text-gray-600 mb-1 mt-3">
                                     {level}
                                 </div>,
                                 // Insert the category checkboxes
