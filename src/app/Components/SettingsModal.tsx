@@ -190,27 +190,27 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                     <div className="flex flex-col items-center">
                         <h2 className="text-lg font-semibold text-center mb-4">Included Categories</h2>
                         <div className="columns-2 gap-x-8 space-y-2">
-                            {Object.entries(spoilerGroups).flatMap(([level, categories]) => [
-                                // Insert a header row that spans both columns
-                                <div key={`${level}-header`} className="col-span-1 text-sm underline text-gray-600 mb-1 mt-3">
-                                    {level}
-                                </div>,
-                                // Insert the category checkboxes
-                                ...categories.map((category) => (
-                                    <label key={category} className="flex items-center space-x-2 text-base">
-                                        <input
-                                            type="checkbox"
-                                            name={`${category.toLowerCase().replace(/\s/g, "")}Checkbox`}
-                                            checked={displayedCategories.includes(category)}
-                                            onChange={() => toggleCategoryFunc(category)}
-                                            className="w-5 h-5 accent-blue-600"
-                                        />
-                                        <span className="text-sm">
-                                            {category}
-                                        </span>
-                                    </label>
-                                ))
-                            ])}
+                            {Object.entries(spoilerGroups).map(([level, categories]) => (
+                                <div key={level} className="break-inside-avoid mb-4">
+                                    <div className="text-sm underline text-gray-600 mb-1">
+                                        {level}
+                                    </div>
+                                    {categories.map((category) => (
+                                        <label key={category} className="flex items-center space-x-2 text-base mb-1">
+                                            <input
+                                                type="checkbox"
+                                                name={`${category.toLowerCase().replace(/\s/g, "")}Checkbox`}
+                                                checked={displayedCategories.includes(category)}
+                                                onChange={() => toggleCategoryFunc(category)}
+                                                className="w-5 h-5 accent-blue-600"
+                                            />
+                                            <span className="text-sm">
+                                                {category}
+                                            </span>
+                                        </label>
+                                    ))}
+                                </div>
+                            ))}
                         </div>
                         <div className="mt-6 flex flex-col items-center">
                         <h2 className="text-lg font-semibold text-center mb-2">Included Volumes</h2>
