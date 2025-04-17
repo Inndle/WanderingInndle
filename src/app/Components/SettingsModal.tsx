@@ -23,12 +23,11 @@ interface SettingsModalProps {
     maxVolume: number;
 }
 
-const categoryLabels: Record<string, string> = {
-    Gender: "Gender (Minor Spoilers)",
-    Status: "Status (Major Spoilers)",
-    Affiliation: "Affiliation (Major Spoilers)",
-    Continent: "Continent (Medium Spoilers)",
-    Residence: "Residence (Medium Spoilers)",
+const spoilerGroups: Record<string, string[]> = {
+    "No Spoilers": ["Mentions", "Introduced", "Species", "Occupation", "Fighting Type"],
+    "Minor Spoilers": ["Gender"],
+    "Medium Spoilers": ["Continent", "Residence"],
+    "Major Spoilers": ["Status", "Affiliation"],
 };
 
 export default function SettingsModal({ onClose, initialSettings, onSettingsChange, resetFunction, allCharacterData, toggleCategoryFunc, displayedCategories, settingsPage = 0, settingsModalFunc, maxVolume }: SettingsModalProps) {
@@ -190,28 +189,27 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                 {activeTab === "categories" && (
                     <div className="flex flex-col items-center">
                         <h2 className="text-lg font-semibold text-center mb-4">Included Categories</h2>
-                        <div className="grid grid-cols-2 gap-x-8 gap-y-2">
-                            {[
-                                "Mentions", "Introduced", "Gender", "Species", "Status",
-                                "Affiliation", "Continent", "Residence", "Occupation", "Fighting Type"
-                            ].map((category) => (
-                                <label key={category} className="items-center space-x-2 text-base">
-                                    <input
-                                        type="checkbox"
-                                        name={`${category.toLowerCase().replace(/\s/g, "")}Checkbox`}
-                                        checked={displayedCategories.includes(category)}
-                                        onChange={() => toggleCategoryFunc(category)}
-                                        className="w-5 h-5 accent-blue-600"
-
-                                    />
-                                    {categoryLabels[category] ? 
-                                    (
-                                        <span className="text-sm">{categoryLabels[category]}</span>
-                                    ) :
-                                    (
-                                        <span>{ category }</span>
-                                    )}
-                                </label>
+                        <div className="space-y-6">
+                            {Object.entries(spoilerGroups).map(([level, categories]) => (
+                                <div key={level}>
+                                    <h3 className="text-lg font-semibold mb-2">{level}</h3>
+                                    <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+                                        {categories.map((category) => (
+                                            <label key={category} className="flex items-center space-x-2 text-base">
+                                                <input
+                                                    type="checkbox"
+                                                    name={`${category.toLowerCase().replace(/\s/g, "")}Checkbox`}
+                                                    checked={displayedCategories.includes(category)}
+                                                    onChange={() => toggleCategoryFunc(category)}
+                                                    className="w-5 h-5 accent-blue-600"
+                                                />
+                                                <span className="text-sm">
+                                                    {category}
+                                                </span>
+                                            </label>
+                                        ))}
+                                    </div>
+                                </div>
                             ))}
                         </div>
                         <div className="mt-6 flex flex-col items-center">
