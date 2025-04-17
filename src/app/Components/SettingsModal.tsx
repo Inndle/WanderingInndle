@@ -197,9 +197,9 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                             {/* No Spoilers section */}
                             <div>
                                 <div className="col-span-2 text-sm underline text-gray-600 mb-2 text-center">No Spoilers</div>
-                                <div className="grid grid-cols-2 gap-x-2 gap-y-2">
+                                <div className="grid grid-cols-2 gap-x-12 gap-y-2">
                                     {noSpoilers.map((category, idx) => {
-                                        // Check if this is the last item and the total number is odd
+                                        // Center the last little dude
                                         const isLastOdd = noSpoilers.length % 2 === 1 && idx === noSpoilers.length - 1;
 
                                         return (
