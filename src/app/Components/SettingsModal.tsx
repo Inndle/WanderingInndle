@@ -189,7 +189,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                 {activeTab === "categories" && (
                     <div className="flex flex-col items-center">
                         <h2 className="text-lg font-semibold text-center mb-4">Included Categories</h2>
-                        <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+                        <div className="columns-2 gap-x-8 space-y-2">
                             {Object.entries(spoilerGroups).flatMap(([level, categories]) => [
                                 // Insert a header row that spans both columns
                                 <div key={`${level}-header`} className="col-span-1 text-sm underline text-gray-600 mb-1 mt-3">
