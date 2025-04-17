@@ -205,7 +205,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                                         return (
                                             <div
                                                 key={category}
-                                                className={isLastOdd ? "col-span-2 flex justify-center" : ""}
+                                                className={isLastOdd ? "col-span-2 flex justify-center" : "flex justify-center"}
                                             >
                                                 <label className="flex items-center space-x-2 text-base">
                                                     <input
