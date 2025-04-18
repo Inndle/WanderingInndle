@@ -136,11 +136,16 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
     // Load the history from the cookie on mount
     const dailyHistoryString = Cookies.get('dailyHistory');
     const freeHistoryString = Cookies.get('freeHistory');
-    if (dailyHistoryString && freeHistoryString) {
+    if (dailyHistoryString) {
       try {
         const parsedDailyHistory: string[] = JSON.parse(dailyHistoryString);
-        const parsedFreeHistory: string[] = JSON.parse(freeHistoryString);
         setDailyHistory(parsedDailyHistory); // Set the state with the parsed history
+      } catch (error) {
+        console.error("Failed to parse history cookie:", error);
+      }
+    } else if (freeHistoryString) {
+      try {
+        const parsedFreeHistory: string[] = JSON.parse(freeHistoryString);
         setFreeHistory(parsedFreeHistory); // Set the state with the parsed history
       } catch (error) {
         console.error("Failed to parse history cookie:", error);
