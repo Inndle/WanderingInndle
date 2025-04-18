@@ -172,6 +172,12 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
     }
   }
 
+  function fullReset(newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number) : void {
+    if (isDaily) { Cookies.set('dailyHistory', "", {expires: 1/48}); }
+    else { Cookies.set('freeHistory', "", {expires: 1/48}); }
+    onReset(newAnswer, newDifficulties, newShowModal, maxVolume);
+  }
+
   function InfoModal({ onClose }: { onClose: () => void }) {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
@@ -226,7 +232,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
         <WinScreen
           todaysAnswer={todaysAnswer}
           history={(isDaily) ? dailyHistory : freeHistory}
-          onFreePlay={onReset}
+          onFreePlay={fullReset}
           daily={isDaily}
           characterData={allCharacterData}
           difficulties={initialDifficulties}
@@ -241,7 +247,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
         onGuess={handleGuess}
         todaysAnswer={todaysAnswer}
         difficulties={initialDifficulties}
-        onReset={onReset}
+        onReset={fullReset}
         setGiveUp={setGiveUp}
         settingsStartOpen={settingsPage}
         settingsModalFunc={setSettingsPage}
