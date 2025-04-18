@@ -119,7 +119,9 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
 }
 
 export default function Game({ todaysAnswer, allCharacterData, initialDifficulties, onReset, showModal, maxVolume }: GameProps) {
-  const [history, setHistory] = useState<string[]>([]);
+  const [freeHistory, setFreeHistory] = useState<string[]>([]);
+  const [dailyHistory, setDailyHistory] = useState<string[]>([]);
+
   const [finished, setFinished] = useState(false);
   const [showTheModal, setShowTheModal] = useState(showModal);
   const [giveUp, setGiveUp] = useState(false);
@@ -132,11 +134,14 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
   // Load History
   useEffect(() => {
     // Load the history from the cookie on mount
-    const historyString = Cookies.get('history');
-    if (historyString) {
+    const dailyHistoryString = Cookies.get('dailyHistory');
+    const freeHistoryString = Cookies.get('freeHistory');
+    if (dailyHistoryString && freeHistoryString) {
       try {
-        const parsedHistory: string[] = JSON.parse(historyString);
-        setHistory(parsedHistory); // Set the state with the parsed history
+        const parsedDailyHistory: string[] = JSON.parse(dailyHistoryString);
+        const parsedFreeHistory: string[] = JSON.parse(freeHistoryString);
+        setDailyHistory(parsedDailyHistory); // Set the state with the parsed history
+        setFreeHistory(parsedFreeHistory); // Set the state with the parsed history
       } catch (error) {
         console.error("Failed to parse history cookie:", error);
       }
@@ -145,10 +150,17 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
 
   // Helper function to pass down to Guesses to update history state
   function handleGuess(guess: string): void {
-    const newHistory = [...history];
-    newHistory.unshift(guess);
-    setHistory(newHistory);
-    Cookies.set('history', JSON.stringify(newHistory), { expires: 1 / 48 });
+    if (isDaily) { 
+      const newHistory = [...dailyHistory];
+      newHistory.unshift(guess);
+      setDailyHistory(newHistory);
+      Cookies.set('dailyHistory', JSON.stringify(newHistory), { expires: 1 / 48 }); 
+    } else {
+      const newHistory = [...freeHistory];
+      newHistory.unshift(guess);
+      setFreeHistory(newHistory);
+      Cookies.set('freeHistory', JSON.stringify(newHistory), { expires: 1 / 48 });
+    }
 
     if (guess === todaysAnswer) {
       setFinished(true);
@@ -208,7 +220,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
       {(finished || giveUp) && (
         <WinScreen
           todaysAnswer={todaysAnswer}
-          history={history}
+          history={(isDaily) ? dailyHistory : freeHistory}
           onFreePlay={onReset}
           daily={isDaily}
           characterData={allCharacterData}
@@ -220,7 +232,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
       )}
       <GuessContainer
         allCharacterData={allCharacterData}
-        history={history}
+        history={(isDaily) ? dailyHistory : freeHistory}
         onGuess={handleGuess}
         todaysAnswer={todaysAnswer}
         difficulties={initialDifficulties}
