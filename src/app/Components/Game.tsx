@@ -133,6 +133,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
 
   // Load History
   useEffect(() => {
+    if (isDaily === null) return;
     // Load the history from the cookie on mount
     const dailyHistoryString = Cookies.get('dailyHistory');
     const freeHistoryString = Cookies.get('freeHistory');
