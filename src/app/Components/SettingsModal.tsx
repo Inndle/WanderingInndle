@@ -26,7 +26,7 @@ interface SettingsModalProps {
 const spoilerGroups: Record<string, string[]> = {
     "No Spoilers": ["Mentions", "Introduced", "Species", "Occupation", "Fighting Type"],
     "Minor Spoilers": ["Gender"],
-    "Medium Spoilers": ["Continent", "Residence"],
+    "Moderate Spoilers": ["Continent", "Residence"],
     "Major Spoilers": ["Status", "Affiliation"],
 };
 
@@ -195,8 +195,8 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                         <div className="space-y-6">
 
                             {/* No Spoilers section */}
-                            <div>
-                                <div className="grid grid-cols-2 gap-x-[2px] gap-y-2">
+                            <div className="mx-auto w-[300px]">
+                                <div className="grid grid-cols-2 gap-y-2">
                                 <div className="col-span-2 text-sm underline text-gray-600 mb-1 text-center">No Spoilers</div>
                                     {noSpoilers.map((category, idx) => {
                                         // Center the last little dude
@@ -205,7 +205,10 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                                         return (
                                             <div
                                                 key={category}
-                                                className={isLastOdd ? "col-span-2 flex justify-center" : "flex justify-center"}
+                                                className={
+                                                    isLastOdd 
+                                                    ? "col-span-2 flex justify-center" 
+                                                    : "flex justify-start pl-10"}
                                             >
                                                 <label className="flex items-center space-x-2 text-base">
                                                     <input
@@ -227,7 +230,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                             <div className="columns-3 gap-x-8 space-y-2">
                                 {otherSpoilerGroups.map(([level, categories]) => (
                                     <div key={level} className="break-inside-avoid mb-4">
-                                        <div className="text-sm underline text-gray-600 mb-1">{level}</div>
+                                        <div className="text-sm text-center underline text-gray-600 mb-1">{level}</div>
                                         {categories.map((category) => (
                                             <label key={category} className="flex items-center space-x-2 text-base mb-1">
                                                 <input
