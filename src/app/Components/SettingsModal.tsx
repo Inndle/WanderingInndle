@@ -197,7 +197,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                             {/* No Spoilers section */}
                             <div>
                                 <div className="grid grid-cols-2 gap-x-[2px] gap-y-2">
-                                <div className="col-span-2 text-sm underline text-gray-600 mb-2 text-center">No Spoilers</div>
+                                <div className="col-span-2 text-sm underline text-gray-600 mb-1 text-center">No Spoilers</div>
                                     {noSpoilers.map((category, idx) => {
                                         // Center the last little dude
                                         const isLastOdd = noSpoilers.length % 2 === 1 && idx === noSpoilers.length - 1;
