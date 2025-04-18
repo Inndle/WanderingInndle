@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Game from "./Game";
-import Cookies from 'js-cookie';
 
 interface GameWrapperProps {
     allCharacterData: Map<string, string[]>,
@@ -11,15 +10,6 @@ interface GameWrapperProps {
 const DEBUGGING = false;
 
 export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
-    // Cookie logic
-    const visited = Cookies.get('visited');
-    if (!visited) {
-      console.log("First visit or session expired.");
-      Cookies.set('visited', 'true', { expires: 1 / 48 });
-    } else {
-      console.log("Welcome back!");
-    }
-
     // Set defaults for game start
     const initialDifficulties: number[] = [1, 2, 3];
     const initialMaxVolume: number = 10;
@@ -78,7 +68,7 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
       setMaxVolume(maxVol ?? maxVolume)
     }
     
-    console.log("showModal2", showModal)
+    console.log("showModal2", showModal);
     return (
       <Game
         key={gameKey}

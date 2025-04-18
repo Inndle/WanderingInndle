@@ -1,11 +1,14 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import GuessContainer from "./Guesses";
 import WinScreen from "./WinScreen";
 import background_img from "../twi-logo-fancy.png";
 import buttonImage from "../infoButton.png";
 import { createHash } from 'crypto';
+import Cookies from 'js-cookie';
+
+
 
 
 interface GameProps {
@@ -126,11 +129,26 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
 
   const [settingsPage, setSettingsPage] = useState(-1);
 
+  // Load History
+  useEffect(() => {
+    // Load the history from the cookie on mount
+    const historyString = Cookies.get('history');
+    if (historyString) {
+      try {
+        const parsedHistory: string[] = JSON.parse(historyString);
+        setHistory(parsedHistory); // Set the state with the parsed history
+      } catch (error) {
+        console.error("Failed to parse history cookie:", error);
+      }
+    }
+  }, []);
+
   // Helper function to pass down to Guesses to update history state
   function handleGuess(guess: string): void {
     const newHistory = [...history];
     newHistory.unshift(guess);
     setHistory(newHistory);
+    Cookies.set('history', JSON.stringify(newHistory), { expires: 1 / 48 });
 
     if (guess === todaysAnswer) {
       setFinished(true);
