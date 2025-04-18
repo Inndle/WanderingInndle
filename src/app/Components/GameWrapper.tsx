@@ -11,6 +11,7 @@ const DEBUGGING = false;
 
 export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
     // Set defaults for game start
+    console.log("init test");
     const initialDifficulties: number[] = [1, 2, 3];
     const initialMaxVolume: number = 10;
 
