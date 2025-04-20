@@ -45,6 +45,8 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
     const [maxVolume, setMaxVolume] = useState(initialMaxVolume);
     const [gameKey, setGameKey] = useState(0);
     const [showModal, setShowModal] = useState(true);
+    const [isDaily, setIsDaily] = useState(false);
+
   
     /**
      * Reset game function that will be passed down to reinitialize the game state
@@ -65,7 +67,8 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
       console.log("ShowModal1", newShowModal)
       setShowModal(newShowModal ?? true);
       setGameKey((prevKey) => prevKey + 1);
-      setMaxVolume(maxVol ?? maxVolume)
+      setMaxVolume(maxVol ?? maxVolume);
+      setIsDaily(false);
     }
     
     console.log("showModal2", showModal);
@@ -78,6 +81,8 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
         onReset={resetGame} // Pass down reset function
         showModal={showModal}
         maxVolume={maxVolume} // Pass down showModal state
+        isDaily={isDaily}
+        setIsDaily={setIsDaily}
       />
     );
 }

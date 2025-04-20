@@ -18,6 +18,8 @@ interface GameProps {
   onReset: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number) => void;
   showModal: boolean;
   maxVolume: number;
+  isDaily: boolean;
+  setIsDaily: (state: boolean) => void;
 }
 
 interface ModalProps {
@@ -84,7 +86,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
         {/* Action Buttons */}
         <div className="grid grid-cols-2 gap-4">
           <button
-            onClick={() => { resetFunc(dailyAnswer, enabledLevels, false); setDaily(true) }}
+            onClick={() => { setDaily(true); resetFunc(dailyAnswer, enabledLevels, false); }}
             className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
           >
             Daily Challenge
@@ -118,14 +120,13 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
   );
 }
 
-export default function Game({ todaysAnswer, allCharacterData, initialDifficulties, onReset, showModal, maxVolume }: GameProps) {
+export default function Game({ todaysAnswer, allCharacterData, initialDifficulties, onReset, showModal, maxVolume, isDaily, setIsDaily }: GameProps) {
   const [freeHistory, setFreeHistory] = useState<string[]>([]);
   const [dailyHistory, setDailyHistory] = useState<string[]>([]);
 
   const [finished, setFinished] = useState(false);
   const [showTheModal, setShowTheModal] = useState(showModal);
   const [giveUp, setGiveUp] = useState(false);
-  const [isDaily, setIsDaily] = useState(false);
   const [showInfoModal, setShowInfoModal] = useState(false);
 
 
@@ -133,7 +134,6 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
 
   // Load History
   useEffect(() => {
-    if (isDaily === null) return;
     // Load the history from the cookie on mount
     const dailyHistoryString = Cookies.get('dailyHistory');
     const freeHistoryString = Cookies.get('freeHistory');
@@ -156,6 +156,9 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
 
   // Helper function to pass down to Guesses to update history state
   function handleGuess(guess: string): void {
+    console.log(isDaily);
+    console.log(dailyHistory);
+    console.log(freeHistory);
     if (isDaily) { 
       const newHistory = [...dailyHistory];
       newHistory.unshift(guess);
@@ -232,7 +235,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
       {(finished || giveUp) && (
         <WinScreen
           todaysAnswer={todaysAnswer}
-          history={(isDaily) ? dailyHistory : freeHistory}
+          history={showTheModal ? [] : (isDaily ? dailyHistory : freeHistory)}
           onFreePlay={fullReset}
           daily={isDaily}
           characterData={allCharacterData}
@@ -244,7 +247,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
       )}
       <GuessContainer
         allCharacterData={allCharacterData}
-        history={(isDaily) ? dailyHistory : freeHistory}
+        history={showTheModal ? [] : (isDaily ? dailyHistory : freeHistory)}
         onGuess={handleGuess}
         todaysAnswer={todaysAnswer}
         difficulties={initialDifficulties}
