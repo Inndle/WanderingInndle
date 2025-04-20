@@ -123,6 +123,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
 export default function Game({ todaysAnswer, allCharacterData, initialDifficulties, onReset, showModal, maxVolume, isDaily, setIsDaily }: GameProps) {
   const [freeHistory, setFreeHistory] = useState<string[]>([]);
   const [dailyHistory, setDailyHistory] = useState<string[]>([]);
+  const [historyLoaded, setHistoryLoaded] = useState(false);
 
   const [finished, setFinished] = useState(false);
   const [showTheModal, setShowTheModal] = useState(showModal);
@@ -152,6 +153,8 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
         console.error("Failed to parse history cookie:", error);
       }
     }
+
+    setHistoryLoaded(true);
   }, []);
 
   // Helper function to pass down to Guesses to update history state
@@ -235,7 +238,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
       {(finished || giveUp) && (
         <WinScreen
           todaysAnswer={todaysAnswer}
-          history={showTheModal ? [] : (isDaily ? dailyHistory : freeHistory)}
+          history={isDaily ? dailyHistory : freeHistory}
           onFreePlay={fullReset}
           daily={isDaily}
           characterData={allCharacterData}
@@ -245,9 +248,9 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
           maxVolume={maxVolume}
         />
       )}
-      <GuessContainer
+      {historyLoaded && <GuessContainer
         allCharacterData={allCharacterData}
-        history={showTheModal ? [] : (isDaily ? dailyHistory : freeHistory)}
+        history={isDaily ? dailyHistory : freeHistory}
         onGuess={handleGuess}
         todaysAnswer={todaysAnswer}
         difficulties={initialDifficulties}
@@ -256,7 +259,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
         settingsStartOpen={settingsPage}
         settingsModalFunc={setSettingsPage}
         maxVolume={maxVolume}
-      />
+      />}
     </div>
   );
 }
