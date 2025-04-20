@@ -15,6 +15,8 @@ interface GameProps {
   onReset: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number) => void;
   showModal: boolean;
   maxVolume: number;
+  isDaily: boolean;
+  setIsDaily: (state: boolean) => void;
 }
 
 interface ModalProps {
@@ -115,12 +117,11 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
   );
 }
 
-export default function Game({ todaysAnswer, allCharacterData, initialDifficulties, onReset, showModal, maxVolume }: GameProps) {
+export default function Game({ todaysAnswer, allCharacterData, initialDifficulties, onReset, showModal, maxVolume, isDaily, setIsDaily }: GameProps) {
   const [history, setHistory] = useState<string[]>([]);
   const [finished, setFinished] = useState(false);
   const [showTheModal, setShowTheModal] = useState(showModal);
   const [giveUp, setGiveUp] = useState(false);
-  const [isDaily, setIsDaily] = useState(false);
   const [showInfoModal, setShowInfoModal] = useState(false);
 
 
