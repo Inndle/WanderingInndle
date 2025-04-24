@@ -2,6 +2,9 @@
 
 ![alt text](./WanderingInndle.png)
 
+---
+Guess the character from the hit web serial [The Wandering Inn](https://wanderinginn.com/)! Try to guess the daily character and play the infinite mode. Hosted on GitHub pages [here](https://inndle.github.io/WanderingInndle/).
+
 ## Things Left to Implement:
 ### Functionality (Listed in order of importance):
 
