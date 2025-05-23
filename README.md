@@ -24,3 +24,5 @@ Right now a lot of the logic for what the squares display and changing what they
 - Maybe add background to arrows
 - Add arrow keys to switch between search bar results
 - Fix the category titles shifting a little once a guess is made (Maybe hide it until history.length > 0)
+- Fix text resizing for mobile (e.g. Fighting Type too large for mobile, sometimes text overflows boxes, etc.)
+- Correct Gear button spacing

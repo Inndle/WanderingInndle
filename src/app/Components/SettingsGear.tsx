@@ -15,7 +15,7 @@ interface SettingsGearProps {
         difficultyCheckbox3: boolean;
         difficultyCheckbox4: boolean;
     }) => void;
-    resetFunction: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number) => void; // Accept reset function
+    resetFunction: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number) => void; // Accept reset function.
     charData: Map<string, string[]>;
     toggleCategoryFunc: (category: string) => void;
     displayedCategories: string[];

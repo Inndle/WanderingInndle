@@ -80,7 +80,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
     const otherSpoilerGroups = Object.entries(spoilerGroups).filter(([level]) => level !== "No Spoilers");    
 
     return (
-        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
+        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-[100]">
             <div className="relative bg-white p-6 rounded-lg shadow-lg w-[30rem] min-h-[32rem]">
                 <button
                     onClick={changeModalStateAndClose}

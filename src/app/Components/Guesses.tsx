@@ -209,36 +209,40 @@ function GiveUpModal({ setGiveUp, onClose }: GiveUpModalProps) {
 
 function Guesses({ allCharacterData, history, todaysAnswer }: GuessesProps) {
   return (
-    <div className="guesses-container flex flex-col justify-center">
-      <div className="category-bar grid grid-cols-11 mb-4 flex" style={{ gridTemplateColumns: `repeat(${DISPLAYED_CATEGORIES.length}, minmax(0, 1fr))` }} >
-        {DISPLAYED_CATEGORIES.map((category, index) => (
-          <div key={index} className="w-24 h-12 category-title border-0">
-            <div className="justify-center flex text-white">
-              {category}
-            </div>
-            <hr className="w-16 h-0.5 mx-auto my-1 bg-gray-100 border-0 md:my-1"></hr>
+    <div className="guesses-container flex flex-col justify-center w-full">
+      <div className="overflow-x-auto w-full">
+        <div className="min-w-max mx-auto sm:w-1/2">
+          <div className="category-bar grid mb-4 flex" style={{ gridTemplateColumns: `repeat(${DISPLAYED_CATEGORIES.length}, minmax(0, 1fr))` }} >
+            {DISPLAYED_CATEGORIES.map((category, index) => (
+              <div key={index} className="w-20 sm:w-24 h-12 category-title border-0">
+                <div className="justify-center flex text-white text-sm sm:text-base">
+                  {category}
+                </div>
+                <hr className="w-12 sm:w-16 h-0.5 mx-auto my-1 bg-gray-100 border-0 md:my-1"></hr>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <div className="guess-history w-full flex flex-col items-center">
-        <ul className="">
-          {
-            history.map((guess, index) => {
-              // Only animate the most recent guess
-              const isLatest = index === 0;
-              
-              return  <li key={index}>
-                        <Guess
-                          todaysAnswer={todaysAnswer}
-                          allCharacterData={allCharacterData}
-                          guess={guess}
-                          isLatest={isLatest}
-                        >
-                        </Guess>
-                      </li>
-            })
-          }
-        </ul>
+          <div className="guess-history w-full flex flex-col items-center">
+            <ul className="w-full">
+              {
+                history.map((guess, index) => {
+                  // Only animate the most recent guess
+                  const isLatest = index === 0;
+                  
+                  return  <li key={index} className="w-full">
+                            <Guess
+                              todaysAnswer={todaysAnswer}
+                              allCharacterData={allCharacterData}
+                              guess={guess}
+                              isLatest={isLatest}
+                            >
+                            </Guess>
+                          </li>
+                })
+              }
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   )
@@ -252,7 +256,7 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) 
   // Dynamically populate the guess row with the correct response according to given guess
   return (
     <div
-      className="guess grid gap-2 rounded-lg w-full mb-4 text-white"
+      className="guess grid gap-1 sm:gap-2 rounded-lg w-full mb-2 sm:mb-4 text-white"
       style={{ gridTemplateColumns: `repeat(${DISPLAYED_CATEGORIES.length}, minmax(0, 1fr))` }}
     >
       {
@@ -303,7 +307,7 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) 
     const animationStyle = isLatest ? { animationDelay } : {};
     
     // Determine what css to apply and how to apply content depending on the given
-    const generic_styling = "hover:brightness-90 flex items-center justify-center text-center border border-gray-600 rounded w-24 h-24 ";
+    const generic_styling = "hover:brightness-90 flex items-center justify-center text-center border border-gray-600 rounded w-20 h-20 sm:w-24 sm:h-24 ";
     const animationClass = isLatest ? "animate-flip-in" : "";
     
     if (content === "") {
@@ -315,7 +319,7 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) 
         if (content === "Unknown") {
           return (
             <div 
-              className={`${generic_styling} bg-white text-black font-bold ${animationClass}`}
+              className={`${generic_styling} bg-white text-black font-bold sm:text-base ${animationClass}`}
               style={animationStyle}
             >
               {guess}
@@ -328,7 +332,7 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) 
               style={animationStyle}
             >
               <img className="w-full h-full object-cover rounded" src={content} alt="Profile Photo" />
-              <div className="absolute inset-0 bg-white text-black flex items-center justify-center font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              <div className="absolute inset-0 bg-white text-black flex items-center justify-center font-bold sm:text-base rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 {guess}
               </div>
             </div>
@@ -350,7 +354,7 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) 
         if (name === "Introduced") {
           return (
             <div 
-              className={`${generic_styling} ${scalarStyling} ${animationClass}`}
+              className={`${generic_styling} ${scalarStyling} ${animationClass} sm:text-base`}
               style={animationStyle}
             >
               <span>{"Vol. " + content}</span>
@@ -359,7 +363,7 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) 
         } else {
           return (
             <div 
-              className={`${generic_styling} ${scalarStyling} ${animationClass}`}
+              className={`${generic_styling} ${scalarStyling} ${animationClass} sm:text-base`}
               style={animationStyle}
             >
               <span>{content}</span>
@@ -378,7 +382,7 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) 
         }
         return (
           <div 
-            className={`${generic_styling} ${binaryStyling} ${animationClass}`}
+            className={`${generic_styling} ${binaryStyling} ${animationClass} sm:text-base`}
             style={animationStyle}
           >
             <span>{content}</span>
@@ -419,6 +423,18 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) 
           case 3:
             categoryStyling += " text-[14px]"
             break;
+              // // Improved text sizing for mobile
+              // const contentLength = content.length;
+              // if (contentLength > 40) {
+              //   categoryStyling += " text-[8px] sm:text-[10px]"
+              // } else if (contentLength > 30) {
+              //   categoryStyling += " text-[9px] sm:text-[11px]"
+              // } else if (contentLength > 20) {
+              //   categoryStyling += " text-[10px] sm:text-[12px]"
+              // } else if (contentLength > 10) {
+              //   categoryStyling += " text-[11px] sm:text-[13px]"
+              // } else {
+              //   categoryStyling += " text-[12px] sm:text-[14px]"
         }
         return (
           <div 
