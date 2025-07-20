@@ -1,9 +1,11 @@
-# Innordle
+# Inndle
 
 ![alt text](./WanderingInndle.png)
 
 ---
-Guess the character from the hit web serial [The Wandering Inn](https://wanderinginn.com/)! Try to guess the daily character and play the infinite mode. Hosted on GitHub pages [here](https://inndle.github.io/WanderingInndle/).
+Hosted on GitHub pages [here](https://inndle.github.io/WanderingInndle/)!
+
+Based on the hit web serial [The Wandering Inn](https://wanderinginn.com/)! Try to guess the character of the day or play the infinite mode. 
 
 ## Things Left to Implement:
 ### Functionality (Listed in order of importance):
@@ -21,8 +23,6 @@ Right now a lot of the logic for what the squares display and changing what they
 - Style scrollbars to be more immersive
 
 ### Low Hanging Fruit:
-- Maybe add background to arrows
 - Add arrow keys to switch between search bar results
-- Fix the category titles shifting a little once a guess is made (Maybe hide it until history.length > 0)
 - Fix text resizing for mobile (e.g. Fighting Type too large for mobile, sometimes text overflows boxes, etc.)
 - Correct Gear button spacing
