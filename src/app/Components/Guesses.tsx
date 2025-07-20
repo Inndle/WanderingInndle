@@ -401,45 +401,15 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) 
             categoryStyling = "bg-green-500"
             break;
         }
-        switch (Math.floor(content.length / 10)) {
-          case 9:
-            categoryStyling += " text-[10px]"
-            break;
-          case 8:
-            categoryStyling += " text-[11px]"
-            break;
-          case 7:
-            categoryStyling += " text-[11px]"
-            break;
-          case 6:
-            categoryStyling += " text-[12px]"
-            break;
-          case 5:
-            categoryStyling += " text-[12px]"
-            break;
-          case 4:
-            categoryStyling += " text-[13px]"
-            break;
-          case 3:
-            categoryStyling += " text-[14px]"
-            break;
-              // // Improved text sizing for mobile
-              // const contentLength = content.length;
-              // if (contentLength > 40) {
-              //   categoryStyling += " text-[8px] sm:text-[10px]"
-              // } else if (contentLength > 30) {
-              //   categoryStyling += " text-[9px] sm:text-[11px]"
-              // } else if (contentLength > 20) {
-              //   categoryStyling += " text-[10px] sm:text-[12px]"
-              // } else if (contentLength > 10) {
-              //   categoryStyling += " text-[11px] sm:text-[13px]"
-              // } else {
-              //   categoryStyling += " text-[12px] sm:text-[14px]"
-        }
+        // Calculate font size based on content length
+        const minFontSize = 12;
+        const maxFontSize = 16;
+        const fontSize = Math.max(minFontSize, maxFontSize - Math.floor(content.length / 8));
+
         return (
           <div 
             className={`${generic_styling} ${categoryStyling} ${animationClass}`}
-            style={animationStyle}
+            style={{ ...animationStyle, fontSize: `${fontSize}px` }}
           >
             <span>{content}</span>
           </div>
