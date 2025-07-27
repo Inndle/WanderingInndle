@@ -228,16 +228,16 @@ function Guesses({ allCharacterData, history, todaysAnswer }: GuessesProps) {
                 history.map((guess, index) => {
                   // Only animate the most recent guess
                   const isLatest = index === 0;
-                  
-                  return  <li key={index} className="w-full">
-                            <Guess
-                              todaysAnswer={todaysAnswer}
-                              allCharacterData={allCharacterData}
-                              guess={guess}
-                              isLatest={isLatest}
-                            >
-                            </Guess>
-                          </li>
+
+                  return <li key={index} className="w-full">
+                    <Guess
+                      todaysAnswer={todaysAnswer}
+                      allCharacterData={allCharacterData}
+                      guess={guess}
+                      isLatest={isLatest}
+                    >
+                    </Guess>
+                  </li>
                 })
               }
             </ul>
@@ -275,7 +275,7 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) 
             response = responseDetail!;
             content = guessDetailsMap.get(category)!.join(", "); // sin of exclamation mark!!
           }
-          
+
           return (
             <GuessDetail
               guess={guess}
@@ -305,39 +305,39 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) 
     // Add animation styles with delay based on index
     const animationDelay = `${index * 220}ms`;
     const animationStyle = isLatest ? { animationDelay } : {};
-    
+
     // Determine what css to apply and how to apply content depending on the given
     const generic_styling = "hover:brightness-90 flex items-center justify-center text-center border border-gray-600 rounded w-20 h-20 sm:w-24 sm:h-24 ";
     const animationClass = isLatest ? "animate-flip-in" : "";
-    
+
     if (content === "") {
       content = "Unknown";
     }
 
     switch (type) {
       case "Image":
-        if (content === "Unknown") {
-          return (
-            <div 
-              className={`${generic_styling} bg-white text-black font-bold sm:text-base ${animationClass}`}
-              style={animationStyle}
-            >
-              {guess}
-            </div>
-          );
-        } else {
-          return (
-            <div 
-              className={`${generic_styling} relative group ${animationClass}`}
-              style={animationStyle}
-            >
-              <img className="w-full h-full object-cover rounded" src={content} alt="Profile Photo" />
-              <div className="absolute inset-0 bg-white text-black flex items-center justify-center font-bold sm:text-base rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                {guess}
-              </div>
-            </div>
-          );
-        }
+        // if (content === "Unknown") {
+        return (
+          <div
+            className={`${generic_styling} bg-white text-black font-bold sm:text-base ${animationClass}`}
+            style={animationStyle}
+          >
+            {guess}
+          </div>
+        );
+      // } else {
+      //   return (
+      //     <div 
+      //       className={`${generic_styling} relative group ${animationClass}`}
+      //       style={animationStyle}
+      //     >
+      //       <img className="w-full h-full object-cover rounded" src={content} alt="Profile Photo" />
+      //       <div className="absolute inset-0 bg-white text-black flex items-center justify-center font-bold sm:text-base rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+      //         {guess}
+      //       </div>
+      //     </div>
+      //   );
+      // }
       case "Scalar":
         let scalarStyling = "";
         switch (response) {
@@ -353,7 +353,7 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) 
         }
         if (name === "Introduced") {
           return (
-            <div 
+            <div
               className={`${generic_styling} ${scalarStyling} ${animationClass} sm:text-base`}
               style={animationStyle}
             >
@@ -362,7 +362,7 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) 
           )
         } else {
           return (
-            <div 
+            <div
               className={`${generic_styling} ${scalarStyling} ${animationClass} sm:text-base`}
               style={animationStyle}
             >
@@ -381,7 +381,7 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) 
             break;
         }
         return (
-          <div 
+          <div
             className={`${generic_styling} ${binaryStyling} ${animationClass} sm:text-base`}
             style={animationStyle}
           >
@@ -407,7 +407,7 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) 
         const fontSize = Math.max(minFontSize, maxFontSize - Math.floor(content.length / 8));
 
         return (
-          <div 
+          <div
             className={`${generic_styling} ${categoryStyling} ${animationClass}`}
             style={{ ...animationStyle, fontSize: `${fontSize}px` }}
           >
