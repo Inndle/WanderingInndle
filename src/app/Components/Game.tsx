@@ -47,12 +47,40 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
   const randomIndex = Math.floor(Math.random() * filteredKeys.length);
   const initialAnswer: string = filteredKeys[randomIndex];
 
-  // Calculate the daily character using our hash
-  const dateStr = new Date().toISOString().split("T")[0];
-  const hashInt = sha256ToBigInt(dateStr);
-  const keysSize = BigInt(filteredKeys.length)
-  const index = hashInt % keysSize
-  const dailyAnswer: string = filteredKeys[Number(index)]
+
+  const daysToCheck = 14;
+  const usedIndexes = new Set<number>();
+
+  // Get list of indexes from the previous 14 days
+  for (let i = 1; i <= daysToCheck; i++) {
+    const pastDate = new Date();
+    pastDate.setDate(pastDate.getDate() - i);
+    const pastDateStr = pastDate.toISOString().split("T")[0];
+    const pastHashInt = sha256ToBigInt(pastDateStr);
+    const keysSize = BigInt(filteredKeys.length);
+    const pastIndex = Number(pastHashInt % keysSize);
+    usedIndexes.add(pastIndex);
+  }
+
+  // Compute today's index
+  const todayStr = new Date().toISOString().split("T")[0];
+  let todayHashInt = sha256ToBigInt(todayStr);
+  const keysSize = BigInt(filteredKeys.length);
+  let index = Number(todayHashInt % keysSize);
+
+  // Increment index until it’s unique
+  while (usedIndexes.has(index)) {
+    index = (index + 1) % Number(keysSize);
+  }
+
+  const dailyAnswer: string = filteredKeys[index];
+
+  // // Calculate the daily character using our hash
+  // const dateStr = new Date().toISOString().split("T")[0];
+  // const hashInt = sha256ToBigInt(dateStr);
+  // const keysSize = BigInt(filteredKeys.length)
+  // const index = hashInt % keysSize
+  // const dailyAnswer: string = filteredKeys[Number(index)]
 
   // Now that we have generated the characters we can create our modal
   return (
