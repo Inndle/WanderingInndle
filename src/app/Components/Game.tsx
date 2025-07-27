@@ -48,7 +48,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
   const initialAnswer: string = filteredKeys[randomIndex];
 
 
-  const daysToCheck = 40;
+  const daysToCheck = 14;
   const usedIndexes = new Set<number>();
 
   // Get list of indexes from the previous 14 days
