@@ -64,7 +64,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
 
   // Compute today's index
   const todayStr = new Date().toISOString().split("T")[0];
-  let todayHashInt = sha256ToBigInt(todayStr);
+  const todayHashInt = sha256ToBigInt(todayStr);
   const keysSize = BigInt(filteredKeys.length);
   let index = Number(todayHashInt % keysSize);
 
