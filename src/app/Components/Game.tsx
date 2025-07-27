@@ -48,7 +48,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
   const initialAnswer: string = filteredKeys[randomIndex];
 
 
-  const daysToCheck = 14;
+  const daysToCheck = 40;
   const usedIndexes = new Set<number>();
 
   // Get list of indexes from the previous 14 days
@@ -56,6 +56,8 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     const pastDate = new Date();
     pastDate.setDate(pastDate.getDate() - i);
     const pastDateStr = pastDate.toISOString().split("T")[0];
+    console.log(pastDateStr)
+    console.log()
     const pastHashInt = sha256ToBigInt(pastDateStr);
     const keysSize = BigInt(filteredKeys.length);
     const pastIndex = Number(pastHashInt % keysSize);
@@ -64,6 +66,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
 
   // Compute today's index
   const todayStr = new Date().toISOString().split("T")[0];
+  console.log(todayStr)
   const todayHashInt = sha256ToBigInt(todayStr);
   const keysSize = BigInt(filteredKeys.length);
   let index = Number(todayHashInt % keysSize);
