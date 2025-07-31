@@ -77,7 +77,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
     };
 
     const noSpoilers = spoilerGroups["No Spoilers"];
-    const otherSpoilerGroups = Object.entries(spoilerGroups).filter(([level]) => level !== "No Spoilers");    
+    const otherSpoilerGroups = Object.entries(spoilerGroups).filter(([level]) => level !== "No Spoilers");
 
     return (
         <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-[100]">
@@ -94,18 +94,17 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                     {tabOptions.map((tabKey) => (
                         <button
                             key={tabKey}
-                            className={`flex-1 p-2 text-center transition font-medium ${
-                                activeTab === tabKey
+                            className={`flex-1 p-2 text-center transition font-medium ${activeTab === tabKey
                                     ? "bg-gray-200 text-black border-b-2 border-blue-500"
                                     : "text-gray-500 hover:bg-gray-100"
-                            }`}
+                                }`}
                             onClick={() => setActiveTab(tabKey)}
                         >
                             {tabKey === "rules"
                                 ? "Rules"
                                 : tabKey === "categories"
-                                ? "Spoiler Settings"
-                                : "Difficulty Settings"}
+                                    ? "Spoiler Settings"
+                                    : "Difficulty Settings"}
                         </button>
                     ))}
                 </div>
@@ -197,7 +196,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                             {/* No Spoilers section */}
                             <div className="mx-auto w-[300px]">
                                 <div className="grid grid-cols-2 gap-y-2">
-                                <div className="col-span-2 text-sm underline text-gray-600 mb-1 text-center">No Spoilers</div>
+                                    <div className="col-span-2 text-sm underline text-gray-600 mb-1 text-center">No Spoilers</div>
                                     {noSpoilers.map((category, idx) => {
                                         // Center the last little dude
                                         const isLastOdd = noSpoilers.length % 2 === 1 && idx === noSpoilers.length - 1;
@@ -206,9 +205,9 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                                             <div
                                                 key={category}
                                                 className={
-                                                    isLastOdd 
-                                                    ? "col-span-2 flex justify-center" 
-                                                    : "flex justify-start pl-10"}
+                                                    isLastOdd
+                                                        ? "col-span-2 flex justify-center"
+                                                        : "flex justify-start pl-10"}
                                             >
                                                 <label className="flex items-center space-x-2 text-base">
                                                     <input
@@ -248,7 +247,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                             </div>
                         </div>
                         <div className="mt-6 flex flex-col items-center">
-                        <h2 className="text-lg font-semibold text-center mb-2">Included Volumes</h2>
+                            <h2 className="text-lg font-semibold text-center mb-2">Included Volumes</h2>
                             <div> Max Volume:
                                 <select
                                     id="dropdown"
@@ -262,7 +261,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                                         </option>
                                     ))}
                                 </select>
-                            </div> 
+                            </div>
                         </div>
                         <button
                             onClick={handleResetClick}
@@ -277,6 +276,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                 {activeTab === "difficulties" && (
                     <div className="flex flex-col items-center">
                         <h2 className="text-lg font-semibold text-center mb-4">Included Difficulties</h2>
+                        <p className="text-lg font-semibold text-center mb-4">These change the pool of characters based on their approximate difficulty to guess</p>
                         <div className="flex flex-col items-start mb-6">
                             {[
                                 { label: "Easy", name: "difficultyCheckbox1" },

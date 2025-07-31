@@ -64,16 +64,30 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
 
   // Compute today's index
   const todayStr = new Date().toISOString().split("T")[0];
-  const todayHashInt = sha256ToBigInt(todayStr);
-  const keysSize = BigInt(filteredKeys.length);
-  let index = Number(todayHashInt % keysSize);
+  // Handle special hardcoded dates
+  const hardcodedAnswers: { [date: string]: string } = {
+    "2025-07-30": "Belavierr",
+    "2025-07-31": "Garry",
+    "2025-08-01": "Flos",
+    "2025-08-02": "Foliana",
+    "2025-08-03": "Redscar",
+  };
 
-  // Increment index until it’s unique
-  while (usedIndexes.has(index)) {
-    index = (index + 1) % Number(keysSize);
+  let dailyAnswer: string;
+
+  if (todayStr in hardcodedAnswers) {
+    dailyAnswer = hardcodedAnswers[todayStr];
+  } else {
+    const todayHashInt = sha256ToBigInt(todayStr);
+    const keysSize = BigInt(filteredKeys.length);
+    let index = Number(todayHashInt % keysSize);
+
+    while (usedIndexes.has(index)) {
+      index = (index + 1) % Number(keysSize);
+    }
+
+    dailyAnswer = filteredKeys[index];
   }
-
-  const dailyAnswer: string = filteredKeys[index];
 
   // // Calculate the daily character using our hash
   // const dateStr = new Date().toISOString().split("T")[0];
@@ -128,7 +142,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
             }}
             className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
           >
-            Open Rules
+            Rules
           </button>
 
           <button
