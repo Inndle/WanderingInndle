@@ -66,11 +66,11 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
   const todayStr = new Date().toISOString().split("T")[0];
   // Handle special hardcoded dates
   const hardcodedAnswers: { [date: string]: string } = {
-    "2025-07-30": "Belavierr",
-    "2025-07-31": "Garry",
-    "2025-08-01": "Flos",
-    "2025-08-02": "Foliana",
-    "2025-08-03": "Redscar",
+    "2025-07-31": "Belavierr",
+    "2025-08-01": "Garry",
+    "2025-08-02": "Flos",
+    "2025-08-03": "Foliana",
+    "2025-08-04": "Redscar",
   };
 
   let dailyAnswer: string;
