@@ -276,7 +276,7 @@ export default function SettingsModal({ onClose, initialSettings, onSettingsChan
                 {activeTab === "difficulties" && (
                     <div className="flex flex-col items-center">
                         <h2 className="text-lg font-semibold text-center mb-4">Included Difficulties</h2>
-                        <p className="text-lg font-semibold text-center mb-4">These change the pool of characters based on their approximate difficulty to guess</p>
+                        <p className="text-center">These change the pool of characters based on their approximate difficulty to guess</p>
                         <div className="flex flex-col items-start mb-6">
                             {[
                                 { label: "Easy", name: "difficultyCheckbox1" },
