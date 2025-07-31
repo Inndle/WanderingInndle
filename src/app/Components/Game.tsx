@@ -70,7 +70,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2025-08-01": "Garry",
     "2025-08-02": "Flos",
     "2025-08-03": "Foliana",
-    "2025-08-04": "Redscar",
+    "2025-08-04": "Garen",
   };
 
   let dailyAnswer: string;
@@ -193,10 +193,6 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
           <h2 className="text-xl font-bold mb-4">About</h2>
           <p className="text-gray-700 text-sm leading-relaxed">
             Inndle is a daily character-guessing game featuring characters from the web serial The Wandering Inn by Pirateaba.
-          </p>
-
-          <p className="text-gray-700 text-sm leading-relaxed">
-            This project is not endorsed nor sponsored by Pirateaba.
           </p>
 
           <p className="text-gray-700 text-sm leading-relaxed">
