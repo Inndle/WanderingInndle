@@ -26,18 +26,18 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
     const initialAnswer: string = keys[randomIndex];
 
     // Log initial answer - NOTE: This answer is only for when you press close on the game start modal
-    if (DEBUGGING) {  
-      const todaysAnswerDetails: string[] | undefined = allCharacterData.get(initialAnswer);
-      if (todaysAnswerDetails === undefined) {
-        console.log('Selected character does not have info')
-      }
-      else {
-        console.log(todaysAnswerDetails);
-        console.log(`Today's Answer: ${initialAnswer}`);
-        console.log(`Today's Answer Aliases: ${todaysAnswerDetails[0].split(" |")}`);
-        console.log(`Today's Answer Fighting Type: ${todaysAnswerDetails[todaysAnswerDetails.length-1].split(" |")}`);
-      }
-    }
+    // if (DEBUGGING) {  
+    //   const todaysAnswerDetails: string[] | undefined = allCharacterData.get(initialAnswer);
+    //   if (todaysAnswerDetails === undefined) {
+    //     console.log('Selected character does not have info')
+    //   }
+    //   else {
+    //     console.log(todaysAnswerDetails);
+    //     console.log(`Today's Answer: ${initialAnswer}`);
+    //     console.log(`Today's Answer Aliases: ${todaysAnswerDetails[0].split(" |")}`);
+    //     console.log(`Today's Answer Fighting Type: ${todaysAnswerDetails[todaysAnswerDetails.length-1].split(" |")}`);
+    //   }
+    // }
 
     // Initialize state based on calculated defaults
     const [todaysAnswer, setTodaysAnswer] = useState(initialAnswer);
@@ -63,14 +63,14 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
     function resetGame(newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVol?: number) {
       setTodaysAnswer(newAnswer || initialAnswer);
       setDifficulties(newDifficulties || initialDifficulties);
-      console.log("ShowModal1", newShowModal)
+      // console.log("ShowModal1", newShowModal)
       setShowModal(newShowModal ?? true);
       setGameKey((prevKey) => prevKey + 1);
       setMaxVolume(maxVol ?? maxVolume)
       setIsDaily(false);
     }
     
-    console.log("showModal2", showModal)
+    // console.log("showModal2", showModal)
     return (
       <Game
         key={gameKey}

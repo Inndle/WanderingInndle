@@ -148,7 +148,7 @@ function GuessBox({ allCharacterData, history, todaysAnswer, onGuess, difficulty
   });
 
   const handleSettingsChange = (updatedSettings: typeof settings) => {
-    console.log("Updated settings in GuessBox:", updatedSettings);
+    // console.log("Updated settings in GuessBox:", updatedSettings);
     setSettings(updatedSettings);
   };
 
@@ -454,7 +454,7 @@ function getCharacterDetailsMap(characterName: string, allCharacterData: Map<str
   // Get guess details for the given character and confirm that it exists
   const characterDetails: string[] | undefined = allCharacterData.get(characterName);
   if (characterDetails === undefined) {
-    console.log(`Could not find details for ${characterName}`)
+    // console.log(`Could not find details for ${characterName}`)
     throw new Error(`Could not find details for ${characterName}`)
   }
 
@@ -464,9 +464,9 @@ function getCharacterDetailsMap(characterName: string, allCharacterData: Map<str
 
   // i starts at 1 because CATEGORIES includes id but guessDetails does not
   for (let i = 1; i < CATEGORIES.length; i++) {
-    if (DEBUGGING) {
-      console.log(`CATEGORIES[i]: ${CATEGORIES[i]}, characterDetails: ${characterDetails[i - 1]}`)
-    }
+    // if (DEBUGGING) {
+    //   console.log(`CATEGORIES[i]: ${CATEGORIES[i]}, characterDetails: ${characterDetails[i - 1]}`)
+    // }
     characterDetailsMap.set(CATEGORIES[i], parseCategory(characterDetails[i - 1]))
   }
 
@@ -519,17 +519,17 @@ function compareDetails({ guessMap, answerMap }: { guessMap: Map<string, string[
     const guessDetail = guessMap.get(category);
     const answerDetail = answerMap.get(category);
 
-    if (DEBUGGING) {
-      console.log(`Comparing Guess (${guessDetail}) and Answer (${answerDetail})`)
-    }
+    // if (DEBUGGING) {
+    //   console.log(`Comparing Guess (${guessDetail}) and Answer (${answerDetail})`)
+    // }
 
     // Ensure map has elements we want in it (this is mainly for typescript)
     if (guessDetail === undefined) {
-      console.log(`Could not find details for ${category}`)
+      // console.log(`Could not find details for ${category}`)
       throw new Error(`Could not find details for ${category}`)
     }
     if (answerDetail === undefined) {
-      console.log(`Could not find details for ${category}`)
+      // console.log(`Could not find details for ${category}`)
       throw new Error(`Could not find details for ${category}`)
     }
 
@@ -562,7 +562,7 @@ function compareDetails({ guessMap, answerMap }: { guessMap: Map<string, string[
         const guessSet = new Set(guessDetail);
         const answerSet = new Set(answerDetail);
         const elementsInCommon: number = guessSet.intersection(answerSet).size;
-        console.log(elementsInCommon)
+        // console.log(elementsInCommon)
         if (elementsInCommon === 0) {
           categoryAns = "None"
         } else if (elementsInCommon === answerSet.size && elementsInCommon === guessSet.size) {

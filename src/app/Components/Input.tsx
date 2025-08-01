@@ -55,7 +55,7 @@ function InputBar({ allCharacterData, history, onGuess }: InputContainerProps) {
         setInput("");
         setShowDropdown(false);
         onGuess(guess);
-        console.log(`Guessed ${guess}`);
+        // console.log(`Guessed ${guess}`);
     }
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
