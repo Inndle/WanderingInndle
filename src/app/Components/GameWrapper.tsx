@@ -7,7 +7,7 @@ interface GameWrapperProps {
     allCharacterData: Map<string, string[]>,
 }
 
-const DEBUGGING = false;
+// const DEBUGGING = false;
 
 export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
     // Set defaults for game start
