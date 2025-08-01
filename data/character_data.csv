@@ -33,7 +33,7 @@ Halrac,Halrac Everam | Halrac the Grim |,Male |,,Human |,Deceased |,Griffon Hunt
 Moore,Moore of Raithland | Moore | Farwalker |,Male |,31 |,Half-Giant |,Deceased |,Halfseekers |,Izril |,The Wandering Inn |,Adventurer |,Mage |,https://wiki.wanderinginn.com/images/9/95/Moore_by_MG.jpg,1,1490,2
 Jelaqua,Jelaqua Ivirith | Ivirith the Tempest |,Female |,58 |,Selphid |,Alive |,Halfseekers |,Izril |,The Wandering Inn | Pallass |,Adventurer |,Warrior |,https://wiki.wanderinginn.com/images/e/e4/Jelaqua-by-artsynada.jpg,1,2267,2
 Garen,Garen Redfang |,Male |,14 |,Hobgoblin | Goblin |,Deceased |,Halfseekers | Redfang Tribe |,Izril |,North Izril |,Chieftain |,Warrior | Leader |,https://wiki.wanderinginn.com/images/0/0c/Garen_by_Pkay.png,1,2415,2
-Trey,Trey Atwood | Troy Atlas | Worm Guy |,Male |,17 |,Human |,Alive |,Reim | Earthers,Chandrar |,Reim |,Vassal |,Mage |,https://wiki.wanderinginn.com/images/4/4e/Trey_Selfie_portrait_by_auspiciousOctopi.jpg,1,6691,2
+Trey,Trey Atwood | Troy Atlas | Worm Guy |,Male |,17 |,Human |,Alive |,Reim | Earthers,Chandrar | Wistram |,Reim | Wistram |,Vassal |,Mage |,https://wiki.wanderinginn.com/images/4/4e/Trey_Selfie_portrait_by_auspiciousOctopi.jpg,1,6691,2
 Teresa,Teresa Atwood | Teres |,Female |,17 |,Human |,Alive |,Reim | Earthers,Chandrar |,Reim |,Vassal | Soldier |,Warrior |,https://wiki.wanderinginn.com/images/6/66/Teres.png,1,2410,2
 Mars,Mars the Illusionist | Mars | Eternal Gladiator |,Female |,,Human |,Alive |,Reim | Seven |,Chandrar |,Reim |,Vassal | Soldier |,Warrior |,https://wiki.wanderinginn.com/images/9/97/Mars_by_pkay.png,1,1233,2
 Ilvriss,Ilvriss Gemscale | Wall Lord Ilvriss | Employer I |,Male |,,Drake |,Alive |,Salazsar |,Izril |,Salazsar |,Noble |,Non-combat |,https://wiki.wanderinginn.com/images/a/aa/Ilvriss-by-curry.png,1,4525,2
@@ -130,7 +130,7 @@ Wil,Wil Kallinad |,Male |,,Human |,Alive |,Titan's School |,Baleros |,Elvallian 
 Yerranola,Yerranola | Yerra |,Female |,,Selphid |,Alive |,Titan's School |,Baleros |,Elvallian |,Strategist |,Leader |,,2,589,4
 Rie,Rie Valerund | Lady Rie Valerund of Invrisil |,Female |,,Human |,Alive |,Circle of Thorns | Unseen Empire |,Izril |,Riverfarm |,Noble | Vassal |,Non-combat |,,2,1428,4
 Snapjaw,Snapjaw | Miss Goblin |,Female |,,Hobgoblin | Goblin |,Alive |,Flooded Waters Tribe | Fellowship of the Inn |,Izril |,Goblinhome |,Soldier |,Warrior |,https://wiki.wanderinginn.com/images/4/4b/Snapjaw_by_Artsy_Nada.jpg,2,712,4
-Yellow Splatters,Yellow Splatters |,Male |,,Antinium |,Alive |,Free Antinium | Painted Antinium | Liscor's City Watch |,Izril |,Liscor |,Soldier | Prognugator |,Warrior |,https://wiki.wanderinginn.com/images/5/59/Yellow_Splatters_Close-Up_by_Jason_Yao.png,2,1072,4
+Yellow Splatters,Yellow Splatters |,Male |,,Antinium |,Alive |,Free Antinium | Painted Antinium | Liscor's City Watch |,Izril |,Liscor |,Soldier | Prognugator |,Warrior | Leader |,https://wiki.wanderinginn.com/images/5/59/Yellow_Splatters_Close-Up_by_Jason_Yao.png,2,1072,4
 Paige,Paige |,Female |,,Human |,Alive |,Gravetender's Fist | United Nations | Earthers,Baleros |,Talenqual |,Smith |,Non-combat |,,2,609,4
 Daly,Daly Sullivan |,Male |,16 |,Human |,Alive |,Gravetender's Fist | United Nations | Bushrangers | Earthers,Baleros |,Talenqual |,Adventurer | Soldier |,Warrior |,,2,1892,4
 Kenjiro,Kenjiro Murata | Ken |,Male |,21 |,Human |,Alive |,Gravetender's Fist | United Nations | Earthers,Baleros |,Talenqual |,Ambassador |,Non-combat |,https://wiki.wanderinginn.com/images/8/83/Ken_by_KaDraginn.png,2,1461,4
@@ -190,7 +190,7 @@ Yelroan,Yelroan | Mathematician Yelroan | Math Gnoll | Sunglasses | Yelroan the 
 Fightipilota,Fightipilota | Flipstrike | Fighti | Flighti Pilota |,Female |,,Goblin |,Alive |,Redfang Tribe | Flooded Waters Tribe |,Izril |,Goblinhome |,Runner |,Archer |,,2,400,8
 Nerul,Nerul Gemscale |,Male |,,Drake |,Alive |,Salazsar |,Izril |,Salazsar |,Noble |,Non-combat |,,2,529,8
 Adetr,Adetr Steelfur |,Male |,19 |,Gnoll |,Alive |,Steelfur Tribe |,Izril |,Great Plains |,Soldier |,Warrior |,https://wiki.wanderinginn.com/images/4/45/Adetr-by-Daryl-Shnmurgenen.jpg,2,589,8
-Ushar,Ushar |,Female |,,Human |,Alive |,Thronebearers | Calanfer |,Izril |,Calanfer | The Wandering Inn |,Knight |,Warrior |,,2,654,8
+Ushar,Ushar |,Female |,,Human |,Alive |,Thronebearers | Calanfer |,Izril | Terandria |,Calanfer | The Wandering Inn |,Knight |,Warrior |,,2,654,8
 Vetn,Vetn | Thief of Clouds |,Male |,18 |,Gnoll |,Alive |,Unaffiliated |,Izril |,Great Plains |,Crime |,Rogue |,,2,695,8
 Ama,Ama | Deathlady Ama |,Female |,,Human |,Alive |,Order of Solstice |,Izril | Terandria |,The Wandering Inn |,Mage | Knight |,Mage |,,2,347,9
 Isthekenous,"Isthekenous | The God of Designs, of plans | The Wandering Builder | The architect of the 'folly of Gods' |",Male |,,God |,Deceased |,Dead Gods |,Kasignel |,Kasignel |,God |,God |,,2,118,9
@@ -237,7 +237,7 @@ Sserys,Sserys | High General Sserys | Sserys of Liscor | Spear of the Drakes |,M
 Nereshal,Nereshal |,Male |,,Human |,Alive |,Blighted Kingdom |,Rhir |,Blighted Kingdom |,Secretary | Mage |,Mage |,,3,259,4
 Tottenval,Tottenval | Blooming Plague | The King's Gardener |,Male |,,Beastkin |,Deceased |,Reim | Seven |,Chandrar |,Reim |,Artisan | Vassal |,Non-combat |,,3,51,4
 Peclir,Peclir Im |,Male |,,Human |,Alive |,Forgotten Wing Company | Jungle Tails |,Baleros |,Elvallian |,Vassal | Assassin |,Rogue |,,3,301,4
-Purple Smile,Purple Smile | Scary-purple-smile-guy |,Male |,,Antinium |,Alive |,Free Antinium | Painted Antinium |,Izril |,Liscor |,Soldier |,Leader |,https://wiki.wanderinginn.com/images/6/6f/Purple_smile_by_MG.jpg,3,172,4
+Purple Smile,Purple Smile | Scary-purple-smile-guy |,Male |,,Antinium |,Alive |,Free Antinium | Painted Antinium |,Izril |,Liscor |,Soldier |,Leader | Warrior |,https://wiki.wanderinginn.com/images/6/6f/Purple_smile_by_MG.jpg,3,172,4
 Regis,Regis Reinhart | Grandfather |,Male |,3800 |,Undead |,Active |,House Reinhart | Circle of Thorns |,Izril |,First Landing |,Noble |,Non-combat |,https://wiki.wanderinginn.com/images/2/20/Regis_cutout_by_Brack.jpg,3,205,4
 Thomast,Thomast Veniral | Chevalier Thomast |,Male |,,Human |,Alive |,Knights of the Petal | House Walchais,Izril |,North Izril |,Soldier | Noble |,Warrior |,https://wiki.wanderinginn.com/images/a/ac/THOMAST_%28persona_5_style%29_by_Chalyon.jpg,3,570,4
 Wuvren,Wuvren Sitil |,Female |,59 |,Human |,Alive |,Magnolia Reinhart |,Izril |,North Izril |,Noble |,Non-combat |,https://wiki.wanderinginn.com/images/a/ac/Wuvren_by_pkay.png,3,154,4
@@ -365,7 +365,7 @@ Satar,Satar Silverfang |,Female |,19 |,Gnoll |,Alive |,Silverfang Tribe |,Izril 
 Qwera,Qwera | Golden Gnoll | Qwera Hatail |,Female |,,Gnoll |,Alive |,Unaffiliated |,Izril |,Great Plains |,Merchant |,Non-combat |,,3,522,8
 Marquin,Marquin | Marquin the Radiant | Marquin of Calanfer | Queen Marquin of Calanfer | Queen Marquin of the Single Breast |,Female |,,Human |,Deceased |,Calanfer | House Marquin |,Terandria |,Calanfer |,Monarch | Soldier |,Leader |,,3,659,8
 Demon King,Demon King |,Male |,,Demon |,Alive |,Demon Kingdom |,Rhir |,Demon Kingdom |,Monarch |,Leader |,,3,94,8
-Doubte,Doubte | Hero of Zethe | Doubte of Zethe |,Male |,,Human |,Alive |,Unaffiliated |,Chandrar |,Zethe |,Farmer |,Warrior |,,3,258,8
+Doubte,Doubte | Hero of Zethe | Doubte of Zethe |,Male |,,Human |,Alive |,Unaffiliated |,Chandrar |,Zethe |,Farmer | Hero |,Warrior |,,3,258,8
 Sest,Sest |,Male |,,Human |,Deceased |,Thronebearers | Calanfer | Wandering Inn |,Izril | Terandria |,Calanfer | The Wandering Inn |,Knight |,Warrior |,,3,349,8
 Fithea,Fithea sor Kerwenas | Fithea the Last | Fithea Deadwood |,Female |,16000 |,Dryad |,Deceased |,Ailendamus |,Terandria |,Ailendamus |,Noble |,Mage |,,3,321,8
 Dionamella,Dionamella | Great General of Ages | Dioname |,Female |,1600 |,Half-Elf |,Deceased |,Ailendamus |,Terandria |,Ailendamus |,General |,Leader |,,3,221,8
@@ -496,7 +496,7 @@ Emme,Emme |,Female |,,Dwarf |,Alive |,Players of Celum |,Izril |,Celum | Invrisi
 Pralcem,Pralcem |,Male |,,Gnoll |,Alive |,Players of Celum |,Izril |,Celum |,Performer |,Non-combat |,,4,72,5
 Gilam,Gilam Quellae |,Male |,,Human |,Alive |,Quellae Family | Bloodfeast Raiders |,Izril |,North Izril |,Noble |,Warrior |,,4,128,5
 Raekea,Raekea Silversmith | Raeky |,Female |,,Gnoll |,Alive |,Silverfang Tribe |,Izril |,Liscor |,Smith | Mayor |,Non-combat |,,4,317,5
-Erill,Erill Fienst | Big E |,Male |,,Human |,Alive |,Unaffiliated |,Izril |,Veltras Lands |,Noble | Merchant |,Non-combat |,,4,136,5
+Erill,Erill Fienst | Big E |,Male |,,Human |,Alive |,Unaffiliated |,Izril |,Veltras Lands |,Noble | Merchant |,Non-combat |,,5,136,5
 Pattin,Pattin | Lord Pattin of Vaunt |,Male |,,Human |,Alive |,Vaunt |,Izril |,Vaunt |,Noble |,Non-combat |,,4,62,5
 Rael,Rael Veniford |,Male |,,Human |,Alive |,Veniford Family |,Izril |,North Izril |,Noble |,Non-combat |,,4,143,5
 Stan,Stan | Crossbow Stan |,Male |,41 |,Human |,Deceased |,Unaffiliated |,Izril |,Celum |,Adventurer |,Archer |,,4,296,6
@@ -589,7 +589,7 @@ Shallel,Shallel Byres |,Female |,,Human |,Alive |,House Byres |,Izril |,Byers' L
 Etril,Etril Wellfar | Waveleader of Wellfar |,Male |,,Human |,Alive |,House Welfar |,Izril |,First Landing |,Noble | Sailor |,Leader |,,4,222,7
 Hetessana,Hetessana Wellfar |,Female |,57 |,Human |,Alive |,House Wellfar | House Terland |,Izril |,First Landing |,Noble |,Non-combat |,,4,47,7
 Ferris,Ferris Thycarl | Ferris Seftpaw |,Male |,,Gnoll |,Alive |,Manus |,Izril |,Manus |,Crime |,Rogue |,,4,209,7
-Shellc,Shellc |,Male |,,Drake |,Alive |,Manus | Blighted Kingdom |,Rhir |,Blighted Kingdom |,Soldier |,Leader |,,4,113,7
+Shellc,Shellc |,Male |,,Drake |,Alive |,Manus | Blighted Kingdom |,Rhir |,Blighted Kingdom |,Soldier |,Leader |,,5,113,7
 Shaerrha,Shaerrha Brasswing | First Gardener | Grand Gardener | The Gardener of Oteslia |,Female |,,Drake |,Alive |,Oteslia |,Izril |,Oteslia |,Monarch |,Non-combat |,,4,273,7
 Werdin,Werdin Blackwing |,Male |,,Drake |,Alive |,Pallass |,Izril |,Pallass |,Noble |,Non-combat |,,4,13,7
 Iratze,Iratze |,Male |,21 |,Human |,Alive |,Pomle |,Chandrar |,Pomle |,Soldier |,Warrior |,,4,109,7
