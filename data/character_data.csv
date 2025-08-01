@@ -465,11 +465,11 @@ Anith,Anith |,Male |,,Beastkin |,Alive |,Vuliel Drae |,Izril |,Liscor |,Adventur
 Insill,Insill |,Male |,,Drake |,Alive |,Vuliel Drae |,Izril |,Liscor |,Adventurer |,Rogue |,,4,271,4
 Dasha,Dasha |,Female |,,Dwarf |,Alive |,Vuliel Drae |,Izril |,Liscor |,Adventurer |,Warrior |,,4,176,4
 Zanthia,Zanthia |,Female |,62 |,Human |,Alive |,Magnolia Reinhart |,Izril |,North Izril |,Noble |,Non-combat |,https://wiki.wanderinginn.com/images/e/ec/Zanthia_by_Tomeo.png,4,169,4
-Tallis,Tallis | Tallis the Stormbreaker |,Male |,,Goblin |,Deceased |,Unaffiliated |,Izril |,North Izril |,Noble | Shaman |,Mage |,,4,34,4
+Tallis,Tallis | Tallis the Stormbreaker |,Male |,,Goblin |,Deceased |,Unaffiliated |,Izril |,North Izril |,Noble | Shaman |,Mage |,,5,34,4
 Nesor,Nesor |,Male |,,Human |,Alive |,Unaffiliated |,Izril |,Invrisil | Riverfarm |,Secretary | Mage |,Mage |,,4,142,4
 Isodore,Isodore |,Female |,18 |,Human |,Alive |,Blighted Kingdom |,Rhir |,Blighted Kingdom |,Royal | Child |,Non-combat |,,4,79,4
 Calectus,Calectus |,Nonbinary |,,Selphid |,Deceased |,Bodies of Fellden | The Minds |,Baleros |,Talenqual | Gathering Citadel |,Guard |,Warrior |,,4,277,4
-Bastiom,Bastiom |,Male |,,Dullahan |,Deceased |,Gravetender's Fist |,Baleros |,Talenqual |,Soldier |,Warrior |,,4,31,4
+Bastiom,Bastiom |,Male |,,Dullahan |,Deceased |,Gravetender's Fist |,Baleros |,Talenqual |,Soldier |,Warrior |,,5,31,4
 Aiko,Aiko Nonomura |,Female |,22 |,Human |,Alive |,Gravetender's Fist | United Nations | Earthers,Baleros |,Talenqual |,Doctor |,Non-combat |,,4,446,4
 Fulviolo,Fulviolo El |,Male |,70 |,Human |,Deceased |,House El |,Izril |,North Izril |,Noble |,Non-combat |,,4,34,4
 Cecille,Cecille Reinhart |,Female |,,Human |,Alive |,House Reinhart |,Izril |,First Landing |,Noble |,Non-combat |,,4,84,4
@@ -540,7 +540,7 @@ Vasraf,Vasraf |,Male |,,Human |,Alive |,Tiqr |,Chandrar |,Tiqr |,General |,Leade
 Merrik,Merrik Hostone |,Male |,,Dwarf |,Alive |,Titan's School |,Baleros |,Elvallian |,General |,Leader |,,4,559,6
 Lorent,Lorent |,Male |,,Dullahan |,Alive |,Unaffiliated |,Izril |,Pallass |,Artisan |,Non-combat |,,4,69,6
 Madain,Madain | Mad Madain |,Male |,,Human |,Alive |,Unaffiliated |,Izril |,Reizmelt |,Innkeeper |,Non-combat |,https://wiki.wanderinginn.com/images/d/d7/Madains_inn_by_brack.jpg,4,185,6
-Priya,Priya |,Female |,,Human |,Alive |,United Nations |,Baleros |,Talenqual |,Chef | Doctor |,Non-combat |,,4,37,6
+Priya,Priya |,Female |,,Human |,Alive |,United Nations |,Baleros |,Talenqual |,Chef | Doctor |,Non-combat |,,5,37,6
 Kirana,Kirana |,Female |,18 |,Human |,Alive |,United Nations |,Baleros |,Talenqual |,Innkeeper |,Non-combat |,,4,215,6
 Tofte,Tofte |,Male |,,Human |,Alive |,United Nations | Bushrangers |,Baleros |,Talenqual |,Adventurer |,Archer |,,4,51,6
 Beatica,Beatica |,Female |,42 |,Human |,Alive |,Unseen Empire |,Izril |,Riverfarm |,Mayor |,Non-combat |,,4,145,6
@@ -620,7 +620,7 @@ Cetrule,Cetrule |,Male |,,Gnoll |,Deceased |,Silverfang Tribe |,Izril |,Great Pl
 Cers,Cers Silverfang |,Male |,9 |,Gnoll |,Alive |,Silverfang Tribe |,Izril |,Great Plains |,Child |,Non-combat |,,4,128,8
 Zacheales,Zacheales | Putrid One |,Male |,,Half-Elf |,Deceased |,Unaffiliated |,Izril |,Village of the Dead |,Mage |,Mage |,,4,169,8
 Kishkeria,Kishkeria | Archmage of the Eternal Grasslands |,Female |,,Gnoll |,Deceased |,Wistram |,Chandrar |,Zeikhal |,Archmage | Mage |,Mage |,,4,28,8
-Sympathy,Sympathy | The Fifth Mind |,Nonbinary |,,Mind | Selphid |,Deceased |,The Minds | Bodies of Fellden |,Baleros |,Gathering Citadel |,Monarch | Intellect |,Non-combat |,,4,31,8
+Sympathy,Sympathy | The Fifth Mind |,Nonbinary |,,Mind | Selphid |,Deceased |,The Minds | Bodies of Fellden |,Baleros |,Gathering Citadel |,Monarch | Intellect |,Non-combat |,,5,31,8
 Lamont,Lamont |,Male |,23 |,Human |,Alive |,Wistram |,Wistram | Sea |,Wistram | Boat |,Sailor |,Non-combat |,,4,137,8
 Czkelcill,Czkelcill Mirrex | Mirrex the Bard | Voice of the Antinium |,Male |,6000 |,Antinium |,Alive |,Centenium |,Rhir |,Demon Kingdom |,Centenium | Performer |,Mage |,,4,30,8
 Iraz,Iraz Steelfur |,Male |,,Gnoll |,Deceased |,Steelfur Tribe |,Izril |,Great Plains |,Chieftain |,Warrior | Leader |,,4,231,8
@@ -667,10 +667,10 @@ Razia,Razia | Razille | Razize | Ratiez the Blade |,Female |,,Agelum |,Deceased 
 Buscrei,Buscrei Veltras |,Female |,,Human |,Alive |,House Veltras |,Izril |,Veltras Lands |,Noble |,Archer |,,4,247,8
 Timewalker,Timewalker | Timewalker | Devourer of Gods | Devourer of Time | Great Devourer |,Nonbinary |,,Seamwalker |,Deceased |,Immortals |,Baleros |,Kasignel |,God |,God |,https://wiki.wanderinginn.com/images/d/d2/Seamwalkers-by-pkay.png,4,61,8
 Zessoprica,Zessoprica | Sovereign of Sands | Great Zossoprica of Chandrar | Wyrm Queen of the Withering Age |,Female |,14000 |,Wyrm |,Deceased |,Immortals |,Chandrar |,Zeikhal |,Monarch |,Mage |,,5,10,8
-Svinta,Svinta | Warden Svinta |,Female |,,Human |,Alive |,Jecrass |,Chandrar |,Jecrass |,Noble |,Warrior |,,4,35,8
+Svinta,Svinta | Warden Svinta |,Female |,,Human |,Alive |,Jecrass |,Chandrar |,Jecrass |,Noble |,Warrior |,,5,35,8
 Pewerthe,Pewerthe |,Female |,25 |,Human |,Alive |,Khelt |,Chandrar |,Khelt |,Artisan |,Non-combat |,,4,140,8
 Xierca,Xierca | Glorious Queen Xierca |,Female |,1300 |,Undead |,Deceased |,Khelt |,Chandrar |,Khelt |,Monarch | Royal |,Leader |,,4,81,8
-Heris,Heris | Queen Heris the Second | Scorpion of Khelt | Great Avenger of Ger |,Female |,,Undead |,Deceased |,Khelt |,Chandrar |,Khelt |,Monarch | Royal |,Leader |,,5,33,8
+Heris,Heris | Queen Heris the Second | Scorpion of Khelt | Great Avenger of Ger |,Female |,,Undead |,Deceased |,Khelt |,Chandrar |,Khelt |,Monarch | Royal |,Leader |,,4,33,8
 His-Xe,His-Xe | King His-Xe the Serpent KingViper-King of Khelt |,Male |,,Undead |,Deceased |,Khelt |,Chandrar |,Khelt |,Monarch | Royal |,Leader |,,5,46,8
 Emrist,Emrist | Queen Emrist of Khelt | The Pactmaker |,Female |,,Undead |,Deceased |,Khelt |,Chandrar |,Khelt |,Monarch | Royal |,Leader |,,5,42,8
 Razzimir,Razzimir |,Male |,,Undead |,Deceased |,Khelt |,Chandrar |,Khelt |,Monarch | Royal |,Leader |,,4,20,8
@@ -680,7 +680,7 @@ Crusader 53,Crusader 53 |,Male |,,Antinium |,Alive |,Liscor | Free Antinium |,Iz
 Seelaw,Seelaw Ya |,Male |,,Garuda |,Alive |,Loquea Dree |,Chandrar |,Zeikhal |,Ambassador |,Warrior |,,4,74,8
 Leka,Leka Thri |,Male |,,Garuda |,Alive |,Loquea Dree |,Chandrar |,Zeikhal |,Ambassador |,Warrior |,,4,185,8
 Frieke,Frieke | Falcon | Falcon of Medain | Frieke of Medain | Frieke of Khelt |,Female |,,Dullahan |,Alive |,Medain | Khelt |,Chandrar |,Medain | Khelt |,Adventurer |,Archer |,,4,112,8
-Shurein,Shurein | Abbot Shurein |,Male |,75 |,String Person |,Alive |,Unaffiliated |,Chandrar |,Sottheim |,General |,Warrior |,,4,37,8
+Shurein,Shurein | Abbot Shurein |,Male |,75 |,String Person |,Alive |,Unaffiliated |,Chandrar |,Sottheim |,General |,Warrior |,,5,37,8
 Merindue,Merindue |,Female |,,String Person |,Deceased |,Nerrhavia's Fallen |,Chandrar |,Nerrhavia's Fallen |,Monarch | Royal |,Leader |,,4,85,8
 Ducaz,Ducaz | Magistrate Ducaz |,Male |,,String Person |,Alive |,Nerrhavia's Fallen |,Chandrar |,Nerrhavia's Fallen |,Mayor |,Non-combat |,,5,59,8
 Solton,Solton | Ser Solton |,Male |,41 |,Human |,Alive |,Order of Haegris |,Terandria |,Pheislant |,Knight |,Warrior |,,4,266,8
@@ -696,7 +696,7 @@ Seru’nial,Seru'nial | The Gnoll Who Flew |,Female |,,Gnoll |,Deceased |,Unaffi
 Prha,Prha |,Female |,27 |,Gnoll |,Alive |,Stone Spears Tribe |,Izril |,Great Plains |,Soldier |,Archer |,,4,69,8
 Oiena,Oiena Zessoprical |,Female |,,Human |,Alive |,Ailendamus |,Terandria |,Ailendamus |,Royal | Child |,Non-combat |,,4,157,8
 Ressk,Ressk |,Nonbinary |,,Selphid |,Deceased |,The Minds |,Baleros |,Gathering Citadel |,Guard |,Warrior |,,4,45,8
-Continuum,Continuum | The First Mind |,Nonbinary |,,Mind | Selphid |,Deceased |,The Minds | Bodies of Fellden |,Baleros |,Gathering Citadel |,Monarch | Ambassador |,Non-combat |,,4,33,8
+Continuum,Continuum | The First Mind |,Nonbinary |,,Mind | Selphid |,Deceased |,The Minds | Bodies of Fellden |,Baleros |,Gathering Citadel |,Monarch | Ambassador |,Non-combat |,,5,33,8
 Dictum,Dictum | The Third Mind |,Nonbinary |,,Mind | Selphid |,Alive |,The Minds | Bodies of Fellden |,Baleros |,Gathering Citadel |,Monarch | Doctor |,Non-combat |,,4,69,8
 Egress,Egress | The Sixth Mind |,Nonbinary |,602 |,Mind | Selphid |,Deceased |,The Minds | Bodies of Fellden |,Baleros |,Gathering Citadel |,Monarch | Smith |,Non-combat |,,4,47,8
 Lormel,Lormel |,Male |,,Human |,Alive |,Thronebearers | Calanfer |,Terandria |,Calanfer |,Knight |,Warrior |,,4,341,8
@@ -709,7 +709,7 @@ Gewilena,Gewilena |,Female |,35 |,Human |,Deceased |,Unaffiliated |,Terandria |,
 Elucina,Elucina | Rebel of String |,Female |,2000 |,String Person |,Deceased |,Unaffiliated |,Chandrar |,Nerrhavia's Fallen |,Hero |,Leader |,,4,126,8
 Ivery,Ivery |,Nonbinary |,,Undead |,Active |,Unaffiliated |,Chandrar |,Zeikhal |,Soldier |,Warrior |,,4,58,8
 Resk,Resk | Alchimagus Resk |,Male |,40 |,Fraerling |,Alive |,United Nations |,Baleros |,Paeth |,Alchemist | Mage |,Mage |,,4,274,8
-Somillune,Somillune | Witch of Ash |,Female |,,,Deceased |,Witches |,Kasignel |,Kasignel |,Witch |,Mage |,,4,35,8
+Somillune,Somillune | Witch of Ash |,Female |,,,Deceased |,Witches |,Kasignel |,Kasignel |,Witch |,Mage |,,5,35,8
 Prixall,Prixall |,Female |,61 |,Hobgoblin | Goblin |,Alive |,Witches | Molten Stone Tribe |,Izril |,Deuse Valley |,Witch | Shaman |,Mage |,https://wiki.wanderinginn.com/images/d/db/Playful_Radiant_Fishies_by_Lanrae.png,4,86,8
 Werri,Werri | Werina |,Female |,26 |,Gnoll |,Alive |,Unaffiliated |,Izril |,Great Plains |,Chieftain |,Leader |,,4,118,8
 Contradiction,Contradiction | The Second Mind | Inventor | Far thinker | Redemption |,Nonbinary |,,Mind | Selphid,Deceased |,Bodies of Fellden | The Minds,Baleros |,Gathering Citadel |,Monarch | Artisan |,Non-combat |,,4,198,9
@@ -719,9 +719,9 @@ Gamur,Gamur | Gamur the Axe |,Male |,,Gnoll |,Alive |,Unaffiliated |,Izril |,Gre
 Rosencrantz,Rosencrantz |,Nonbinary |,,Antinium |,Alive |,Free Antinium | The Wandering Inn |,Izril |,The Wandering Inn |,Innkeeper |,Non-combat |,,4,153,9
 Theillige,,Nonbinary |,,,,Fae | Immortals |,Avalon |,Avalon |,Soldier |,Warrior |,,4,78,9
 Itkisa,Itkisa |,Female |,,Human |,Alive |,Unaffiliated |,Chandrar |,Meneretorre |,Vassal |,Warrior |,,4,117,9
-Antal,Antal Fekete |,Male |,,Human |,Alive |,Blighted Kingdom |,Rhir |,Blighted Kingdom |,Hero |,Non-combat |,,4,35,9
+Antal,Antal Fekete |,Male |,,Human |,Alive |,Blighted Kingdom |,Rhir |,Blighted Kingdom |,Hero |,Non-combat |,,5,35,9
 Rosech,Rosech |,Male |,,Human |,Deceased |,Bloodtear Pirates |,Sea |,Boat |,Pirate | General |,Warrior | Leader |,,4,184,9
-Beacle,Beacle |,Female |,14 |,Human |,Alive |,Calanfer |,Terandria |,Calanfer |,Secretary |,Non-combat |,https://wiki.wanderinginn.com/images/3/34/Saint_becca_saviour_of_the_umbral_throne.png,4,34,9
+Beacle,Beacle |,Female |,14 |,Human |,Alive |,Calanfer |,Terandria |,Calanfer |,Secretary |,Non-combat |,https://wiki.wanderinginn.com/images/3/34/Saint_becca_saviour_of_the_umbral_throne.png,5,34,9
 Thilowen,Thilowen |,Male |,,Human |,Alive |,Calanfer | Thronebearers |,Terandria |,Calanfer |,Knight | General |,Warrior | Leader |,,4,62,9
 Chaoisa,Chaoisa | The Contempt of Man |,Female |,39 |,Human |,Alive |,Driver's Guild |,Izril |,North Izril |,Runner |,Non-combat |,,4,103,9
 Zanze,Zanze Envergall |,Male |,,Human |,Deceased |,Driver's Guild | Order of Solstice |,Izril |,The Wandering Inn |,Runner |,Non-combat |,,4,115,9
@@ -743,11 +743,11 @@ Raich,Raich | Raich the Path |,Female |,,Human |,Alive |,Runner's Guild |,Izril 
 Herove,Herove Canidus | Shield-Runner Herove |,Male |,,Human |,Deceased |,Runner's Guild | Order of Solstice |,Izril |,Celum |,Runner | Knight |,Warrior |,,4,102,9
 Eschowar,Eschowar Erchirite |,Male |,87 |,Drake |,Alive |,Salazsar |,Izril |,Salazsar |,Noble |,Non-combat |,,4,98,9
 Telleis,Telleis |,Female |,,Human |,Alive |,Unaffiliated |,Terandria |,Samal |,Royal |,Warrior |,,4,40,9
-Riz,Riz | Facecarver Riz |,Female |,,Human |,Alive |,Unaffiliated |,Izril |,Invrisil |,Adventurer |,Rogue |,,4,36,9
+Riz,Riz | Facecarver Riz |,Female |,,Human |,Alive |,Unaffiliated |,Izril |,Invrisil |,Adventurer |,Rogue |,,5,36,9
 Bviora,Bviora Stormless |,Female |,,Human |,Deceased |,Unaffiliated |,Izril |,Liscor |,Crime |,Rogue |,,4,126,9
 Selphid Geneva,Selphid Geneva | Other Geneva | Alternate Geneva | Selphid-Geneva | Mind-Geneva | Evil-Geneva |,Female |,1 |,Selphid |,Unknown |,The Minds |,Baleros |,Gathering Citadel |,Doctor | Vassal |,Non-combat |,https://wiki.wanderinginn.com/images/3/31/Genevil_by_Brack.jpg,4,79,9
 Vensha,Vensha | Dame Vensha |,Female |,62 |,Human |,Alive |,Thronebearers | Calanfer |,Terandria |,Calanfer |,Knight |,Warrior |,,4,52,9
-Nollesc,Nollesc |,Male |,,Drowned Person | Drake |,Alive |,Unaffiliated |,Izril |,The Wandering Inn |,Assassin |,Rogue |,,4,30,9
+Nollesc,Nollesc |,Male |,,Drowned Person | Drake |,Alive |,Unaffiliated |,Izril |,The Wandering Inn |,Assassin |,Rogue |,,5,30,9
 Izikere,Izikere | Izikere the Guardian |,Female |,300 |,Goblin |,Alive |,Unaffiliated |,Isles |,Isle of Goblins |,Noble |,Mage | Leader |,,4,47,9
 Jespeire,Jespeire |,Male |,,Half-Elf |,Alive |,Unaffiliated |,Izril | Terandria |,New Lands |,Guard |,Warrior |,,4,47,9
 Viecel,Viecel Cohex | Viecel the Gambler | Viecel the Mad Gambler | Viecel the Mad Better | Luckless |,Male |,,Selphid |,Alive |,Unaffiliated |,Izril |,Adventurer's Haven,Adventurer |,Mage |,,4,92,9
