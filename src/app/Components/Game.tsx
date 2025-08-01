@@ -117,7 +117,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
           Visit <strong>Settings</strong> to:
           <ul className="list-disc list-inside text-left mt-2 ml-2">
             <li>Select difficulty</li>
-            <li>Hide columns to prevent spoilers</li>
+            <li>Mask columns to prevent spoilers</li>
             <li>Read comprehensive instructions</li>
           </ul>
         </p>
