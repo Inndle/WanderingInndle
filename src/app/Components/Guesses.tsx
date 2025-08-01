@@ -55,11 +55,11 @@ const CATEGORIES = [
 ]
 
 const CATEGORY_ORDER = [
-  "Name", "Mentions", "Introduced", "Gender", "Species", "Status", "Affiliation", "Continent", "Residence", "Occupation", "Fighting Type"
+  "Image", "Mentions", "Introduced", "Gender", "Species", "Status", "Affiliation", "Continent", "Residence", "Occupation", "Fighting Type"
 ]
 
 let DISPLAYED_CATEGORIES = [
-  "Name", "Mentions", "Introduced", "Gender", "Species", "Status", "Affiliation", "Continent", "Residence", "Occupation", "Fighting Type"
+  "Image", "Mentions", "Introduced", "Gender", "Species", "Status", "Affiliation", "Continent", "Residence", "Occupation", "Fighting Type"
 ]
 
 // const CATEGORY_TO_TYPE = {
@@ -77,7 +77,7 @@ let DISPLAYED_CATEGORIES = [
 // }
 
 const categoryTypeMap: Map<string, string> = new Map<string, string>;
-categoryTypeMap.set("Name", "Image");
+categoryTypeMap.set("Image", "Image");
 categoryTypeMap.set("Mentions", "Scalar");
 categoryTypeMap.set("Introduced", "Scalar");
 categoryTypeMap.set("Gender", "Binary");
