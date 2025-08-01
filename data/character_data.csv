@@ -267,7 +267,7 @@ Bevussa,Bevussa Slenderscale |,Female |,,Garuda |,Alive |,Pallass |,Izril |,Pall
 Eltistiman,Eltistiman Verdue |,Male |,35 |,Human |,Alive |,Players of Celum |,Izril |,Invrisil |,Performer | Mage |,Mage |,,3,105,5
 Thunderfur,Thunderfur |,Male |,,Wolf |,Deceased |,Redfang Tribe | Flooded Waters Tribe |,Izril |,Goblinhome |,Soldier |,Warrior |,,3,114,5
 Silent Queen,Silent Queen | The Queen of the Silent Antinium | Silent Queen |,Female |,,Antinium |,Alive |,Silent Antinium |,Izril |,Hivelands |,Monarch |,Leader |,,3,148,5
-Nailren,Nailren | Nailren of the Fletchsing Tribe |,Male |,36 |,Gnoll |,Alive |,The Pride of Kelia |,Izril |,Liscor | Great Plains |,Adventurer | Chieftain | Assassin |,Warrior |,,3,309,5
+Nailren,Nailren | Nailren of the Fletchsing Tribe |,Male |,36 |,Gnoll |,Alive |,The Pride of Kelia |,Izril |,Liscor | Great Plains |,Adventurer | Chieftain | Spy |,Warrior |,,3,309,5
 Twisted Queen,Twisted Queen | The Queen of the Twisted Antinium | Twisted Queen |,Female |,,Antinium |,Alive |,Twisted Antinium |,Izril |,Hivelands |,Monarch |,Leader |,https://wiki.wanderinginn.com/images/8/88/Prank-by-brack.jpg,3,157,5
 Pryde,Pryde Ulta |,Female |,,Human |,Alive |,Magnolia Reinhart |,Izril |,North Izril |,Noble |,Leader |,https://wiki.wanderinginn.com/images/d/da/Pryde_by_Bobo_Plushie.png,3,678,6
 Alonna,Alonna Swiftwing |,Female |,,Drake |,Alive |,Liscor |,Izril |,Liscor |,Mage | Mayor | Secretary |,Non-combat |,,3,215,6
@@ -391,7 +391,7 @@ Zenol,Zenol Isphel | Prince Zenol |,Male |,,String Person |,Alive |,Nerrhavia's 
 Vess,Vess |,Male |,16 |,Drake |,Alive |,Order of Solstice |,Izril |,Luldem |,Knight | Soldier |,Mage |,https://wiki.wanderinginn.com/images/6/65/Vess_by_Fiore.png,3,562,8
 Geraeri,Geraeri | Stonesoup Herdmistress of the Greatland | Herdmistress |,Female |,61 |,Centaur |,Alive |,Unaffiliated |,Chandrar |,Jecrass |,Monarch |,Leader |,,3,69,8
 Riqre,Riqre'ma Medaale | Emir Riqre | Riqre |,Male |,,,Deceased |,Roshal |,Chandrar |,Roshal |,Crime |,Non-combat |,,3,402,8
-Xesci,Xesci |,Female |,,Drake |,Alive |,Salazsar |,Izril |,Salazsar |,Courtesan |,Rogue |,,3,326,8
+Xesci,Xesci |,Female |,,Drake |,Alive |,Salazsar |,Izril |,Salazsar |,Spy |,Rogue |,,3,326,8
 Cotm,Cotm |,Male |,,Fraerling |,Alive |,Tallguard |,Baleros |,Paeth |,Guard |,Archer |,,3,258,8
 Spitty,Spitty |,Male |,,Camel |,Alive |,Tiqr | Pomle |,Chandrar |,Zeikhal |,Layabout |,Non-combat |,,3,147,8
 Tesy,Tesy | Sellme |,Male |,18 |,Drake |,Deceased |,Unaffiliated |,Izril |,Salazsar | Liscor |,Crime |,Rogue |,,3,956,8
@@ -747,7 +747,7 @@ Riz,Riz | Facecarver Riz |,Female |,,Human |,Alive |,Unaffiliated |,Izril |,Invr
 Bviora,Bviora Stormless |,Female |,,Human |,Deceased |,Unaffiliated |,Izril |,Liscor |,Crime |,Rogue |,,4,126,9
 Selphid Geneva,Selphid Geneva | Other Geneva | Alternate Geneva | Selphid-Geneva | Mind-Geneva | Evil-Geneva |,Female |,1 |,Selphid |,Unknown |,The Minds |,Baleros |,Gathering Citadel |,Doctor | Vassal |,Non-combat |,https://wiki.wanderinginn.com/images/3/31/Genevil_by_Brack.jpg,6,79,9
 Vensha,Vensha | Dame Vensha |,Female |,62 |,Human |,Alive |,Thronebearers | Calanfer |,Terandria |,Calanfer |,Knight |,Warrior |,,5,52,9
-Nollesc,Nollesc |,Male |,,Drowned Person | Drake |,Alive |,Unaffiliated |,Izril |,The Wandering Inn |,Assassin |,Rogue |,,5,30,9
+Nollesc,Nollesc |,Male |,,Drowned Person | Drake |,Alive |,Unaffiliated |,Izril |,The Wandering Inn |,Spy |,Rogue |,,5,30,9
 Izikere,Izikere | Izikere the Guardian |,Female |,300 |,Goblin |,Alive |,Unaffiliated |,Isles |,Isle of Goblins |,Noble |,Mage | Leader |,,5,47,9
 Jespeire,Jespeire |,Male |,,Half-Elf |,Alive |,Unaffiliated |,Izril | Terandria |,New Lands |,Guard |,Warrior |,,5,47,9
 Viecel,Viecel Cohex | Viecel the Gambler | Viecel the Mad Gambler | Viecel the Mad Better | Luckless |,Male |,,Selphid |,Alive |,Unaffiliated |,Izril |,Adventurer's Haven,Adventurer |,Mage |,,4,92,9
