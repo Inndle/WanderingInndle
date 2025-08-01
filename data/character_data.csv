@@ -451,7 +451,7 @@ Noears,Noears |,Male |,,Goblin |,Deceased |,Mountain City Tribe | Flooded Waters
 Orangepoo,Orangepoo |,Male |,,Goblin |,Deceased |,Redfang Tribe | Flooded Waters Tribe |,Izril |,Liscor | Esthelm |,Soldier |,Warrior |,,4,10,3
 Bugear,Bugear |,Male |,,Hobgoblin | Goblin |,Deceased |,Redfang Tribe | Flooded Waters Tribe |,Izril |,North Izril |,Soldier |,Warrior |,https://wiki.wanderinginn.com/images/b/b5/Gobo_study_bugear_by_mg.jpg,4,64,3
 Yesel,Yesel | Miss Yesel |,Female |,,Human |,Alive |,Unseen Empire |,Izril |,Riverfarm |,Vassal | Artisan |,Non-combat |,,4,212,3
-Rievan,Rievan Forstrom |,Male |,,Human |,Alive |,Wistram |,Wistram |,Wistram |,Mage | Intellect |,Mage |,,4,88,3
+Rievan,Rievan Forstrom |,Male |,,Human |,Alive |,Wistram |,Wistram |,Wistram |,Mage | Intellect |,Mage |,,5,88,3
 Timor,Timor du Havrington |,Male |,,Human |,Deceased |,Wistram |,Wistram |,Wistram |,Mage | Noble |,Mage |,,5,62,3
 Oom,Oom |,Male |,10 |,Slime |,Deceased |,Az'kerash | Chosen |,Izril |,Bloodfields |,Vassal |,Warrior |,https://wiki.wanderinginn.com/images/7/72/Oom_by_vivienneblanchy.png,4,254,4
 Rinu,Rinu | Cat |,Male |,,Human |,Alive |,Demon Kingdom |,Rhir |,Rhir | Demon Kingdom |,Layabout |,Non-combat |,,4,73,4
@@ -478,12 +478,12 @@ Welca,Welca Caveis |,Female |,,Human |,Alive |,House Walchais | Knights of the P
 Kerrig,Kerrig Louis |,Male |,40 |,Human |,Deceased |,House Walchais | Knights of the Petal |,Izril |,North Izril |,Knight |,Warrior |,,4,389,4
 Bekia,Bekia |,Female |,,Gnoll |,Deceased |,Magnolia Reinhart |,Izril |,Invrisil |,Chieftain | Maid |,Non-combat |,,4,91,4
 Cirille,Cirille Bitterclaw |,Female |,,Drake |,Deceased |,Manus |,Izril |,Manus |,General |,Leader |,,4,671,4
-Salvia,Salvia |,Female |,,Human |,Alive |,Unaffiliated |,Izril |,North Izril |,Soldier |,Leader |,,4,97,4
+Salvia,Salvia |,Female |,,Human |,Alive |,Unaffiliated |,Izril |,North Izril |,Soldier |,Leader |,,5,97,4
 Tessia,Tessia |,Female |,,Human |,Alive |,Riverfarm | Unseen Empire |,Izril |,Riverfarm |,Knight | Smith |,Warrior |,,5,72,4
 Ad,Ad | Captain Ad |,Male |,,Human |,Alive |,Unaffiliated |,Sea |,Boat |,Doctor |,Non-combat |,,5,60,4
 Eliasor,Eliasor Melissar |,Female |,10 |,Human |,Alive |,Unaffiliated |,Izril |,North Izril |,Noble |,Non-combat |,,4,135,4
 Larr,Larr |,Male |,,Gnoll |,Alive |,Vuliel Drae | Hawkarrow Tribe |,Izril |,Liscor |,Adventurer |,Archer |,,4,167,4
-Jackal,Jackal | Jack |,Male |,,,Alive |,Unaffiliated |,Izril |,North Izril |,Adventurer |,Archer |,,4,95,5
+Jackal,Jackal | Jack |,Male |,,,Alive |,Unaffiliated |,Izril |,North Izril |,Adventurer |,Archer |,,5,95,5
 Teura,Teura |,Female |,83 |,Half-Elf |,Alive |,Wistram |,Wistram |,Wistram |,Mage |,Mage |,,4,178,5
 Thornst (Halfseekers),Thornst (Halfseekers) |,Male |,,Half-Elf |,Deceased |,Halfseekers |,Izril |,North Izril |,Adventurer |,Archer |,,5,70,5
 Kilmet,Kilmet |,Male |,,Human |,Alive |,House Veltras |,Izril |,North Izril |,Secretary |,Non-combat |,,5,59,5
@@ -511,11 +511,11 @@ Lyfelt,Lyfelt | Minister Lyfelt |,Male |,,Human |,Deceased |,Belchan |,Chandrar 
 Bamer,Bamer |,Male |,,Vampire | Human |,Deceased |,Drakle Family |,Izril |,Riezmelt | Liscor |,Farmer |,Non-combat |,,4,135,6
 Rivel,Rivel val Lischelle-Drakle |,Male |,,Vampire | Human |,Alive |,Drakle Family | Order of Solstice |,Izril |,Riezmelt | Liscor | The Wandering Inn |,Knight |,Warrior |,,4,168,6
 Dawson,Dawson |,Male |,,Human |,Alive |,Gravetender's Fist | United Nations | Bushrangers | Earthers,Baleros |,Talenqual |,Adventurer |,Warrior |,,4,225,6
-Tagil,Tagil |,Male |,,Human |,Deceased |,Hunter's Guild |,Terandria |,Noelictus |,Soldier |,Archer |,,4,95,6
+Tagil,Tagil |,Male |,,Human |,Deceased |,Hunter's Guild |,Terandria |,Noelictus |,Soldier |,Archer |,,5,95,6
 Dellic,Dellic | Armsmaster Dellic |,Male |,,Human |,Alive |,Illivere Federation | Femithain |,Chandrar |,Illivere |,General |,Warrior |,,4,194,6
 Geril,Geril |,Male |,,Human |,Alive |,Jecrass |,Chandrar |,Jecrass |,Secretary |,Non-combat |,,4,175,6
 Novakya,Novakya | Griffin Queen |,Female |,,Human |,Alive |,Kaliv |,Terandria |,Kaliv |,Monarch | Royal |,Non-combat |,,5,65,6
-Teliv,Teliv Witherscale |,Male |,,Drake |,Alive |,Liscor |,Izril |,Liscor |,Ambassador |,Non-combat |,,4,87,6
+Teliv,Teliv Witherscale |,Male |,,Drake |,Alive |,Liscor |,Izril |,Liscor |,Ambassador |,Non-combat |,,5,87,6
 Tismel,Tismel Lischscale |,Male |,,Drake |,Alive |,Liscor |,Izril |,Liscor |,Artisan | Mayor |,Non-combat |,https://wiki.wanderinginn.com/images/7/75/Tismel_by_DemonicCriminal.jpg,4,159,6
 Bearclaw,Bearclaw | Bearclaw |,Female |,,Gnoll |,Deceased |,Liscor's Dungeon |,Izril |,Liscor |,Crime |,Warrior |,https://wiki.wanderinginn.com/images/5/5a/Bearclaw_by_Lire.png,4,216,6
 Vell,Vell |,Female |,,Drake |,Alive |,Liscorian Army | Liscor |,Izril |,Liscor |,Soldier |,Leader |,,4,148,6
@@ -547,20 +547,20 @@ Beatica,Beatica |,Female |,42 |,Human |,Alive |,Unseen Empire |,Izril |,Riverfar
 Elmmet,Elmmet Patterson |,Male |,,Human |,Deceased |,Unseen Empire |,Izril |,Riverfarm |,Mayor | Crime |,Rogue |,,4,102,6
 Isceil,Isceil |,Male |,,Drake |,Deceased |,Wistram |,Wistram |,Wistram |,Mage |,Mage |,,4,348,6
 Telim,Telim | Magus Telim | High Mage Telim | Thief of Tables |,Male |,57 |,Human |,Alive |,Wistram |,Wistram |,Wistram |,Mage |,Mage |,,4,348,7
-George,George |,Male |,,Human |,Deceased |,Earthers | Wistram |,Wistram |,Wistram |,Layabout |,Non-combat |,,4,96,7
+George,George |,Male |,,Human |,Deceased |,Earthers | Wistram |,Wistram |,Wistram |,Layabout |,Non-combat |,,5,96,7
 Goat,Goat |,Male |,,Antinium |,Deceased |,Free Antinium | Painted Antinium |,Izril |,Liscor |,Soldier |,Warrior |,https://wiki.wanderinginn.com/images/3/39/Antinium_goat_by_mg.jpg,4,218,7
 Khedal,Khedal | Prince Khedal | Strong Sea Cow |,Male |,55 |,Minotaur |,Alive |,House of Minos |,Isles |,Isle of Minos |,Royal |,Warrior |,,4,313,7
 Emper,Emper |,Male |,,String Person |,Alive |,Pomle | Stargazer's Promise |,Izril |,Great Plains |,Adventurer |,Warrior |,,5,70,7
-Valmira,Valmira |,Female |,50 |,,Deceased |,Wistram |,Wistram |,Heiste | Wistram |,Archmage | Mage |,Mage |,,4,90,7
+Valmira,Valmira |,Female |,50 |,,Deceased |,Wistram |,Wistram |,Heiste | Wistram |,Archmage | Mage |,Mage |,,5,90,7
 Xil,Xil |,Male |,70 |,Garuda |,Deceased |,Pomle | Nerrhavia's Fallen |,Chandrar |,Pomle |,Soldier |,Warrior |,,4,203,7
 Imor,Imor Seagrass | Lord Admiral Seagrass | Tyrant Seagrass | Duke Seagrass |,Male |,,,Alive |,Empire of Sands |,Sea |,Boat |,Noble | Sailor |,Leader |,,5,66,7
 Agratha,Agratha |,Female |,,Human |,Alive |,Witches | Unseen Empire |,Izril |,Riverfarm |,Witch | Intellect |,Mage |,,4,217,7
 Quiteil,Quiteil | Bastion-General Quiteil |,Male |,,Human |,Alive |,Blighted Kingdom |,Rhir |,Blighted Kingdom | 4th Wall |,General |,Leader |,,4,125,7
 Melidore,Melidore |,Male |,,Fae |,Alive |,Fae | Immortals,Avalon |,Avalon |,Noble |,Warrior |,,4,194,7
-Nama,Nama |,Female |,,,Alive |,Fae | Immortals |,Avalon |,Avalon |,God |,God |,https://wiki.wanderinginn.com/images/1/17/Nama_Mushroom.jpg,4,93,7
+Nama,Nama |,Female |,,,Alive |,Fae | Immortals |,Avalon |,Avalon |,God |,God |,https://wiki.wanderinginn.com/images/1/17/Nama_Mushroom.jpg,5,93,7
 Zedalien,Zedalien | Steward Zedalien |,Male |,209 |,Half-Elf |,Alive |,House El |,Izril |,New Lands | Gaiil-Drome |,Secretary |,Non-combat |,,4,145,7
 Deskie,Deskie | Honored Deskie |,Female |,81 |,Gnoll |,Alive |,Longstalker's Fang Tribe |,Izril |,Great Plains |,Artisan |,Non-combat |,,4,179,7
-Suxhel,Suxhel |,Female |,,Gazer |,Alive |,Stargazer's Promise |,Izril |,Great Plains |,Adventurer |,Mage |,,4,97,7
+Suxhel,Suxhel |,Female |,,Gazer |,Alive |,Stargazer's Promise |,Izril |,Great Plains |,Adventurer |,Mage |,,5,97,7
 Neranthei,Neranthei |,Female |,,Human |,Alive |,Thronebearers | Calanfer |,Terandria |,Calanfer |,Knight |,Warrior |,,5,55,7
 Orelighn,Orelighn |,Male |,,Gnoll |,Alive |,Greenpaw Tribe |,Izril |,Great Plains |,Chieftain |,Non-combat |,,4,139,7
 Desinee,Desinee El |,Female |,,Human |,Alive |,House El |,Izril |,North Izril |,Noble |,Non-combat |,,4,104,7
@@ -710,7 +710,7 @@ Elucina,Elucina | Rebel of String |,Female |,2000 |,String Person |,Deceased |,U
 Ivery,Ivery |,Nonbinary |,,Undead |,Active |,Unaffiliated |,Chandrar |,Zeikhal |,Soldier |,Warrior |,,4,58,8
 Resk,Resk | Alchimagus Resk |,Male |,40 |,Fraerling |,Alive |,United Nations |,Baleros |,Paeth |,Alchemist | Mage |,Mage |,,5,274,8
 Somillune,Somillune | Witch of Ash |,Female |,,,Deceased |,Witches |,Kasignel |,Kasignel |,Witch |,Mage |,,5,35,8
-Prixall,Prixall |,Female |,61 |,Hobgoblin | Goblin |,Alive |,Witches | Molten Stone Tribe |,Izril |,Deuse Valley |,Witch | Shaman |,Mage |,https://wiki.wanderinginn.com/images/d/db/Playful_Radiant_Fishies_by_Lanrae.png,4,86,8
+Prixall,Prixall |,Female |,61 |,Hobgoblin | Goblin |,Alive |,Witches | Molten Stone Tribe |,Izril |,Deuse Valley |,Witch | Shaman |,Mage |,https://wiki.wanderinginn.com/images/d/db/Playful_Radiant_Fishies_by_Lanrae.png,5,86,8
 Werri,Werri | Werina |,Female |,26 |,Gnoll |,Alive |,Unaffiliated |,Izril |,Great Plains |,Chieftain |,Leader |,,4,118,8
 Contradiction,Contradiction | The Second Mind | Inventor | Far thinker | Redemption |,Nonbinary |,,Mind | Selphid,Deceased |,Bodies of Fellden | The Minds,Baleros |,Gathering Citadel |,Monarch | Artisan |,Non-combat |,,4,198,9
 Maxy,Maxy |,Female |,,Half-Elf |,Alive |,Bloodtear Pirates |,Sea |,Boat |,Pirate | General |,Warrior |,,4,114,9
@@ -737,9 +737,9 @@ Rittane,Rittane |,Female |,7 |,Human |,Alive |,Rheirgeist | The Wandering Inn,Iz
 Dorkel,Dorkel |,Male |,,Human |,Alive |,Rheirgest |,Izril |,Rheirgest |,Mage |,Mage |,,5,59,9
 Shaullile,Shaullile |,Female |,26 |,Drake |,Alive |,Roshal |,Chandrar |,Roshal |,Noble | Crime |,Non-combat |,,5,78,9
 Thatalocian,Thatalocian Reevis |,Male |,,Human |,Alive |,Roshal |,Chandrar |,Roshal |,Noble | Crime |,Non-combat |,,4,101,9
-Pazeral,Pazeral |,Male |,39 |,Jinn | String Person |,Alive |,Roshal |,Chandrar |,Roshal |,Noble | Crime |,Non-combat |,,4,95,9
+Pazeral,Pazeral |,Male |,39 |,Jinn | String Person |,Alive |,Roshal |,Chandrar |,Roshal |,Noble | Crime |,Non-combat |,,5,95,9
 Xorespe,Xorespe | Emissary Xorespe |,Male |,,Naga | Lizardfolk |,Alive |,Unaffiliated |,Baleros |,Jungle |,Ambassador |,Non-combat |,,5,12,9
-Raich,Raich | Raich the Path |,Female |,,Human |,Alive |,Runner's Guild |,Izril |,Celum |,Runner |,Non-combat |,,4,89,9
+Raich,Raich | Raich the Path |,Female |,,Human |,Alive |,Runner's Guild |,Izril |,Celum |,Runner |,Non-combat |,,5,89,9
 Herove,Herove Canidus | Shield-Runner Herove |,Male |,,Human |,Deceased |,Runner's Guild | Order of Solstice |,Izril |,Celum |,Runner | Knight |,Warrior |,,4,102,9
 Eschowar,Eschowar Erchirite |,Male |,87 |,Drake |,Alive |,Salazsar |,Izril |,Salazsar |,Noble |,Non-combat |,,4,98,9
 Telleis,Telleis |,Female |,,Human |,Alive |,Unaffiliated |,Terandria |,Samal |,Royal |,Warrior |,,5,40,9
