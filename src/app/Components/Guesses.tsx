@@ -89,7 +89,7 @@ categoryTypeMap.set("Residence", "Category");
 categoryTypeMap.set("Occupation", "Category");
 categoryTypeMap.set("Fighting Type", "Category");
 
-const DEBUGGING = true;
+// const DEBUGGING = true;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //// Begin component declaration
