@@ -216,7 +216,7 @@ function Guesses({ allCharacterData, history, todaysAnswer }: GuessesProps) {
             {DISPLAYED_CATEGORIES.map((category, index) => (
               <div key={index} className="w-20 sm:w-24 h-12 category-title border-0">
                 <div className="justify-center flex text-white text-sm sm:text-base">
-                  {category}
+                  {category === "Image" ? "Name" : category}
                 </div>
                 <hr className="w-12 sm:w-16 h-0.5 mx-auto my-1 bg-gray-100 border-0 md:my-1"></hr>
               </div>
