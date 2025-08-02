@@ -7,7 +7,7 @@ Bird,Bird | Little Bird | Bird the Hunter | Bird the Liar | Sky Hunter | Bird of
 Ksmvr,"Ksmvr | Ksm | Ksmvr of Chandrar | Ksmvr of the Horns of Hammerad | Ksmvr of the Free Antinium | Ksmvr of Liscor | Ksmvr of Two Trees | Ksmvr, the Dancing Antinium |",Male |,3 |,Antinium |,Alive |,Horns of Hammerad |,Izril | Chandrar |,The Wandering Inn | Illivere |,Adventurer | Prognugator |,Warrior |,https://wiki.wanderinginn.com/images/c/c1/Ksmvr_Crossbow_by_Auspiciousoctopi.jpg,1,6297,1
 Ceria,Ceria Springwalker | Ice Squirrel | Ice Weasel | Captain Ceria | Professor Springwalker |,Female |,65 |,Half-Elf |,Alive |,Horns of Hammerad |,Izril | Terandria | Wistram | Chandrar |,Erribathe | The Wandering Inn | Wistram |,Adventurer | Mage |,Mage |,https://wiki.wanderinginn.com/images/1/1e/Ceria_Springwalker_by_Dr.replig8r.PNG,1,14186,1
 Pisces,Pisces Jealnet | Necro Boy | Necro-Lad | Comrade Pisces | Pisces the Nose | Bane of Roshal |,Male |,23 |,Human |,Alive |,Horns of Hammerad |,Izril | Terandria | Wistram | Chandrar |,The Wandering Inn | Wistram | Ailendamus |,Adventurer | Mage |,Mage |,https://wiki.wanderinginn.com/images/1/16/Pisces_by_JY.PNG,1,13592,1
-Yvlon,Yvlon Byres | Yv | Yvlon the Silver Arm | Slaughterer of Silver | Yvlon Silverarm | One-Armed Slaughterer | Silver-Killer | Silverarm | The Silver Killer of Izril |,Female |,,Human |,Alive |,Horns of Hammerad | House Byres,Izril | Chandrar |,The Wandering Inn | Byers' Lands | Nerrhavia's Fallen |,Adventurer | Noble |,Warrior |,https://wiki.wanderinginn.com/images/2/26/Yvlon_by_pkay.png,1,9248,1
+Yvlon,Yvlon Byres | Yv | Yvlon the Silver Arm | Slaughterer of Silver | Yvlon Silverarm | One-Armed Slaughterer | Silver-Killer | Silverarm | The Silver Killer of Izril |,Female |,,Human |,Alive |,Horns of Hammerad | House Byres,Izril | Chandrar |,The Wandering Inn | Byres' Lands | Nerrhavia's Fallen |,Adventurer | Noble |,Warrior |,https://wiki.wanderinginn.com/images/2/26/Yvlon_by_pkay.png,1,9248,1
 Calruz,Calruz | Calruz of the Beriad | Mr. Grumpy | bull-guy | cow-guy | One arm | Horn Chieftain |,Male |,,Minotaur |,Alive |,Horns of Hammerad | Liscor's Dungeon |,Izril |,Liscor | North Izril |,Adventurer | Soldier |,Warrior |,https://wiki.wanderinginn.com/images/4/42/Calruz_by_DemonicCriminal.jpg,1,1968,1
 Magnolia,Magnolia Reinhart | Lady Magnolia | The Deadly Flower Blooming In The North | Flower Lady | Mags |,Female |,47 |,Human |,Alive |,House Reinhart | Magnolia Reinhart |,Izril |,Invrisil | Celum |,Noble |,Non-combat |,https://wiki.wanderinginn.com/images/c/ca/Magnolia_by_LeChatDemon.jpg,1,7433,1
 Olesm,Olesm Swifttail | Commander Olesm | Strategos Olesm |,Male |,22 |,Drake |,Alive |,Liscor |,Izril |,Liscor |,Strategist |,Leader |,https://wiki.wanderinginn.com/images/d/df/Olesm_transformation_by_Butts.png,1,4692,1
@@ -44,7 +44,7 @@ Montressa,Montressa du Valeross | Mons |,Female |,,Human |,Alive |,Wistram |,Izr
 Pyrite,Pyrite | Gold Stone Chieftain | Golden Goblin |,Male |,32 |,Hobgoblin | Goblin |,Deceased |,Flooded Waters Tribe |,Izril |,North Izril |,Chieftain |,Leader | Warrior |,https://wiki.wanderinginn.com/images/f/fa/Pyrite_by_Artsy_Nada.jpg,1,2133,3
 Ivolethe,Ivolethe |,Female |,,Fae |,Alive |,Fae | Immortals,Avalon |,Avalon |,Noble |,Non-combat |,https://wiki.wanderinginn.com/images/3/36/Ivolethe-by-tomeo.jpg,1,1043,3
 Ulvama,Ulvama |,Female |,29 |,Hobgoblin | Goblin |,Alive |,Flooded Waters Tribe | Fellowship of the Inn |,Izril | Baleros |,Dwarfhall's Rest | Goblinhome | The Wandering Inn |,Shaman |,Mage |,https://wiki.wanderinginn.com/images/9/9b/Ulvama_by_pkay.jpg,1,3553,3
-Ylawes,Ylawes Byres | The Savior of Esthelm |,Male |,28 |,Human |,Alive |,House Byres | Silver Swords |,Izril |,Byers' Lands | New Lands |,Adventurer | Knight | Noble |,Warrior |,https://wiki.wanderinginn.com/images/f/fb/Ylawes-by-mg.jpg,1,2710,3
+Ylawes,Ylawes Byres | The Savior of Esthelm |,Male |,28 |,Human |,Alive |,House Byres | Silver Swords |,Izril |,Byres' Lands | New Lands |,Adventurer | Knight | Noble |,Warrior |,https://wiki.wanderinginn.com/images/f/fb/Ylawes-by-mg.jpg,1,2710,3
 Hedault,Hedault |,Male |,30 |,Human |,Alive |,Horns of Hammerad |,Izril |,Invrisil |,Enchanter | Merchant |,Non-combat |,https://wiki.wanderinginn.com/images/b/b6/Hedault_by_mg.jpg,1,850,3
 Badarrow,Badarrow |,Male |,,Hobgoblin | Goblin |,Alive |,Redfang Tribe | Flooded Waters Tribe | The Wandering Inn | Fellowship of the Inn |,Izril |,The Wandering Inn | Goblinhome |,Guard |,Archer |,https://wiki.wanderinginn.com/images/a/ae/Badarrow.jpg,1,1222,3
 Numbtongue,Numbtongue |,Male |,6 |,Hobgoblin | Goblin |,Alive |,Redfang Tribe | Flooded Waters Tribe | The Wandering Inn | Fellowship of the Inn |,Izril |,The Wandering Inn |,Guard | Bard |,Warrior |,https://wiki.wanderinginn.com/images/2/2a/Numbtongue_by_ArtsyNada.png,1,5833,3
@@ -200,7 +200,7 @@ Theofore,Theofore |,Male |,,Human |,Alive |,Assassin's Guild | Magnolia Reinhart
 Coretine,Coretine | Blighted Queen | Coretine the First |,Female |,36 |,Human |,Alive |,Blighted Kingdom |,Rhir |,Blighted Kingdom |,Monarch | Royal | General |,Non-combat |,https://wiki.wanderinginn.com/images/6/64/Blighted-queen-by-boboplushie.jpg,3,63,1
 Xevccha (Free Queen),Xevccha | Queen of the Free Antinium | Free Queen |,Female |,250 |,Antinium |,Alive |,Free Antinium |,Izril |,Liscor |,Monarch |,Leader |,https://wiki.wanderinginn.com/images/b/b2/Free_Queen_posing_by_LeChat_lesser.jpg,3,800,1
 Gerial,Gerial Doerisel |,Male |,,Human |,Deceased |,Horns of Hammerad |,Izril |,North Izril |,Adventurer |,Warrior |,https://wiki.wanderinginn.com/images/7/7e/Hunt_Gerial_by_DemonicCriminal.jpg,3,541,1
-Ysara,Ysara Byres | Silver Trader | Silver Merchant |,Female |,,Human |,Alive |,House Byres |,Izril |,Byers' Lands | Great Plains |,Merchant | Noble |,Non-combat |,,3,591,1
+Ysara,Ysara Byres | Silver Trader | Silver Merchant |,Female |,,Human |,Alive |,House Byres |,Izril |,Byres' Lands | Great Plains |,Merchant | Noble |,Non-combat |,,3,591,1
 Tekshia,Tekshia Shivertail | Tekshia the Spearmaster |,Female |,84 |,Drake |,Deceased |,Liscor | Liscor's Adventurer's Guild,Izril |,Liscor |,Adventurer | Secretary |,Warrior |,https://wiki.wanderinginn.com/images/1/12/Tekshia_outlined_by_DemonicCriminal.jpg,3,585,1
 Jeiss,Jeiss Sielmark |,Male |,,Drake |,Deceased |,Liscor's City Watch |,Izril |,Liscor |,Mayor | Guard |,Warrior |,,3,358,1
 Beilmark,Beilmark | Senior Guardswoman Beilmark | Honored Beilmark |,Female |,,Gnoll |,Alive |,Liscor's City Watch |,Izril |,Liscor |,Guard |,Warrior |,,3,349,1
@@ -256,7 +256,7 @@ Armored Queen,Armored Queen | The Queen of the Armored Antinium |,Female |,,Anti
 Keldrass,Keldrass |,Male |,,Drake |,Alive |,Unaffiliated |,Izril |,Pallass |,Adventurer |,Warrior |,https://wiki.wanderinginn.com/images/2/27/Flamewarden_by_DemonicCriminal.jpg,3,366,5
 Flying Queen,Flying Queen | The Queen of the Flying Antinium | Flying Queen |,Female |,,Antinium |,Alive |,Flying Antinium |,Izril |,Hivelands |,Monarch |,Leader |,,3,144,5
 Earlia,Earlia |,Female |,,Human |,Alive |,Gemhammer |,Izril |,Liscor |,Adventurer |,Warrior |,,3,352,5
-Yitton,Yitton Byres |,Male |,53 |,Human |,Alive |,House Byres |,Izril |,Byers' Lands |,Noble |,Leader |,,3,593,5
+Yitton,Yitton Byres |,Male |,53 |,Human |,Alive |,House Byres |,Izril |,Byres' Lands |,Noble |,Leader |,,3,593,5
 Gralton,Gralton Radivaek | Gralton of Lycit | Dog Lord |,Male |,42 |,Human |,Alive |,House Veltras |,Izril |,North Izril |,Noble |,Leader |,,3,396,5
 Jericha,Jericha Synthel |,Female |,40 |,Human |,Alive |,House Veltras |,Izril |,Veltras Lands |,Vassal | Mage |,Mage |,,3,824,5
 Pellmia,Pellmia Quellae | Pell |,Male |,60 |,Human |,Alive |,House Veltras |,Izril |,North Izril |,Noble |,Non-combat |,,3,650,5
@@ -584,7 +584,7 @@ Silver Pine,Silver Pine |,Nonbinary |,,Treant |,Alive |,Fae | Immortals |,Avalon
 Sikeri,Sikeri'val-Toreshio-Maresssui | Sikeri the Wyrm |,Female |,,Wyrm |,Alive |,Fae | Immortals |,Avalon |,Avalon |,Noble |,Mage |,,4,118,7
 Holdnose,Holdnose |,Male |,7 |,Goblin |,Alive |,Flooded Waters Tribe |,Izril |,Riverfarm |,Artisan |,Non-combat |,,5,18,7
 Archer B12,Archer B12 | B12 |,Male |,,Antinium |,Alive |,Free Antinium |,Izril |,Liscor |,Soldier |,Archer |,,4,70,7
-Shallel,Shallel Byres |,Female |,,Human |,Alive |,House Byres |,Izril |,Byers' Lands |,Noble |,Non-combat |,,4,59,7
+Shallel,Shallel Byres |,Female |,,Human |,Alive |,House Byres |,Izril |,Byres' Lands |,Noble |,Non-combat |,,4,59,7
 Etril,Etril Wellfar | Waveleader of Wellfar |,Male |,,Human |,Alive |,House Welfar |,Izril |,First Landing |,Noble | Sailor |,Leader |,,4,222,7
 Hetessana,Hetessana Wellfar |,Female |,57 |,Human |,Alive |,House Wellfar | House Terland |,Izril |,First Landing |,Noble |,Non-combat |,,5,47,7
 Ferris,Ferris Thycarl | Ferris Seftpaw |,Male |,,Gnoll |,Alive |,Manus |,Izril |,Manus |,Crime |,Rogue |,,4,209,7
@@ -623,7 +623,7 @@ Sympathy,Sympathy | The Fifth Mind |,Nonbinary |,,Mind | Selphid |,Deceased |,Th
 Lamont,Lamont |,Male |,23 |,Human |,Alive |,Wistram |,Wistram | Sea |,Wistram | Boat |,Sailor |,Non-combat |,,4,137,8
 Czkelcill,Czkelcill Mirrex | Mirrex the Bard | Voice of the Antinium |,Male |,6000 |,Antinium |,Alive |,Centenium |,Rhir |,Demon Kingdom |,Centenium | Performer |,Mage |,,4,30,8
 Iraz,Iraz Steelfur |,Male |,,Gnoll |,Deceased |,Steelfur Tribe |,Izril |,Great Plains |,Chieftain |,Warrior | Leader |,,4,231,8
-Yderigrisel,Yderigrisel | Silver Dragonknight |,Male |,,Dragon |,Deceased |,House Byres | Immortals,Izril |,Byers' Lands |,Knight |,Warrior |,https://wiki.wanderinginn.com/images/e/e3/Knight_Dragon_by_Lanrae.png,4,79,8
+Yderigrisel,Yderigrisel | Silver Dragonknight |,Male |,,Dragon |,Deceased |,House Byres | Immortals,Izril |,Byres' Lands |,Knight |,Warrior |,https://wiki.wanderinginn.com/images/e/e3/Knight_Dragon_by_Lanrae.png,4,79,8
 Jiupe,Jiupe | Screamtouch Jiupe |,Female |,,Drowned Person |,Deceased |,Bloodtear Pirates |,Sea |,Boat |,Pirate |,Warrior |,,4,176,8
 Menisi,Menisi du Marquin | Menisi the Watchful |,Female |,,Human |,Alive |,Calanfer | House Marquin |,Terandria |,Calanfer |,Royal |,Non-combat |,,4,14,8
 Ierwyn,Ierwyn | Ierwyn the Herald of Forests |,Female |,200 |,Half-Elf |,Alive |,Claiven Earth |,Chandrar |,Claiven Earth |,General |,Warrior | Leader |,,4,87,8
@@ -1015,7 +1015,7 @@ Rikku,Rikku Hime |,Female |,,Human |,Alive |,,Izril |,Great Plains |,Alchemist |
 Wilen,Wilen |,Male |,14 |,Human |,Deceased |,,Rhir |,Blighted Kingdom |,Child |,Non-combat |,,6,38,2
 Thompson,Thompson Green | ayan |,Male |,,Human |,,,Unknown |,Unknown |,Merchant |,Non-combat |,,6,4,2
 Grimvol,Grimvol |,Male |,,,Unknown |,,Baleros |,Jungle |,General |,Leader |,,6,12,2
-Yaltes,Yaltes Byres |,Male |,,Human |,Unknown |,Byres Family |,Izril |,Byers' Lands |,Knight |,Warrior |,,6,3,3
+Yaltes,Yaltes Byres |,Male |,,Human |,Unknown |,Byres Family |,Izril |,Byres' Lands |,Knight |,Warrior |,,6,3,3
 Raisha,Raisha |,Female |,,Gnoll |,Alive |,Invrisil |,Izril |,Invrisil |,Guard |,Warrior |,,6,8,3
 Regisand,Regisand Curle |,Male |,,Human |,Alive |,Invrisil | Magnolia Reinhart |,Izril |,Invrisil |,Mayor |,Non-combat |,,6,2,3
 Merec,Merec |,Male |,,Human |,Alive |,Merchant's Guild |,Izril |,Invrisil |,Merchant |,Non-combat |,,6,33,3
