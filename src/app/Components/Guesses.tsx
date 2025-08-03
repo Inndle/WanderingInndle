@@ -256,10 +256,40 @@ interface CellPlan {
   index: number
 }
 
-function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps & { isLatest: boolean }) {
+function planRow({todaysAnswer, allCharacterData, guess}: GuessProps): CellPlan[] {
   // Call function to determine types in GuessDetail
   const allResponses: Map<string, string> = determineResponse({ todaysAnswer, guess, allCharacterData });
   const guessDetailsMap = getCharacterDetailsMap(guess, allCharacterData);
+
+  return DISPLAYED_CATEGORIES.map((category, index) => {
+    const responseDetail = allResponses.get(category);
+    let type: string;
+    let content: string;
+    let response: string;
+
+    if (responseDetail === undefined) {
+      type = "ERROR"
+      content = "ERROR"
+      response = "Error"
+    } else {
+      type = categoryTypeMap.get(category)!; // sin of exclamation mark!!
+      response = responseDetail!;
+      content = guessDetailsMap.get(category)!.join(", "); // sin of exclamation mark!!
+    }
+
+    return {
+      guess,
+      type,
+      content,
+      response,
+      name: category,
+      index
+    };
+  })
+}
+
+function Guess(props: GuessProps & { isLatest: boolean }) {
+  const rowPlan = planRow(props);
 
   // Dynamically populate the guess row with the correct response according to given guess
   return (
@@ -268,37 +298,13 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps &
       style={{ gridTemplateColumns: `repeat(${DISPLAYED_CATEGORIES.length}, minmax(0, 1fr))` }}
     >
       {
-        DISPLAYED_CATEGORIES.map((category, index) => {
-          const responseDetail = allResponses.get(category);
-          let type: string;
-          let content: string;
-          let response: string;
-
-          if (responseDetail === undefined) {
-            type = "ERROR"
-            content = "ERROR"
-            response = "Error"
-          } else {
-            type = categoryTypeMap.get(category)!; // sin of exclamation mark!!
-            response = responseDetail!;
-            content = guessDetailsMap.get(category)!.join(", "); // sin of exclamation mark!!
-          }
-
-          const plan: CellPlan = {
-            guess,
-            type,
-            content,
-            response,
-            name: category,
-            index
-          }
-
+        rowPlan.map((cellPan, index) => {
           return (
             <GuessDetail
-              {...plan}
+              {...cellPan}
               key={index}
-              isLatest={isLatest}
-            ></GuessDetail>
+              isLatest={props.isLatest}
+            />
           )
         })
       }
