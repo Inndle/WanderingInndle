@@ -45,8 +45,7 @@ interface GuessesProps {
 interface GuessProps {
   allCharacterData: Map<string, string[]>,
   guess: string,
-  todaysAnswer: string,
-  isLatest?: boolean
+  todaysAnswer: string
 }
 
 //// Declaring useful constants
@@ -248,7 +247,16 @@ function Guesses({ allCharacterData, history, todaysAnswer }: GuessesProps) {
   )
 }
 
-function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) {
+interface CellPlan {
+  guess: string,
+  type: string,
+  response: string,
+  content: string,
+  name: string,
+  index: number
+}
+
+function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps & { isLatest: boolean }) {
   // Call function to determine types in GuessDetail
   const allResponses: Map<string, string> = determineResponse({ todaysAnswer, guess, allCharacterData });
   const guessDetailsMap = getCharacterDetailsMap(guess, allCharacterData);
@@ -276,16 +284,20 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) 
             content = guessDetailsMap.get(category)!.join(", "); // sin of exclamation mark!!
           }
 
+          const plan: CellPlan = {
+            guess,
+            type,
+            content,
+            response,
+            name: category,
+            index
+          }
+
           return (
             <GuessDetail
-              guess={guess}
-              type={type}
-              content={content}
-              response={response}
+              {...plan}
               key={index}
-              name={category}
               isLatest={isLatest}
-              index={index}
             ></GuessDetail>
           )
         })
@@ -293,15 +305,7 @@ function Guess({ todaysAnswer, allCharacterData, guess, isLatest }: GuessProps) 
     </div>
   )
 
-  function GuessDetail({ guess, type, response, content, name, isLatest, index }: {
-    guess: string,
-    type: string,
-    response: string,
-    content: string,
-    name: string,
-    isLatest?: boolean,
-    index: number
-  }) {
+  function GuessDetail({ guess, type, response, content, name, isLatest, index }: CellPlan & { isLatest?: boolean }) {
     // Add animation styles with delay based on index
     const animationDelay = `${index * 220}ms`;
     const animationStyle = isLatest ? { animationDelay } : {};
