@@ -247,7 +247,7 @@ function Guesses({ allCharacterData, history, todaysAnswer }: GuessesProps) {
   )
 }
 
-type CellPlan = CellResponse & {
+export type CellPlan = CellResponse & {
   guess: string,
   content: string,
   /** Name of the category */
@@ -256,7 +256,7 @@ type CellPlan = CellResponse & {
   index: number,
 }
 
-type CellResponse = {
+export type CellResponse = {
   type: "Image",
   /** Image of the guessed person */
   response: string
@@ -271,7 +271,7 @@ type CellResponse = {
   response: "None" | "Match" | "Partial"
 }
 
-function planRow({todaysAnswer, allCharacterData, guess}: GuessProps): CellPlan[] {
+export function planRow({todaysAnswer, allCharacterData, guess}: GuessProps): CellPlan[] {
   // Call function to determine types in GuessDetail
   const allResponses: Map<string, string> = determineResponse({ todaysAnswer, guess, allCharacterData });
   const guessDetailsMap = getCharacterDetailsMap(guess, allCharacterData);

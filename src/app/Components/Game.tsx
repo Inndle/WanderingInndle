@@ -7,22 +7,24 @@ import background_img from "../twi-logo-fancy.png";
 import buttonImage from "../infoButton.png";
 import { createHash } from 'crypto';
 
+export type ResetFunc = (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number, dayNumber?: number) => void
 
 interface GameProps {
   todaysAnswer: string;
   allCharacterData: Map<string, string[]>;
   initialDifficulties: number[];
-  onReset: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number) => void;
+  onReset: ResetFunc;
   showModal: boolean;
   maxVolume: number;
   isDaily: boolean;
   setIsDaily: (state: boolean) => void;
+  dayNumber: number;
 }
 
 interface ModalProps {
   onClose: () => void;
-  resetFunc: (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number) => void;
-  setDaily: (state: boolean) => void;
+  resetFunc: ResetFunc;
+  setDaily: (state: boolean) => void
   settingsModalFunc: (page: number) => void;
   allCharacterData: Map<string, string[]>;
 }
@@ -50,10 +52,11 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
 
   const daysToCheck = 14;
   const usedIndexes = new Set<number>();
+  const usedDate = new Date();
 
   // Get list of indexes from the previous 14 days
   for (let i = 1; i <= daysToCheck; i++) {
-    const pastDate = new Date();
+    const pastDate = new Date(usedDate);
     pastDate.setDate(pastDate.getDate() - i);
     const pastDateStr = pastDate.toISOString().split("T")[0];
     const pastHashInt = sha256ToBigInt(pastDateStr);
@@ -63,7 +66,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
   }
 
   // Compute today's index
-  const todayStr = new Date().toISOString().split("T")[0];
+  const todayStr = usedDate.toISOString().split("T")[0];
   // Handle special hardcoded dates
   const hardcodedAnswers: { [date: string]: string } = {
     "2025-07-31": "Belavierr",
@@ -72,6 +75,15 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2025-08-03": "Foliana",
     "2025-08-04": "Garen",
   };
+
+  // Date without time is automatically UTC.
+  const firstDate = new Date("2025-07-31");
+  const todayDate = new Date(todayStr);
+  const msInDay =  1000 * 60 * 60 * 24;
+  // The firstDate and todayDate are both in UTC, so no rounding should be necessary.
+  let dayNumber = (todayDate.getTime() - firstDate.getTime()) / msInDay + 1;
+  // To be safe, round anyways.
+  dayNumber = Math.round(dayNumber);
 
   let dailyAnswer: string;
 
@@ -125,7 +137,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
         {/* Action Buttons */}
         <div className="grid grid-cols-2 gap-4">
           <button
-            onClick={() => { resetFunc(dailyAnswer, enabledLevels, false); setDaily(true) }}
+            onClick={() => { resetFunc(dailyAnswer, enabledLevels, false, undefined, dayNumber); setDaily(true) }}
             className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
           >
             Daily Challenge
@@ -159,7 +171,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
   );
 }
 
-export default function Game({ todaysAnswer, allCharacterData, initialDifficulties, onReset, showModal, maxVolume, isDaily, setIsDaily }: GameProps) {
+export default function Game({ todaysAnswer, allCharacterData, initialDifficulties, onReset, showModal, maxVolume, isDaily, setIsDaily, dayNumber }: GameProps) {
   const [history, setHistory] = useState<string[]>([]);
   const [finished, setFinished] = useState(false);
   const [showTheModal, setShowTheModal] = useState(showModal);
@@ -232,6 +244,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
           history={history}
           onFreePlay={onReset}
           daily={isDaily}
+          dayNumber={dayNumber}
           characterData={allCharacterData}
           difficulties={initialDifficulties}
           gaveUp={giveUp}
