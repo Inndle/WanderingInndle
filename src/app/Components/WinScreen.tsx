@@ -38,7 +38,7 @@ export default function WinScreen({todaysAnswer, history, onFreePlay, daily, day
 
   const shareResults = () => {
     const answer = daily ? `${dayNumber}` : todaysAnswer;
-    const strIn = gaveUp ? `${history.length} + X` : `in ${history.length}`;
+    const strIn = gaveUp ? `in X + ${history.length}` : `in ${history.length}`;
     let str = `Wandering Inndle ${answer}: ${strIn}`;
 
     str += '\n';
