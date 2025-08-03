@@ -105,7 +105,9 @@ async function copyToClipboard(text: string) {
   } else {
     const prevFocused = document.activeElement as HTMLElement | null;
     const input = document.createElement("input");
-    input.style = "position: absolute; left: -1000px; top: -1000px";
+    input.style.position = "absolute";
+    input.style.left = "-1000px";
+    input.style.top = "-1000px";
     input.value = text;
     document.body.appendChild(input);
     input.select();
