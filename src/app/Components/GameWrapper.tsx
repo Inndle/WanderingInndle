@@ -45,6 +45,7 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
   const [maxVolume, setMaxVolume] = useState(initialMaxVolume);
   const [gameKey, setGameKey] = useState(0);
   const [isDaily, setIsDaily] = useState(false);
+  const [dayNumber, setDayNumber] = useState(0);
   const [showModal, setShowModal] = useState(true);
 
   /**
@@ -60,13 +61,15 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
    * @param newShowModal 
    * returns nothing
    */
-  function resetGame(newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVol?: number) {
+  function resetGame(newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVol?: number, dayNumber?: number) {
     setTodaysAnswer(newAnswer || initialAnswer);
     setDifficulties(newDifficulties || initialDifficulties);
     // console.log("ShowModal1", newShowModal)
     setShowModal(newShowModal ?? true);
     setGameKey((prevKey) => prevKey + 1);
     setMaxVolume(maxVol ?? maxVolume)
+    if (dayNumber !== undefined)
+      setDayNumber(dayNumber);
     setIsDaily(false);
   }
 
@@ -82,6 +85,7 @@ export default function GameWrapper({ allCharacterData }: GameWrapperProps) {
       maxVolume={maxVolume} // Pass down showModal state
       isDaily={isDaily}
       setIsDaily={setIsDaily}
+      dayNumber={dayNumber}
     />
   );
 }
