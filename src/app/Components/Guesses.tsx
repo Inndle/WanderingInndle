@@ -247,13 +247,28 @@ function Guesses({ allCharacterData, history, todaysAnswer }: GuessesProps) {
   )
 }
 
-interface CellPlan {
+type CellPlan = CellResponse & {
   guess: string,
-  type: string,
-  response: string,
   content: string,
+  /** Name of the category */
   name: string,
-  index: number
+  /** Index in the list */
+  index: number,
+}
+
+type CellResponse = {
+  type: "Image",
+  /** Image of the guessed person */
+  response: string
+} | {
+  type: "Scalar",
+  response: "High" | "Low" | "Correct"
+} | {
+  type: "Binary",
+  response: "Correct" | "Incorrect"
+} | {
+  type: "Category",
+  response: "None" | "Match" | "Partial"
 }
 
 function planRow({todaysAnswer, allCharacterData, guess}: GuessProps): CellPlan[] {
@@ -277,13 +292,15 @@ function planRow({todaysAnswer, allCharacterData, guess}: GuessProps): CellPlan[
       content = guessDetailsMap.get(category)!.join(", "); // sin of exclamation mark!!
     }
 
+    // Trusting `compareDetails` to satisfy this type
+    const tr = {type, response} as CellResponse;
+
     return {
       guess,
-      type,
+      ...tr,
       content,
-      response,
-      name: category,
-      index
+      index,
+      name: category
     };
   })
 }
@@ -298,10 +315,10 @@ function Guess(props: GuessProps & { isLatest: boolean }) {
       style={{ gridTemplateColumns: `repeat(${DISPLAYED_CATEGORIES.length}, minmax(0, 1fr))` }}
     >
       {
-        rowPlan.map((cellPan, index) => {
+        rowPlan.map((cellPlan, index) => {
           return (
             <GuessDetail
-              {...cellPan}
+              {...cellPlan}
               key={index}
               isLatest={props.isLatest}
             />
