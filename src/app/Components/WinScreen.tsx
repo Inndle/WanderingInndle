@@ -36,8 +36,13 @@ export default function WinScreen({todaysAnswer, history, onFreePlay, daily, day
         }
     };
 
+  const firstDate = new Date("2025-07-31");
+  const todayDate = new Date(firstDate);
+  todayDate.setDate(todayDate.getDate() + dayNumber);
+  const todayStr = todayDate.toISOString().split("T")[0];
+
   const shareResults = () => {
-    const answer = daily ? `#${dayNumber}` : todaysAnswer;
+    const answer = daily ? `${todayStr}` : todaysAnswer;
     const strIn = gaveUp ? `Gave up after + ${history.length}` : `in ${history.length}`;
     let str = `Wandering Inndle ${answer}: ${strIn}`;
 
