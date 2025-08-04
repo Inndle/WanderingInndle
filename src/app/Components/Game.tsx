@@ -74,12 +74,13 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2025-08-02": "Flos",
     "2025-08-03": "Foliana",
     "2025-08-04": "Garen",
+    "2025-08-05": "Fithea",
   };
 
   // Date without time is automatically UTC.
   const firstDate = new Date("2025-07-31");
   const todayDate = new Date(todayStr);
-  const msInDay =  1000 * 60 * 60 * 24;
+  const msInDay = 1000 * 60 * 60 * 24;
   // The firstDate and todayDate are both in UTC, so no rounding should be necessary.
   let dayNumber = (todayDate.getTime() - firstDate.getTime()) / msInDay + 1;
   // To be safe, round anyways.
@@ -214,6 +215,8 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
       </div>
     );
   }
+
+
 
   return (
     <div className="game flex flex-col items-center relative px-4">
