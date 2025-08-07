@@ -88,7 +88,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
   dayNumber = Math.round(dayNumber);
 
   let dailyAnswer: string;
-
+  console.log(todayStr)
   if (todayStr in hardcodedAnswers) {
     dailyAnswer = hardcodedAnswers[todayStr];
   } else {
