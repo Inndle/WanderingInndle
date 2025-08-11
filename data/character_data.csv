@@ -617,7 +617,7 @@ Femar,Femar | The Sharkcaptain of Zeres | Captain Femar | Femar of Zeres | [Shar
 Akrisa,Akrisa Silverfang |,Female |,42 |,Gnoll |,Alive |,Silverfang Tribe |,Izril |,Great Plains |,Chieftain |,Non-combat |,,4,349,8
 Cetrule,Cetrule |,Male |,,Gnoll |,Deceased |,Silverfang Tribe |,Izril |,Great Plains |,Shaman |,Mage |,,4,187,8
 Cers,Cers Silverfang |,Male |,9 |,Gnoll |,Alive |,Silverfang Tribe |,Izril |,Great Plains |,Child |,Non-combat |,,4,128,8
-Zacheales,Zacheales | Putrid One |,Male |,,Half-Elf |,Deceased |,Unaffiliated |,Izril |,Village of the Dead |,Mage |,Mage |,,4,169,8
+Zacheales,Zacheales | Putrid One |,Male |,,Half-Elf |,Deceased |,Unaffiliated |,Izril |,Village of the Dead | Kasignel |,Mage |,Mage |,,4,169,8
 Kishkeria,Kishkeria | Archmage of the Eternal Grasslands |,Female |,,Gnoll |,Deceased |,Wistram |,Chandrar |,Zeikhal |,Archmage | Mage |,Mage |,,4,28,8
 Sympathy,Sympathy | The Fifth Mind |,Nonbinary |,,Mind | Selphid |,Deceased |,The Minds | Bodies of Fellden |,Baleros |,Gathering Citadel |,Monarch | Intellect |,Non-combat |,,5,31,8
 Lamont,Lamont |,Male |,23 |,Human |,Alive |,Wistram |,Wistram | Sea |,Wistram | Boat |,Sailor |,Non-combat |,,4,137,8
@@ -642,7 +642,7 @@ Taganchiel,Taganchiel | Tagan |,Male |,,Goblin |,Alive |,Mountain City Tribe | F
 Esor,Esor Ventail |,Male |,41 |,Garuda |,Alive |,Pallass |,Izril |,Pallass |,Strategist |,Leader |,,5,78,8
 Ulcreziek,Ulcreziek | Ulcre |,Male |,,Gnoll |,Deceased |,Plain's Eye Tribe |,Izril |,Great Plains |,Shaman |,Mage |,,4,201,8
 Ilekrome,Ilekrome | Enchanter Ilekrome |,Male |,,Fraerling |,Alive |,Unaffiliated |,Baleros |,Paeth |,Enchanter | Mayor |,Non-combat |,,4,208,8
-Velzimri,Velzimri | Sage of a Hundred Thousand Secrets | Velzi |,Male |,600 |,String Person |,Deceased |,Unaffiliated |,Chandrar |,Khelt |,Alchemist |,Non-combat |,,4,68,8
+Velzimri,Velzimri | Sage of a Hundred Thousand Secrets | Velzi |,Male |,600 |,String Person |,Deceased |,Unaffiliated |,Chandrar |,Khelt | Kasignel |,Alchemist |,Non-combat |,,4,68,8
 Oesca,Oesca Zessoprical |,Female |,9 |,Human |,Alive |,Ailendamus |,Terandria |,Ailendamus |,Royal | Child |,Non-combat |,,4,164,8
 Ivenius,Ivenius Zessoprical |,Male |,,Human |,Alive |,Ailendamus |,Terandria |,Ailendamus |,Royal | Knight | Child |,Warrior |,,5,29,8
 Paterghost,Paterghost | Lady Paterghost |,Female |,1000 |,Elemental |,Alive |,Ailendamus | Immortals,Terandria |,Ailendamus | Taimaguros |,Knight |,Warrior |,,4,80,8
@@ -668,11 +668,11 @@ Timewalker,Timewalker | Timewalker | Devourer of Gods | Devourer of Time | Great
 Zessoprica,Zessoprica | Sovereign of Sands | Great Zossoprica of Chandrar | Wyrm Queen of the Withering Age |,Female |,14000 |,Wyrm |,Deceased |,Immortals |,Chandrar |,Zeikhal |,Monarch |,Mage |,,5,10,8
 Svinta,Svinta | Warden Svinta |,Female |,,Human |,Alive |,Jecrass |,Chandrar |,Jecrass |,Noble |,Warrior |,,5,35,8
 Pewerthe,Pewerthe |,Female |,25 |,Human |,Alive |,Khelt |,Chandrar |,Khelt |,Artisan |,Non-combat |,,4,140,8
-Xierca,Xierca | Glorious Queen Xierca |,Female |,1300 |,Undead |,Deceased |,Khelt |,Chandrar |,Khelt |,Monarch | Royal |,Leader |,,4,81,8
-Heris,Heris | Queen Heris the Second | Scorpion of Khelt | Great Avenger of Ger |,Female |,,Undead |,Deceased |,Khelt |,Chandrar |,Khelt |,Monarch | Royal |,Leader |,,4,33,8
-His-Xe,His-Xe | King His-Xe the Serpent KingViper-King of Khelt |,Male |,,Undead |,Deceased |,Khelt |,Chandrar |,Khelt |,Monarch | Royal |,Leader |,,5,46,8
-Emrist,Emrist | Queen Emrist of Khelt | The Pactmaker |,Female |,,Undead |,Deceased |,Khelt |,Chandrar |,Khelt |,Monarch | Royal |,Leader |,,5,42,8
-Razzimir,Razzimir |,Male |,,Undead |,Deceased |,Khelt |,Chandrar |,Khelt |,Monarch | Royal |,Leader |,,4,20,8
+Xierca,Xierca | Glorious Queen Xierca |,Female |,1300 |,Undead |,Deceased |,Khelt |,Chandrar |,Khelt | Kasignel |,Monarch | Royal |,Leader |,,4,81,8
+Heris,Heris | Queen Heris the Second | Scorpion of Khelt | Great Avenger of Ger |,Female |,,Undead |,Deceased |,Khelt |,Chandrar |,Khelt | Kasignel |,Monarch | Royal |,Leader |,,4,33,8
+His-Xe,His-Xe | King His-Xe the Serpent KingViper-King of Khelt |,Male |,,Undead | String Person |,Deceased |,Khelt |,Chandrar |,Khelt | Kasignel |,Monarch | Royal |,Leader |,,5,46,8
+Emrist,Emrist | Queen Emrist of Khelt | The Pactmaker |,Female |,,Undead |,Deceased |,Khelt |,Chandrar |,Khelt | Kasignel |,Monarch | Royal |,Leader |,,5,42,8
+Razzimir,Razzimir |,Male |,,Undead |,Deceased |,Khelt |,Chandrar |,Khelt | Kasignel |,Monarch | Royal |,Leader |,,4,20,8
 Hecrelunn,Hecrelunn | Vizir Hecrelunn | Little Brother-King | Exalted King | Reclaimer of Chandrar |,Male |,,Undead |,Active |,Khelt |,Chandrar |,Khelt |,Vassal | Monarch | Mage |,Mage |,,4,255,8
 Crusader 57,Crusader 57 | Crusader 57-7 |,Male |,,Antinium |,Alive |,Liscor | Free Antinium |,Izril |,Liscor |,Soldier |,Warrior |,https://wiki.wanderinginn.com/images/0/09/Crusader_57_by_son.chapo.jpg,4,174,8
 Crusader 53,Crusader 53 |,Male |,,Antinium |,Alive |,Liscor | Free Antinium |,Izril |,Liscor |,Soldier |,Warrior |,https://wiki.wanderinginn.com/images/0/03/Templar_53_by_Lanrae.png,4,144,8
@@ -901,7 +901,7 @@ Eitha,Eitha |,Female |,,Gnoll |,Alive |,Hawkarrow Tribe |,Izril |,Great Plains |
 Dorgon,Dorgon | Dorgon of Maweil |,Male |,,Minotaur |,Alive |,House of Minos |,Isles |,Isle of Minos |,Adventurer |,Warrior |,,5,45,8
 Gadrea,Gadrea |,Female |,,Agelum |,Alive |,House Shoel | Immortals,Terandria |,Ailendamus |,Noble |,Warrior |,,5,125,8
 Nirayicel,Nirayicel |,Female |,,Dragon |,Deceased |,Immortals |,Izril |,North Izril |,Noble |,Mage |,,5,7,8
-Salui,Salui | Champion of War Salui | Dragon of the Sands | The Crimson Viper |,Male |,,Human | Undead |,Deceased |,Khelt |,Chandrar |,Khelt |,Soldier |,Warrior |,,5,64,8
+Salui,Salui | Champion of War Salui | Dragon of the Sands | The Crimson Viper |,Male |,,Human | Undead |,Deceased |,Khelt |,Chandrar |,Khelt | Ksasignel |,Soldier |,Warrior |,,5,64,8
 Tkayl,Tkayl | King Tkayl of Khelt | Silent Sovereign | Harbinger of Peace | Guardian of the Waters |,Male |,,Undead |,Deceased |,Khelt |,Chandrar |,Khelt |,Monarch | Royal |,Leader |,,5,9,8
 Colovt,Colovt | Farmer Colovt |,Male |,,,Alive |,Khelt | Reim |,Chandrar |,Khelt |,Farmer |,Non-combat |,,5,80,8
 Maksie,Maksie | Scout Leader Maksie |,Female |,,Drake |,Alive |,Liscorian Army |,Izril |,Liscor |,Soldier |,Rogue |,,5,76,8
