@@ -433,6 +433,8 @@ function Guess(props: GuessProps & { isLatest: boolean }) {
         const maxFontSize = 16;
         const fontSize = Math.max(minFontSize, maxFontSize - Math.floor(content.length / 8));
 
+        
+
         return (
           <div
             className={`${generic_styling} ${categoryStyling} ${animationClass}`}
