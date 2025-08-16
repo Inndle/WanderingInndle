@@ -6,8 +6,6 @@ import WinScreen from "./WinScreen";
 import background_img from "../twi-logo-fancy.png";
 import buttonImage from "../infoButton.png";
 import { createHash } from 'crypto';
-import { useEffect, useRef } from "react";
-
 
 export type ResetFunc = (newAnswer?: string, newDifficulties?: number[], newShowModal?: boolean, maxVolume?: number, dayNumber?: number) => void
 
@@ -82,7 +80,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2025-08-13": "Wil",
     "2025-08-14": "Rasea",
     "2025-08-15": "Larracel",
-    "2025-08-16": "Brunkr", //Was gonna repeat Tserre
+    "2025-08-16": "Brunkr", //Was gonna repeat
   };
 
   // Date without time is automatically UTC.
@@ -202,50 +200,6 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
   }
 
   function InfoModal({ onClose }: { onClose: () => void }) {
-    // Konami code sequence
-    const konamiCode = [
-      "ArrowUp",
-      "ArrowUp",
-      "ArrowDown",
-      "ArrowDown",
-      "ArrowLeft",
-      "ArrowRight",
-      "ArrowLeft",
-      "ArrowRight",
-      "b",
-      "a",
-      "Enter",
-    ];
-
-    const position = useRef(0);
-
-    useEffect(() => {
-      const handleKeyDown = (event: KeyboardEvent) => {
-        const key = event.key;
-
-        // Check if pressed key matches current step in sequence
-        if (key === konamiCode[position.current]) {
-          position.current++;
-
-          // If full code matched
-          if (position.current === konamiCode.length) {
-            alert("Konami code entered!");
-            position.current = 0; // reset
-          }
-        } else {
-          // reset if wrong key
-          position.current = 0;
-        }
-      };
-
-      window.addEventListener("keydown", handleKeyDown);
-
-      // cleanup
-      return () => {
-        window.removeEventListener("keydown", handleKeyDown);
-      };
-    }, []);
-
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
         <div className="bg-white p-6 rounded-2xl shadow-lg max-w-md w-full text-left relative">
@@ -257,8 +211,7 @@ export default function Game({ todaysAnswer, allCharacterData, initialDifficulti
           </button>
           <h2 className="text-xl font-bold mb-4">About</h2>
           <p className="text-gray-700 text-sm leading-relaxed">
-            Inndle is a daily character-guessing game featuring characters from
-            the web serial The Wandering Inn by Pirateaba.
+            Inndle is a daily character-guessing game featuring characters from the web serial The Wandering Inn by Pirateaba.
           </p>
 
           <p className="text-gray-700 text-sm leading-relaxed">
