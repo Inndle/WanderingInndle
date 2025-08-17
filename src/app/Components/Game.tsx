@@ -123,6 +123,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2025-08-15": "Larracel",
     "2025-08-16": "Brunkr", //Was gonna repeat Tserre
     "2025-08-17": "Drevish", //I'm just gonna start hardcoding these. It's still the one that was randomly generated dw. Hardcoding means I can change the dataset and it won't break.
+    "2025-08-18": "Kevin",
   };
 
   // Date without time is automatically UTC.
