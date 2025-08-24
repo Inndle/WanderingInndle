@@ -92,7 +92,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
   const daysToCheck = 14;
   const usedIndexes = new Set<number>();
   const usedDate = new Date();
-  // usedDate.setDate(usedDate.getDate() + 1)
+  //usedDate.setDate(usedDate.getDate() + 1)
 
 
   // Get list of indexes from the previous 14 days
@@ -122,7 +122,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2025-08-14": "Rasea",
     "2025-08-15": "Larracel",
     "2025-08-16": "Brunkr", //Was gonna repeat Tserre
-    "2025-08-17": "Drevish", //I'm just gonna start hardcoding these. It'll still be the one that was randomly generated dw. Hardcoding means I can change the dataset and it won't break.
+    "2025-08-17": "Drevish",
     "2025-08-18": "Kevin",
     "2025-08-19": "Emerrhain",
     "2025-08-20": "Garia",
@@ -205,21 +205,22 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
             Free Play
           </button>
           <button
-            onClick={() => {
-              settingsModalFunc(0);
-            }}
+            onClick={() => { settingsModalFunc(0); }}
             className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
           >
             Rules
           </button>
-
           <button
-            onClick={() => {
-              settingsModalFunc(1);
-            }}
+            onClick={() => { settingsModalFunc(1); }}
             className="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition"
           >
             Spoiler Controls
+          </button>
+          <button
+            onClick={() => { settingsModalFunc(3); }}
+            className="col-span-2 px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition"
+          >
+            Enter Seed
           </button>
         </div>
       </div>
