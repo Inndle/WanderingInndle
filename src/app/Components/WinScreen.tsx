@@ -67,10 +67,15 @@ export default function WinScreen({ todaysAnswer, history, onFreePlay, daily, da
     }
   };
 
+  const firstDate = new Date("2025-07-31");
+  const todayDate = new Date(firstDate);
+  todayDate.setDate(todayDate.getDate() + dayNumber - 1);
+  const todayStr = todayDate.toISOString().split("T")[0];
+
   const shareResults = () => {
-    const answer = daily ? `${dayNumber}` : todaysAnswer;
-    const strIn = gaveUp ? `in X + ${history.length}` : `in ${history.length}`;
-    let str = `Wandering Inndle ||${answer}||: ${strIn}`;
+    const answer = daily ? `${todayStr}` : todaysAnswer;
+    const strIn = gaveUp ? `Gave up after + ${history.length}` : `in ${history.length}`;
+    let str = daily ? `Wandering Inndle ${answer}: ${strIn}` : `Wandering Inndle ||${answer}||: ${strIn}`;
 
     str += '\n';
     str += history.map((guess) => {
