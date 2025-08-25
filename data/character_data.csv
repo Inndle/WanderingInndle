@@ -100,7 +100,7 @@ Marian (Strategist),Marian Felthof |,Female |,,Centaur |,Alive |,Titan's School 
 Venitra,Venitra | Regrika Blackpaw |,Female |,10 |,Undead |,Active |,Az'kerash | Chosen |,Izril |,Bloodfields |,Soldier | Vassal |,Warrior |,https://wiki.wanderinginn.com/images/1/1c/Venitra_by_DemonicCriminal.jpg,2,789,2
 Thomas,Thomas Trautmann | Tom | Clown of Rhir | The Clown |,Male |,20 |,Human |,Alive |,Earthers | Blighted Kingdom |,Rhir |,Blighted Kingdom |,Hero |,Warrior | Rogue |,https://wiki.wanderinginn.com/images/e/e9/Tom_by_JohnDoe.jpg,2,591,2
 Typhenous,Typhenous | Plague Mage | Typhenous the Plague | Typhenous the Plague Mage | Typhenous the Plague Knife | Typhenous the Face | Typhenous Face | Typh | Typhy |,Male |,52 |,Human |,Alive |,Griffon Hunt |,Izril |,Riverfarm |,Adventurer |,Mage |,https://wiki.wanderinginn.com/images/9/9a/Typhoid_by_MG.jpg,2,1302,2
-Revi,Revi |,Female |,20 |,String Person |,Alive |,Griffon Hunt |,Izril |,The Wandering Inn | Riverfarm |,Adventurer |,Mage |,https://wiki.wanderinginn.com/images/5/5e/Revi_by_Butts_%28Cutout%29.png,2,1604,2
+Revi,Revi |,Female |,20 |,String Person |,Alive |,Griffon Hunt |,Izril | Baleros |,The Wandering Inn | Riverfarm |,Adventurer |,Mage |,https://wiki.wanderinginn.com/images/5/5e/Revi_by_Butts_%28Cutout%29.png,2,1604,2
 Seborn,Seborn Sailwinds |,Male |,,Drowned Person |,Alive |,Halfseekers |,Izril |,The Wandering Inn |,Adventurer | Pirate |,Rogue |,https://wiki.wanderinginn.com/images/8/8f/Seborn_2_by_DemonicCriminal.jpg,2,1262,2
 Venaz,Venaz | Venaz of Hammerad | Venaz of the Beriad | Sir Bull | Sea Cow |,Male |,,Minotaur |,Alive |,House of Minos | Titan's School |,Baleros |,Elvallian |,Strategist |,Leader |,,2,1742,2
 Brunkr,Brunkr Silverfang |,Male |,,Gnoll |,Deceased |,Silverfang Tribe | Order of Solstice |,Izril |,Liscor |,Knight |,Warrior |,https://wiki.wanderinginn.com/images/c/c7/Brunkr_by_flauschesoeckchen.PNG,2,424,2
@@ -342,7 +342,7 @@ Shirka,Shirka |,Female |,,Drake |,Alive |,Pallass |,Izril |,Pallass |,General |,
 Edellein,Edellein Blackwing |,Male |,,Drake |,Alive |,Pallass |,Izril |,Pallass |,General |,Leader |,,3,189,7
 Mirn,Mirn |,Male |,,Drake |,Alive |,Pallass |,Izril |,Pallass |,Innkeeper | Guard |,Warrior |,,3,698,7
 Merish,Merish | Chief Warrior Merish |,Male |,33 |,Gnoll |,Alive |,Plain's Eye Tribe |,Izril |,Great Plains |,Chieftain | Soldier |,Warrior | Leader |,https://wiki.wanderinginn.com/images/a/a7/Chief_Warrior_Merish_Frost_Breath_by_Brack.png,3,961,7
-Minizi,Minizi | Mini-Gazi |,Female |,1 |,Golem |,Active |,Reim |,Chandrar |,Reim |,Guard |,Warrior |,https://wiki.wanderinginn.com/images/7/73/Minizisword-by-artsynada.gif,4,265,7
+Minizi,Minizi | Mini-Gazi |,Female |,1 |,Golem |,Active |,Reim |,Chandrar | Wistram |,Reim | Wistram |,Guard |,Warrior |,https://wiki.wanderinginn.com/images/7/73/Minizisword-by-artsynada.gif,4,265,7
 Ci,Ci | Moonlight Rider | Moonlight Duo |,Female |,,Horse |,Alive |,Runner's Guild |,Izril |,Invrisil |,Courier | Runner |,Non-combat |,,3,120,7
 Delanay,Delanay d'Artien |,Male |,,Human |,Alive |,Runner's Guild |,Izril |,North Izril |,Runner | Noble |,Warrior |,https://wiki.wanderinginn.com/images/f/fb/Vamp_hunter_by_demoniccriminal.jpg,3,258,7
 Salamani,Salamani | Salamani the Haste Mage | Salamani the Mage Runner | Mage Rider |,Male |,,Human | Lizardfolk |,Alive |,Runner's Guild |,Izril |,North Izril |,Courier | Runner |,Non-combat |,https://wiki.wanderinginn.com/images/1/1d/Salamani_by_JackEnza.png,3,523,7
@@ -701,7 +701,7 @@ Egress,Egress | The Sixth Mind |,Nonbinary |,602 |,Mind | Selphid |,Deceased |,T
 Lormel,Lormel |,Male |,,Human |,Alive |,Thronebearers | Calanfer |,Terandria |,Calanfer |,Knight |,Warrior |,,4,341,8
 Cawe,Cawe |,Female |,,Garuda |,Deceased |,Unaffiliated |,Chandrar |,Zeikhal |,Assassin |,Rogue |,,4,307,8
 Eloque,Eloque |,Female |,,Lizardfolk |,Alive |,Unaffiliated |,Baleros | Chandrar |,Jungle | Zeikhal |,Slave |,Non-combat |,,4,393,8
-Bearig,Bearig |,Male |,,String Person |,Alive |,Unaffiliated |,Chandrar |,Zeikhal |,Chef |,Non-combat |,,4,282,8
+Bearig,Bearig |,Male |,,String Person |,Alive |,Unaffiliated |,Chandrar |,Zeikhal |,Chef |,Non-combat |,,5,282,8
 Gadiekh,Gadiekh | World-Pact Adventurer |,Male |,,Gnoll |,Alive |,Unaffiliated |,Izril |,Great Plains |,Adventurer |,Warrior |,,5,28,8
 Vokkhar,Vokkhar | Vok |,Male |,16 |,Gnoll |,Alive |,Unaffiliated |,Izril |,Cellidel | Liscor |,Child | Guard |,Warrior |,,4,178,8
 Gewilena,Gewilena |,Female |,35 |,Human |,Deceased |,Unaffiliated |,Terandria |,Ailendamus |,Mage | Intellect |,Mage |,,6,49,8
@@ -727,7 +727,7 @@ Zanze,Zanze Envergall |,Male |,,Human |,Deceased |,Driver's Guild | Order of Sol
 Heorth,Heorth Dorribaum |,Male |,,Djinni |,Alive |,Fissival |,Izril |,Fissival |,Slave | Intellect |,Mage |,,5,23,9
 Dorigal,Dorigal |,Male |,,Drake |,Alive |,Fissival |,Izril |,Fissival |,Noble | Mage |,Mage |,,5,29,9
 Etrogaer,Etrogaer | Lord Etrogaer |,Male |,,Human |,Alive |,Unaffiliated |,Terandria |,Golaen |,Guard |,Warrior |,,5,86,9
-Zeomtoril,Zeomtoril | Zeom |,Male |,,Human |,Alive |,House Reinhart |,Izril |,North Izril |,Enchanter |,Non-combat |,,4,141,9
+Zeomtoril,Zeomtoril | Zeom |,Male |,,Human |,Alive |,House Reinhart |,Izril |,North Izril |,Enchanter |,Non-combat |,,5,141,9
 Aleieta,Aleieta Reinhart |,Female |,,Human |,Deceased |,House Reinhart |,Izril |,First Landing |,Noble |,Non-combat |,,5,29,9
 Lectara,Lectara |,Female |,,Human |,Alive |,House Terland |,Izril |,First Landing |,Soldier |,Leader |,,5,27,9
 Kenva,Kenva |,Female |,,Drake |,Alive |,Pallass |,Izril |,Pallass |,Child |,Non-combat |,,4,121,9
@@ -1097,7 +1097,7 @@ Thien,Thien |,Male |,,Human |,Alive |,Cara O'Sullivan | The Singer's Band |,Tera
 Callidaz,Callidaz | Callidaz |,Male |,,Giant |,Alive |,Demon Kingdom |,Rhir |,Demon Kingdom |,Noble |,Warrior |,,6,20,7
 Davi,Davi |,Male |,25 |,Human | Pakeil |,Alive |,Earthers |,Chandrar |,A'ctelios Salash |,Layabout |,Non-combat |,,6,11,7
 Niila,Niila |,Female |,,Drake |,Alive |,Fissival |,Izril |,Fissival |,Adventurer |,Mage |,,6,23,7
-Pisca,Pisca |,Female |,,Antinium |,Alive |,Free HiveGarry |,Izril |,Liscor |,Chef |,Non-combat |,,6,25,7
+Pisca,Pisca |,Female |,,Antinium |,Alive |,Free Antinium |,Izril |,Liscor |,Chef |,Non-combat |,,6,25,7
 Zenna,Zenna |,Female |,250 |,Half-Elf |,Alive |,Ieka Imarris |,Izril |,Invrisil |,Maid |,Non-combat |,,6,19,7
 Mel,Mel Owe |,Male |,17 |,Human |,Alive |,Owe Family |,Izril |,North Izril |,Noble |,Non-combat |,,6,21,7
 Akral,Akral | Akral the Adamantium |,Male |,,Gnoll |,Alive |,Salazsar |,Izril |,Salazsar |,Adventurer |,Warrior |,,6,5,7
