@@ -116,8 +116,13 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2025-08-03": "Foliana",
     "2025-08-04": "Garen",
     "2025-08-05": "Fithea",
+    "2025-08-06": "Halrac",
+    "2025-08-07": "Tolveilouka",
     "2025-08-08": "Seraphel",
+    "2025-08-09": "Crusader 51",
     "2025-08-10": "Gothica",
+    "2025-08-11": "Serept",
+    "2025-08-12": "Tserre",
     "2025-08-13": "Wil",
     "2025-08-14": "Rasea",
     "2025-08-15": "Larracel",
@@ -131,6 +136,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2025-08-23": "Revi",
     "2025-08-24": "Verdan",
     "2025-08-25": "Typhenous",
+    "2025-08-26": "Xitegen",
   };
 
   // Date without time is automatically UTC.
