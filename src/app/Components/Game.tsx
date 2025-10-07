@@ -179,6 +179,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2025-10-05": "Rie",
     "2025-10-06": "Ulvama",
     "2025-10-07": "Ilvriss",
+    "2025-10-08": "Wrymvr",
   };
 
   // Date without time is automatically UTC.
