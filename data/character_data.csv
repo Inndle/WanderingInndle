@@ -673,7 +673,7 @@ Heris,Heris | Queen Heris the Second | Scorpion of Khelt | Great Avenger of Ger 
 His-Xe,His-Xe | King His-Xe the Serpent KingViper-King of Khelt |,Male |,,Undead | String Person |,Deceased |,Khelt |,Chandrar |,Khelt | Kasignel |,Monarch | Royal |,Leader |,,5,46,8
 Emrist,Emrist | Queen Emrist of Khelt | The Pactmaker |,Female |,,Undead |,Deceased |,Khelt |,Chandrar |,Khelt | Kasignel |,Monarch | Royal |,Leader |,,5,42,8
 Razzimir,Razzimir |,Male |,,Undead |,Deceased |,Khelt |,Chandrar |,Khelt | Kasignel |,Monarch | Royal |,Leader |,,4,20,8
-Hecrelunn,Hecrelunn | Vizir Hecrelunn | Little Brother-King | Exalted King | Reclaimer of Chandrar |,Male |,,Undead |,Active |,Khelt |,Chandrar |,Khelt |,Vassal | Monarch | Mage |,Mage |,,4,255,8
+Hecrelunn,Hecrelunn | Vizir Hecrelunn | Little Brother-King | Exalted King | Reclaimer of Chandrar |,Male |,,Undead |,Active |,Khelt |,Chandrar |,Khelt |,Vassal | Monarch | Mage |,Mage |,,3,255,8
 Crusader 57,Crusader 57 | Crusader 57-7 |,Male |,,Antinium |,Alive |,Liscor | Free Antinium |,Izril |,Liscor |,Soldier |,Warrior |,https://wiki.wanderinginn.com/images/0/09/Crusader_57_by_son.chapo.jpg,4,174,8
 Crusader 53,Crusader 53 |,Male |,,Antinium |,Alive |,Liscor | Free Antinium |,Izril |,Liscor |,Soldier |,Warrior |,https://wiki.wanderinginn.com/images/0/03/Templar_53_by_Lanrae.png,4,144,8
 Seelaw,Seelaw Ya |,Male |,,Garuda |,Alive |,Loquea Dree |,Chandrar |,Zeikhal |,Ambassador |,Warrior |,,5,74,8
@@ -710,7 +710,7 @@ Ivery,Ivery |,Nonbinary |,,Undead |,Active |,Unaffiliated |,Chandrar |,Zeikhal |
 Resk,Resk | Alchimagus Resk |,Male |,40 |,Fraerling |,Alive |,United Nations |,Baleros |,Paeth |,Alchemist | Mage |,Mage |,,5,274,8
 Somillune,Somillune | Witch of Ash |,Female |,,,Deceased |,Witches |,Kasignel |,Kasignel |,Witch |,Mage |,,5,35,8
 Prixall,Prixall |,Female |,61 |,Hobgoblin | Goblin |,Alive |,Witches | Molten Stone Tribe |,Izril |,Goblinhome |,Witch | Shaman |,Mage |,https://wiki.wanderinginn.com/images/d/db/Playful_Radiant_Fishies_by_Lanrae.png,5,86,8
-Werri,Werri | Werina |,Female |,26 |,Gnoll |,Alive |,Unaffiliated |,Izril |,Great Plains |,Chieftain |,Leader |,,4,118,8
+Werri,Werri | Werina |,Female |,26 |,Gnoll |,Alive |,Unaffiliated |,Izril |,Great Plains |,Chieftain |,Leader | Warrior |,,4,118,8
 Contradiction,Contradiction | The Second Mind | Inventor | Far thinker | Redemption |,Nonbinary |,,Mind | Selphid,Deceased |,Bodies of Fellden | The Minds,Baleros |,Gathering Citadel |,Monarch | Artisan |,Non-combat |,,4,198,9
 Maxy,Maxy |,Female |,,Half-Elf |,Alive |,Bloodtear Pirates |,Sea |,Boat |,Pirate | General |,Warrior |,,4,114,9
 Khetieve,Khetieve | Khetieve-Xool | Dragonlord of Waves | Dragonlord of Waters | Waterboy |,Male |,3000 |,Dragon |,Deceased |,Immortals |,Sea |,Diotria |,Noble | Monarch |,Mage | Warrior |,,5,22,9
