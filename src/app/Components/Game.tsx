@@ -226,6 +226,15 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     //Xesci and Octavia and uhhh....
     "2025-11-25": "Teriarch",
     "2025-11-26": "Ieka",
+    "2025-11-27": "Vernoue",
+    "2025-11-28": "Dawil",
+    "2025-11-29": "Sserys",
+    "2025-11-30": "Fithea",
+    "2025-12-01": "Irurx",
+    "2025-12-02": "Asale",
+    "2025-12-03": "Stan",
+    "2025-12-04": "Tserre",
+
   };
 
   // Date without time is automatically UTC.
@@ -276,7 +285,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
         <h2 className="text-2xl font-bold mb-4">Welcome to Inndle!</h2>
 
         <p className="mb-6 text-sm text-gray-700 leading-relaxed">
-          The <strong>Daily Challenge</strong> is the same for everyone and resets at <strong>8:00pm EST</strong>.<br /><br />
+          The <strong>Daily Challenge</strong> is the same for everyone and resets at <strong>7:00pm EST</strong>.<br /><br />
           <strong>Free Play</strong> allows you to choose from different difficulties.<br /><br />
           Visit <strong>Settings</strong> to:
           <ul className="list-disc list-inside text-left mt-2 ml-2">
