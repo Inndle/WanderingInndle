@@ -239,6 +239,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2025-12-07": "Moore",
     "2025-12-08": "Olesm",
     "2025-12-09": "Tremborag",
+    "2025-12-10": "Mrsha",
     "2025-12-11": "Mrsha",
     "2025-12-12": "Nerrhavia",
     "2025-12-13": "Embria",
