@@ -247,6 +247,16 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2025-12-15": "Fierre",
     "2025-12-16": "Ysara",
     "2025-12-17": "Perorn",
+    "2025-12-18": "Ivolethe",
+    "2025-12-19": "Reiss",
+    "2025-12-20": "Laken",
+    "2025-12-21": "Zelkyr",
+    "2025-12-22": "Othius",
+    "2025-12-23": "Greydath",
+    "2025-12-24": "Rhisveri",
+    "2025-12-25": "Nawalishifra",
+    "2025-12-26": "Maughin",
+    "2025-12-27": "Salii",
   };
 
   // Date without time is automatically UTC.
