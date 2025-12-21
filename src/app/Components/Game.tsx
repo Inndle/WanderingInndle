@@ -254,7 +254,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2025-12-22": "Othius",
     "2025-12-23": "Greydath",
     "2025-12-24": "Rhisveri",
-    "2025-12-25": "Nawalishifra",
+    "2025-12-25": "Hecrelunn",
     "2025-12-26": "Maughin",
     "2025-12-27": "Salii",
   };
