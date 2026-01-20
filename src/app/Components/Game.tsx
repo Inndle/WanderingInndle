@@ -280,7 +280,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2026-01-17": "Hedault",
     "2026-01-18": "Chaldion",
     "2026-01-19": "Klbkch",
-    "2026-01-20": "Chesacre",
+    "2026-01-20": "Apista",
     "2026-01-21": "Tyrion",
     "2026-01-22": "Belavierr",
     "2026-01-23": "Halrac",
