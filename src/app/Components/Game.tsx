@@ -296,7 +296,9 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2026-02-02": "Thaina",
     "2026-02-03": "Salkis",
     "2026-02-04": "Lehra",
-    "2026-02-05": "Sheta",
+    "2026-02-05": "Pawn",
+    "2026-02-06": "Ryoka",
+    "2026-02-07": "Sheta",
 
   };
 
