@@ -314,6 +314,13 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2026-02-20": "Barelle",
     "2026-02-21": "Rags",
     "2026-02-22": "Vofea",
+    "2026-02-23": "Geneva",
+    "2026-02-24": "Silvenia",
+    "2026-02-25": "Pelt",
+    "2026-02-26": "Tulm",
+    "2026-02-27": "Rabbiteater",
+    "2026-02-28": "Nsiia",
+    "2026-03-01": "Ylawes",
 
 
   };
