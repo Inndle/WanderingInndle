@@ -387,7 +387,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
         <h2 className="text-2xl font-bold mb-4">Welcome to Inndle!</h2>
 
         <p className="mb-6 text-sm text-gray-700 leading-relaxed">
-          The <strong>Daily Challenge</strong> is the same for everyone and resets at <strong>7:00pm EST</strong>.<br /><br />
+          The <strong>Daily Challenge</strong> is the same for everyone and resets at <strong>8:00pm EST</strong>.<br /><br />
           <strong>Free Play</strong> allows you to choose from different difficulties.<br /><br />
           Visit <strong>Settings</strong> to:
           <ul className="list-disc list-inside text-left mt-2 ml-2">
