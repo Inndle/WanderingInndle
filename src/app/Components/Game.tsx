@@ -351,10 +351,13 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2026-03-29": "Anand",
     "2026-03-30": "Satar",
     "2026-03-31": "Relc",
-
-
-
-
+    "2026-04-01": "Mars",
+    "2026-04-02": "Pyrite",
+    "2026-04-03": "Hawk",
+    "2026-04-04": "Xrn",
+    "2026-04-05": "Cara",
+    "2026-04-06": "Ilvriss",
+    "2026-04-07": "Wer",
 
   };
 
