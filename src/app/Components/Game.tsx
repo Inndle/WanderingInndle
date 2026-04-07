@@ -358,7 +358,15 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2026-04-05": "Cara",
     "2026-04-06": "Ilvriss",
     "2026-04-07": "Wer",
+    "2026-04-08": "Torreb",
+    "2026-04-09": "Cortese",
+    "2026-04-10": "Tesy",
+    "2026-04-11": "Doroumata",
+    "2026-04-12": "Iradoren",
+    "2026-04-13": "Anazurhe",
+    "2026-04-14": "Calidus",
 
+    //Gresaria and Shirka
   };
 
   // Date without time is automatically UTC.
