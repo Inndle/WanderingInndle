@@ -365,6 +365,11 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2026-04-12": "Iradoren",
     "2026-04-13": "Anazurhe",
     "2026-04-14": "Calidus",
+    "2026-04-15": "Tolveilouka",
+    "2026-04-16": "Gresaria",
+    "2025-04-17": "Wil",
+    "2026-04-18": "Shirka",
+
 
     //Gresaria and Shirka
   };
