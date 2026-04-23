@@ -374,6 +374,14 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2026-04-21": "Viceria",
     "2026-04-22": "Periss",
     "2026-04-23": "Gireulashia",
+    "2026-04-24": "Quarass",
+    "2026-04-25": "Luan",
+    "2026-04-26": "Thelican",
+    "2026-04-27": "Revine",
+    "2026-04-28": "Lupp",
+    "2026-04-29": "Feshi",
+    "2026-04-30": "Hexel",
+
 
 
 
