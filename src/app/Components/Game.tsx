@@ -405,6 +405,8 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2026-05-22": "Ceria",
     "2026-05-23": "Calac",
     "2026-05-24": "Thomast",
+    "2026-05-25": "Eater of Spears",
+    "2026-05-26": "Selys",
 
 
   };
