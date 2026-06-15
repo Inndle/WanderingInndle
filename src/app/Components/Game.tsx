@@ -425,6 +425,13 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2026-06-11": "Ushar",
     "2026-06-12": "Talia",
     "2026-06-13": "Grimalkin",
+    "2026-06-14": "Infinitypear",
+    "2026-06-15": "Rie",
+    "2026-06-16": "Feor",
+    "2026-06-17": "Xesci",
+    "2026-06-18": "Nanette",
+    "2026-06-19": "Embria",
+    "2026-06-20": "Irurx",
 
 
   };
