@@ -446,6 +446,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2026-07-02": "Pisces",
     "2026-07-03": "Rastandius",
     "2026-07-04": "Geneva",
+    "2026-07-05": "Femithain",
 
 
 
