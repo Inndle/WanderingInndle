@@ -457,6 +457,10 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2026-07-13": "Doubte",
     "2026-07-14": "Adetr",
     "2026-07-15": "Tyrion",
+    "2026-07-16": "Rasea",
+    "2026-07-17": "Imani",
+    "2026-07-18": "Jasi",
+
 
 
 
