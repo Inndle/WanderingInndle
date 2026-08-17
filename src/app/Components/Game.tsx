@@ -490,6 +490,8 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2026-08-15": "Prost",
     "2026-08-16": "Venitra",
     "2026-08-17": "Maviola",
+    "2026-08-18": "Alcaz",
+
 
 
 
