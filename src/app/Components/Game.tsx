@@ -503,6 +503,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2026-08-28": "Seborn",
     "2026-08-29": "Nerrhavia",
     "2026-08-30": "Vaulont",
+    "2026-08-31": "Jewel", 
 
 
   };
