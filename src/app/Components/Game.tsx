@@ -523,6 +523,7 @@ function Modal({ onClose, resetFunc, setDaily, settingsModalFunc, allCharacterDa
     "2026-09-17": "Headscratcher",
     "2026-09-18": "Califor",
     "2026-09-19": "Silvenia",
+    "2026-09-20": "Mihaela",
 
 
 
