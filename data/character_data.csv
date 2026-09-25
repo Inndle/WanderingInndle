@@ -447,8 +447,8 @@ Grunter,Grunter |,Male |,,Hobgoblin | Goblin |,Deceased |,Redfang Tribe | Floode
 Nekhret,Nekhret | Archmage Nekhret |,Female |,,,Deceased |,Wistram |,Wistram |,Wistram |,Archmage | Mage |,Mage |,,4,38,3
 Sacra,Sacra | Odveig |,Female |,24 |,Human |,Deceased |,Magnolia Reinhart |,Izril |,Riverfarm |,Maid | Adventurer | Assassin |,Rogue |,,4,325,3
 Noears,Noears |,Male |,,Goblin |,Deceased |,Mountain City Tribe | Flooded Waters Tribe |,Izril |,North Izril |,Mage |,Mage |,https://wiki.wanderinginn.com/images/b/b8/Noears.png,4,293,3
-Orangepoo,Orangepoo |,Male |,,Goblin |,Deceased |,Redfang Tribe | Flooded Waters Tribe |,Izril |,Liscor | Esthelm |,Soldier |,Warrior |,,4,10,3
-Bugear,Bugear |,Male |,,Hobgoblin | Goblin |,Deceased |,Redfang Tribe | Flooded Waters Tribe |,Izril |,North Izril |,Soldier |,Warrior |,https://wiki.wanderinginn.com/images/b/b5/Gobo_study_bugear_by_mg.jpg,4,64,3
+Orangepoo,Orangepoo |,Male |,,Goblin |,Deceased |,Redfang Tribe | Flooded Waters Tribe |,Izril |,North Izril | Esthelm |,Soldier |,Warrior |,,4,10,3
+Bugear,Bugear |,Male |,,Hobgoblin | Goblin |,Deceased |,Redfang Tribe | Flooded Waters Tribe |,Izril |,North Izril | Esthelm |,Soldier |,Warrior |,https://wiki.wanderinginn.com/images/b/b5/Gobo_study_bugear_by_mg.jpg,4,64,3
 Yesel,Yesel | Miss Yesel |,Female |,,Human |,Alive |,Unseen Empire |,Izril |,Riverfarm |,Vassal | Artisan |,Non-combat |,,4,212,3
 Rievan,Rievan Forstrom |,Male |,,Human |,Alive |,Wistram |,Wistram |,Wistram |,Mage | Intellect |,Mage |,,5,88,3
 Timor,Timor du Havrington |,Male |,,Human |,Deceased |,Wistram |,Wistram |,Wistram |,Mage | Noble |,Mage |,,5,62,3
@@ -778,7 +778,7 @@ Blake,Blake |,Male |,19 |,Human |,Alive |,United Nations |,Baleros |,Talenqual |
 Ieneessa,Ieneessa | Serpentine Matriarch |,Female |,36 |,Drake |,Alive |,Zeres |,Izril |,Zeres |,Monarch |,Non-combat |,,5,76,2
 Nemor,Nemor | Great Mage Nemor |,Male |,,Human |,Deceased |,Circle of Thorns |,Izril |,Invrisil |,Mage |,Mage |,,5,56,3
 Umbral,Umbral |,Male |,,Human |,Deceased |,Esthelm |,Izril |,Esthelm |,Soldier |,Warrior |,,5,36,3
-Rocksoup,Rocksoup |,Male |,,Goblin |,Deceased |,Redfang Tribe | Flooded Waters Tribe |,Izril |,Goblinhome |,Soldier |,Warrior |,https://wiki.wanderinginn.com/images/1/1b/Gobo_study_rocksoup_by_mg.jpg,5,22,3
+Rocksoup,Rocksoup |,Male |,,Goblin |,Deceased |,Redfang Tribe | Flooded Waters Tribe |,Izril |,North Izril | Esthelm |,Soldier |,Warrior |,https://wiki.wanderinginn.com/images/1/1b/Gobo_study_rocksoup_by_mg.jpg,5,22,3
 Thriss,Thriss |,Male |,,Human |,Deceased |,Unaffiliated |,Baleros |,Jungle |,Soldier |,Leader |,,5,40,3
 Jurix,Jurix |,Male |,45 |,Dullahan |,Deceased |,Wistram |,Wistram |,Wistram |,Mage |,Mage |,,5,37,3
 Cessic,Cessic |,Male |,,Lizardfolk |,Alive |,Wistram |,Wistram |,Wistram |,Mage |,Mage |,,5,30,3
@@ -1021,8 +1021,8 @@ Regisand,Regisand Curle |,Male |,,Human |,Alive |,Invrisil | Magnolia Reinhart |
 Merec,Merec |,Male |,,Human |,Alive |,Merchant's Guild |,Izril |,Invrisil |,Merchant |,Non-combat |,,6,33,3
 Clara,Clara |,Female |,,Human |,Alive |,Raverian Fighters |,Baleros |,Jungle |,Soldier |,Warrior |,,6,14,3
 Lim,Lim |,Male |,,Human |,Unknown |,Raverian Fighters Company |,Baleros |,Jungle |,Soldier |,Warrior |,,6,13,3
-Bitefly,Bitefly |,Male |,,Goblin |,Deceased |,Redfang Tribe | Redfang Elite Warriors | Flooded Waters Tribe |,Izril |,Goblinhome |,Soldier |,Warrior |,,6,7,3
-Leftstep,Leftstep |,Male |,,Goblin |,Deceased |,Redfang Tribe | Redfang Elite Warriors | Flooded Waters Tribe |,Izril |,Goblinhome |,Soldier |,Warrior |,,6,9,3
+Bitefly,Bitefly |,Male |,,Goblin |,Deceased |,Redfang Tribe | Redfang Elite Warriors | Flooded Waters Tribe |,Izril |,North Izril | Esthelm |,Soldier |,Warrior |,,6,7,3
+Leftstep,Leftstep |,Male |,,Goblin |,Deceased |,Redfang Tribe | Redfang Elite Warriors | Flooded Waters Tribe |,Izril |,North Izril | Esthelm |,Soldier |,Warrior |,,6,9,3
 Anabelle,Anabelle |,Female |,,Human |,Alive |,Unseen Empire |,Izril |,Riverfarm |,Child |,Non-combat |,,6,22,3
 Tshya,Tshya | Scaleslough |,Male |,63 |,Drake |,Deceased |,Wistram Academy |,Wistram |,Wistram |,Mage | Intellect |,Mage |,,6,4,3
 Nemistra,Nemistra Verdinan |,Female |,,Selphid |,Deceased |,Wistram Academy |,Wistram |,Wistram |,Mage |,Mage |,,6,2,3
