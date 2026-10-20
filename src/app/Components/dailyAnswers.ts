@@ -444,6 +444,8 @@ export const hardcodedAnswers: Record<string, string> = {
     "2026-10-18": "Anazurhe",
     "2026-10-19": "Chaldion",
     "2026-10-20": "Troydel",
+    "2026-10-21": "Beniar",
+
 
 
 };
